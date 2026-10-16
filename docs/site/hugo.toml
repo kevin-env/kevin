@@ -20,12 +20,13 @@ title = "kevin"
     noClasses = false
 
 [params]
-  BookTheme = "auto"
+  BookTheme = "dark"
   BookSearch = true
   BookSection = "docs"
   BookRepo = "https://github.com/kevin-env/kevin"
   BookEditPath = "edit/main/docs/site/content"
   BookFavicon = "favicon.svg"
+  BookLogo = "logo.svg"
 
 [[menu.after]]
   name = "GitHub"
