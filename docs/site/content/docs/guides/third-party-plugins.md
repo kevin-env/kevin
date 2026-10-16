@@ -11,17 +11,17 @@ A third-party plugin adds step types that kevin does not ship. You can find plug
 ## Add an index
 
 ```sh
-kevin plugin index add https://github.com/acme/kevin-plugin-index
+kevin plugin index add https://github.com/kevin-env/kevin-plugin-index --as kevin-env
 ```
 
-kevin clones the repository and prints the number of plugins it found. The index gets an alias derived from the URL. To choose the alias, add `--as <alias>`.
+kevin clones the repository and prints the number of plugins it found. Without `--as <alias>`, the index gets an alias derived from the URL.
 
 To see your indexes, run `kevin plugin index list`. To get new releases, run `kevin plugin index update`.
 
 ## Find a plugin
 
 ```sh
-kevin plugin search postgres
+kevin plugin search echo
 ```
 
 Each result shows `<alias>/<name>`, a summary, and the latest version. With no query, `search` lists every plugin.
@@ -29,21 +29,20 @@ Each result shows `<alias>/<name>`, a summary, and the latest version. With no q
 To see the versions of a plugin and the `plugins:` entry for the latest one:
 
 ```sh
-kevin plugin index show postgres
+kevin plugin index show echo
 ```
 
 ```
-name	postgres
-summary	a postgres database for local dev
-homepage	https://github.com/acme/kevin-plugin-postgres
-maintainer	Acme Inc
-repo	acme (https://github.com/acme/kevin-plugin-index)
-version	1.4.0 (latest)
-version	1.3.0
+name	echo
+summary	an example plugin that prints a message
+homepage	https://kevin-env.dev
+maintainer	Justen Walker
+repo	kevin-env (https://github.com/kevin-env/kevin-plugin-index)
+version	0.1.0 (latest)
 
 plugins: {
-	postgres: {
-		oci: "ghcr.io/acme/kevin-plugin-postgres:v1.4.0"
+	echo: {
+		oci: "ghcr.io/kevin-env/kevin/plugin-echo:0.1.0"
 		signing: {
 			scheme: "minisign"
 		}
@@ -51,17 +50,17 @@ plugins: {
 }
 ```
 
-If two indexes have a plugin with the same name, the command fails and lists the aliases. Use `<alias>/<name>`, for example `acme/postgres`.
+If two indexes have a plugin with the same name, the command fails and lists the aliases. Use `<alias>/<name>`, for example `kevin-env/echo`.
 
 ## Install a plugin
 
 ```sh
-kevin plugin index install postgres
+kevin plugin index install echo
 ```
 
 ```
-trusted	0764f8e1f91b2058
-installed	postgres	1.4.0
+trusted	65a4ca28b7921128
+installed	echo	0.1.0
 ```
 
 `install` does two things:
@@ -69,7 +68,7 @@ installed	postgres	1.4.0
 1. Adds the signers that the plugin's index entry declares to your trust store.
 2. Adds the `plugins:` entry to your environment file.
 
-To install an older release, add `--version 1.3.0`. The version must match exactly. To review the signer before you trust it, add `--no-trust`, then trust it yourself (see below).
+To install an older release, add `--version 0.1.0`. The version must match exactly. To review the signer before you trust it, add `--no-trust`, then trust it yourself (see below).
 
 `install` fails if the environment file already declares a plugin with that name, or if the file is package-mode CUE. In those cases, copy the entry from `kevin plugin index show` into the file yourself.
 
@@ -112,7 +111,7 @@ kevin trusts the certificates in the file in addition to your system roots. This
 
    ```cue
    env: db: {
-       uses: "postgres:server"
+       uses: "echo:echo"
        with: {
            // fields from the plugin's documentation
        }
