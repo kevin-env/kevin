@@ -7,8 +7,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/config"
-	"github.com/justenwalker/kevin/internal/plugins/launcher"
+	"github.com/kevin-env/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/plugins/launcher"
 )
 
 // TestApplySchema proves applySchema catches a rendered with block that

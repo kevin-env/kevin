@@ -8,8 +8,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/cmd"
-	"github.com/justenwalker/kevin/internal/plugins/signing"
+	"github.com/kevin-env/kevin/internal/cmd"
+	"github.com/kevin-env/kevin/internal/plugins/signing"
 )
 
 func TestPluginTrust(t *testing.T) {

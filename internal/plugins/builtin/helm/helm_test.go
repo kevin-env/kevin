@@ -9,9 +9,9 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	helmcmd "github.com/justenwalker/kevin/internal/command/helm"
-	"github.com/justenwalker/kevin/internal/plugins/plugintest"
-	"github.com/justenwalker/kevin/plugin"
+	helmcmd "github.com/kevin-env/kevin/internal/command/helm"
+	"github.com/kevin-env/kevin/internal/plugins/plugintest"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 type capture struct{ logs []string }

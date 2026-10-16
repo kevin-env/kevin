@@ -28,7 +28,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 
-	"github.com/justenwalker/kevin/protos/pb"
+	"github.com/kevin-env/kevin/protos/pb"
 )
 
 // relayTestDomain is the environment domain that the suite's relay answers

@@ -10,9 +10,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/justenwalker/kevin/internal/container"
-	"github.com/justenwalker/kevin/internal/relay"
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/internal/container"
+	"github.com/kevin-env/kevin/internal/relay"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 // NodePort is the fixed port the SOCKS5 relay pod listens on for its TCP

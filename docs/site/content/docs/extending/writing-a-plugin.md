@@ -5,7 +5,7 @@ weight: 1
 
 # Writing a plugin
 
-A plugin is a program that offers one or more step types. This guide writes one in Go with the `github.com/justenwalker/kevin/plugin` package. [`cmd/kevin-plugin-echo`](https://github.com/justenwalker/kevin/tree/main/cmd/kevin-plugin-echo) is a complete example with three step types and a provider `config` block.
+A plugin is a program that offers one or more step types. This guide writes one in Go with the `github.com/kevin-env/kevin/plugin` package. [`cmd/kevin-plugin-echo`](https://github.com/kevin-env/kevin/tree/main/cmd/kevin-plugin-echo) is a complete example with three step types and a provider `config` block.
 
 ## Write the plugin
 
@@ -17,7 +17,7 @@ package main
 import (
     "context"
 
-    "github.com/justenwalker/kevin/plugin"
+    "github.com/kevin-env/kevin/plugin"
 )
 
 type widgetStep struct{}

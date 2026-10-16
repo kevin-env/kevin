@@ -12,7 +12,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/justenwalker/kevin/internal/statedir"
+	"github.com/kevin-env/kevin/internal/statedir"
 )
 
 // Dir is the pkg-cache directory under the user state directory - global, shared across every project.

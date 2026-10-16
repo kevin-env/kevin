@@ -8,7 +8,7 @@ import (
 	"cuelang.org/go/cue/cuecontext"
 	yamlpkg "cuelang.org/go/encoding/yaml"
 
-	"github.com/justenwalker/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/config"
 )
 
 //go:embed schema.cue

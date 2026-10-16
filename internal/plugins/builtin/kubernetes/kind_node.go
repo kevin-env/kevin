@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 // caAnchorPath is where TrustCA writes the kevin root certificate inside a

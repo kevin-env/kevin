@@ -13,9 +13,9 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/command"
-	"github.com/justenwalker/kevin/internal/command/commandtest"
-	"github.com/justenwalker/kevin/internal/run/runstate"
+	"github.com/kevin-env/kevin/internal/command"
+	"github.com/kevin-env/kevin/internal/command/commandtest"
+	"github.com/kevin-env/kevin/internal/run/runstate"
 )
 
 func TestRunStateFor(t *testing.T) {

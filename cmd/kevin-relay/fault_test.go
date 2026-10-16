@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/protos/pb"
+	"github.com/kevin-env/kevin/protos/pb"
 )
 
 func TestApplyFault(t *testing.T) {

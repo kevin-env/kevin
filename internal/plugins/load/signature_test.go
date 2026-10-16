@@ -7,9 +7,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/command/cosign"
-	"github.com/justenwalker/kevin/internal/plugins/signing"
-	"github.com/justenwalker/kevin/internal/uerr"
+	"github.com/kevin-env/kevin/internal/command/cosign"
+	"github.com/kevin-env/kevin/internal/plugins/signing"
+	"github.com/kevin-env/kevin/internal/uerr"
 )
 
 func TestFriendlySignatureErr(t *testing.T) {

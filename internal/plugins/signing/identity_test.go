@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/plugins/signing"
+	"github.com/kevin-env/kevin/internal/plugins/signing"
 )
 
 // writeStrayIdentityFile drops a file that doesn't parse as an identity

@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/config"
 )
 
 // scopeRuntime is a projectRuntime double whose ListByLabel reports a fixed

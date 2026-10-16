@@ -11,7 +11,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/container"
+	"github.com/kevin-env/kevin/internal/container"
 )
 
 func TestExec(t *testing.T) {

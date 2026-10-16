@@ -15,7 +15,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/proxy"
+	"github.com/kevin-env/kevin/internal/proxy"
 )
 
 // TestConnect covers handleConnect end to end: terminating TLS with a leaf

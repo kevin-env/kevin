@@ -12,7 +12,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/proxy"
+	"github.com/kevin-env/kevin/internal/proxy"
 )
 
 // TestWebsocket covers serveUpgrade end to end: the handshake succeeding and

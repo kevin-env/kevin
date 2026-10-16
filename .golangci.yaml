@@ -87,7 +87,7 @@ linters:
       # GO-002 already governs wrapping between our own packages; wrapcheck
       # is left to police genuinely opaque third-party/stdlib errors.
       ignore-package-globs:
-        - github.com/justenwalker/kevin/*
+        - github.com/kevin-env/kevin/*
 
   exclusions:
     generated: lax
@@ -173,6 +173,6 @@ formatters:
       sections:
         - standard
         - default
-        - prefix(github.com/justenwalker/kevin)
+        - prefix(github.com/kevin-env/kevin)
   exclusions:
     generated: lax

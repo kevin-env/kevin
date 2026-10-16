@@ -14,7 +14,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 
-	"github.com/justenwalker/kevin/protos/pb"
+	"github.com/kevin-env/kevin/protos/pb"
 )
 
 // TestSetInterceptsOpensADeclaredPort proves a SetIntercepts control call

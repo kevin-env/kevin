@@ -3,7 +3,7 @@
 // the log and progress streams, the published outputs, and the removal.
 package main
 
-import "github.com/justenwalker/kevin/plugin"
+import "github.com/kevin-env/kevin/plugin"
 
 func main() {
 	plugin.Serve(plugin.Plugin{

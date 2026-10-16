@@ -11,10 +11,10 @@ import (
 
 	"go.yaml.in/yaml/v3"
 
-	"github.com/justenwalker/kevin/internal/command"
-	kindcmd "github.com/justenwalker/kevin/internal/command/kind"
-	"github.com/justenwalker/kevin/internal/container"
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/internal/command"
+	kindcmd "github.com/kevin-env/kevin/internal/command/kind"
+	"github.com/kevin-env/kevin/internal/container"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 // kindProviderEnvVar is kind's own switch (upstream-labeled experimental)

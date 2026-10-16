@@ -24,8 +24,8 @@ import (
 	specs "github.com/opencontainers/image-spec/specs-go"
 	ocispec "github.com/opencontainers/image-spec/specs-go/v1"
 
-	"github.com/justenwalker/kevin/internal/plugins/source/cache"
-	"github.com/justenwalker/kevin/internal/plugins/source/transport"
+	"github.com/kevin-env/kevin/internal/plugins/source/cache"
+	"github.com/kevin-env/kevin/internal/plugins/source/transport"
 )
 
 // MediaType identifies an OCI manifest layer as a kevin plugin package - the

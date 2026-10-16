@@ -5,8 +5,8 @@ import (
 	"errors"
 	"time"
 
-	"github.com/justenwalker/kevin/internal/run/api"
-	"github.com/justenwalker/kevin/internal/run/session"
+	"github.com/kevin-env/kevin/internal/run/api"
+	"github.com/kevin-env/kevin/internal/run/session"
 )
 
 // Rerun runs a step again, as RerunStep does, and reports what changed.

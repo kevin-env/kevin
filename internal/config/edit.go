@@ -12,7 +12,7 @@ import (
 	"cuelang.org/go/cue/format"
 	"cuelang.org/go/cue/parser"
 
-	"github.com/justenwalker/kevin/internal/uerr"
+	"github.com/kevin-env/kevin/internal/uerr"
 )
 
 // InsertPlugin merges snippet - CUE source shaped like

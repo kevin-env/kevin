@@ -6,9 +6,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/config"
-	"github.com/justenwalker/kevin/internal/output"
-	"github.com/justenwalker/kevin/internal/run/session"
+	"github.com/kevin-env/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/output"
+	"github.com/kevin-env/kevin/internal/run/session"
 )
 
 func TestEvalGroupOutputs(t *testing.T) {

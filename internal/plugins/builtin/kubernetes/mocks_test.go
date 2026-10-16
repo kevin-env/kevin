@@ -8,9 +8,9 @@ import (
 	"context"
 	"io"
 
-	"github.com/justenwalker/kevin/internal/command/k3d"
-	"github.com/justenwalker/kevin/internal/command/kind"
-	"github.com/justenwalker/kevin/internal/command/minikube"
+	"github.com/kevin-env/kevin/internal/command/k3d"
+	"github.com/kevin-env/kevin/internal/command/kind"
+	"github.com/kevin-env/kevin/internal/command/minikube"
 	mock "github.com/stretchr/testify/mock"
 )
 

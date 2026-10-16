@@ -20,7 +20,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/justenwalker/kevin/internal/command"
+	"github.com/kevin-env/kevin/internal/command"
 )
 
 // Request describes the authority to install.

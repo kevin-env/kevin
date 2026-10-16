@@ -5,7 +5,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/justenwalker/kevin/internal/plugins/index"
+	"github.com/kevin-env/kevin/internal/plugins/index"
 )
 
 // pluginIndexCommand groups the subcommands that manage the local cache of

@@ -1,7 +1,6 @@
 version: v2
 modules:
   - path: protos
-    name: buf.build/justenwalker/kevin
 lint:
   use:
     - DEFAULT

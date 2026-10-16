@@ -10,10 +10,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/run/api"
-	"github.com/justenwalker/kevin/internal/run/runstate"
-	"github.com/justenwalker/kevin/internal/run/session"
-	"github.com/justenwalker/kevin/internal/ui/console"
+	"github.com/kevin-env/kevin/internal/run/api"
+	"github.com/kevin-env/kevin/internal/run/runstate"
+	"github.com/kevin-env/kevin/internal/run/session"
+	"github.com/kevin-env/kevin/internal/ui/console"
 )
 
 func dialServer(t *testing.T, h http.Handler) *api.Client {

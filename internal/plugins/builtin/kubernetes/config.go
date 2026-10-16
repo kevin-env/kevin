@@ -1,8 +1,8 @@
 package kubernetes
 
 import (
-	"github.com/justenwalker/kevin/internal/container"
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/internal/container"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 // nodeLabelKey is the Kubernetes node label that names each node: the

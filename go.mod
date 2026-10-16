@@ -1,4 +1,4 @@
-module github.com/justenwalker/kevin
+module github.com/kevin-env/kevin
 
 go 1.26.6
 

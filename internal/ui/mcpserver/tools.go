@@ -9,9 +9,9 @@ import (
 
 	"github.com/modelcontextprotocol/go-sdk/mcp"
 
-	"github.com/justenwalker/kevin/internal/run/api"
-	"github.com/justenwalker/kevin/internal/run/session"
-	"github.com/justenwalker/kevin/internal/run/steplog"
+	"github.com/kevin-env/kevin/internal/run/api"
+	"github.com/kevin-env/kevin/internal/run/session"
+	"github.com/kevin-env/kevin/internal/run/steplog"
 )
 
 // ListStepsOutput is the result of list_steps.

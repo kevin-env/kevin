@@ -3,8 +3,8 @@ package config
 import (
 	"fmt"
 
-	"github.com/justenwalker/kevin/internal/config/expr"
-	"github.com/justenwalker/kevin/internal/statedir"
+	"github.com/kevin-env/kevin/internal/config/expr"
+	"github.com/kevin-env/kevin/internal/statedir"
 )
 
 // ResolvePluginConfigs renders every declared plugin's config block against

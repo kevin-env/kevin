@@ -17,14 +17,14 @@ import (
 	"github.com/stretchr/testify/suite"
 	"golang.org/x/net/proxy"
 
-	"github.com/justenwalker/kevin/internal/command"
-	kindcmd "github.com/justenwalker/kevin/internal/command/kind"
-	"github.com/justenwalker/kevin/internal/container"
-	"github.com/justenwalker/kevin/internal/pki/ca"
-	"github.com/justenwalker/kevin/internal/relay"
-	"github.com/justenwalker/kevin/internal/relay/relaytest"
-	"github.com/justenwalker/kevin/internal/statedir"
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/internal/command"
+	kindcmd "github.com/kevin-env/kevin/internal/command/kind"
+	"github.com/kevin-env/kevin/internal/container"
+	"github.com/kevin-env/kevin/internal/pki/ca"
+	"github.com/kevin-env/kevin/internal/relay"
+	"github.com/kevin-env/kevin/internal/relay/relaytest"
+	"github.com/kevin-env/kevin/internal/statedir"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 // kindProject names every docker and kind resource that this suite creates.

@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/step"
+	"github.com/kevin-env/kevin/internal/step"
 )
 
 func TestPrintCheck(t *testing.T) {

@@ -1,8 +1,8 @@
 package engine
 
 import (
-	"github.com/justenwalker/kevin/internal/plugins/launcher"
-	"github.com/justenwalker/kevin/internal/step"
+	"github.com/kevin-env/kevin/internal/plugins/launcher"
+	"github.com/kevin-env/kevin/internal/step"
 )
 
 // stepKind returns the Kind that info's step type name reports, or

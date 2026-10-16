@@ -9,8 +9,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	kevincmd "github.com/justenwalker/kevin/internal/cmd"
-	"github.com/justenwalker/kevin/internal/cmdschema"
+	kevincmd "github.com/kevin-env/kevin/internal/cmd"
+	"github.com/kevin-env/kevin/internal/cmdschema"
 )
 
 const (

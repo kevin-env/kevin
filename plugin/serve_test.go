@@ -15,7 +15,7 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"github.com/justenwalker/kevin/protos/pb"
+	"github.com/kevin-env/kevin/protos/pb"
 )
 
 func TestPluginRegister(t *testing.T) {

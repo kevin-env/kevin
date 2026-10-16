@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/config"
 )
 
 var demoSnippet = []byte("plugins: {\n\tdemo: {\n\t\toci: \"ghcr.io/example/demo:v1.0.0\"\n\t}\n}")

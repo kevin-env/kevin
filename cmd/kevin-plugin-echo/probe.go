@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 // probeStep implements the probe step type. Up always succeeds and creates

@@ -7,11 +7,11 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/justenwalker/kevin/internal/config"
-	"github.com/justenwalker/kevin/internal/plugins/signing"
-	"github.com/justenwalker/kevin/internal/plugins/source/cache"
-	"github.com/justenwalker/kevin/internal/plugins/source/httpsrc"
-	"github.com/justenwalker/kevin/internal/plugins/source/ocisrc"
+	"github.com/kevin-env/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/plugins/signing"
+	"github.com/kevin-env/kevin/internal/plugins/source/cache"
+	"github.com/kevin-env/kevin/internal/plugins/source/httpsrc"
+	"github.com/kevin-env/kevin/internal/plugins/source/ocisrc"
 )
 
 // Detached signature file suffixes: minisign's own default for

@@ -16,9 +16,9 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"github.com/justenwalker/kevin/internal/step"
-	"github.com/justenwalker/kevin/internal/uerr"
-	"github.com/justenwalker/kevin/protos/pb"
+	"github.com/kevin-env/kevin/internal/step"
+	"github.com/kevin-env/kevin/internal/uerr"
+	"github.com/kevin-env/kevin/protos/pb"
 )
 
 var echoPlugin = sync.OnceValues(func() (string, error) {
@@ -28,7 +28,7 @@ var echoPlugin = sync.OnceValues(func() (string, error) {
 	}
 	bin := filepath.Join(dir, "kevin-plugin-echo")
 	cmd := exec.CommandContext(context.Background(), "go", "build", "-o", bin,
-		"github.com/justenwalker/kevin/cmd/kevin-plugin-echo")
+		"github.com/kevin-env/kevin/cmd/kevin-plugin-echo")
 	if out, buildErr := cmd.CombinedOutput(); buildErr != nil {
 		return "", fmt.Errorf("build echo plugin: %w: %s", buildErr, out)
 	}

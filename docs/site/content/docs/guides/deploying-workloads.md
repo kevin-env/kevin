@@ -83,4 +83,4 @@ By default, teardown deletes what `kubectl` applied and uninstalls what `helm` i
 
 ## Related
 
-- [`examples/kind`](https://github.com/justenwalker/kevin/tree/main/examples/kind): a `kubectl` step and a `helm` step, each with a `wait` step.
+- [`examples/kind`](https://github.com/kevin-env/kevin/tree/main/examples/kind): a `kubectl` step and a `helm` step, each with a `wait` step.

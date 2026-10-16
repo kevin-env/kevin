@@ -12,9 +12,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/justenwalker/kevin/internal/command"
-	helmcmd "github.com/justenwalker/kevin/internal/command/helm"
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/internal/command"
+	helmcmd "github.com/kevin-env/kevin/internal/command/helm"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 //go:embed schema.cue

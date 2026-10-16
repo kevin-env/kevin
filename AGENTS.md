@@ -83,7 +83,7 @@ in Docker Desktop/OrbStack's settings instead, which lets the default
 `docker` driver do it too). gnob does none of this for you. It writes and
 commits `internal/version/VERSION` (embedded by `internal/version`, which
 `internal/cmd` reads for `kevin --version` and `internal/relay` reads to
-build the default relay image tag - `ghcr.io/justenwalker/kevin/relay:` +
+build the default relay image tag - `ghcr.io/kevin-env/kevin/relay:` +
 that version, or the locally-built `kevin-relay:dev` while still
 unreleased - so both read correctly even from a `go install`/module-proxy
 build, not just a goreleaser one) before tagging, locally only. It then

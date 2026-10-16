@@ -7,7 +7,7 @@ package wait
 import (
 	"context"
 
-	"github.com/justenwalker/kevin/internal/command/kubectl"
+	"github.com/kevin-env/kevin/internal/command/kubectl"
 	mock "github.com/stretchr/testify/mock"
 )
 

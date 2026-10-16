@@ -14,7 +14,7 @@ import (
 	"cuelang.org/go/cue"
 	cueerrors "cuelang.org/go/cue/errors"
 
-	"github.com/justenwalker/kevin/internal/config/expr"
+	"github.com/kevin-env/kevin/internal/config/expr"
 )
 
 // Validate checks the config file for validity against the given set of plugin schemas.

@@ -12,7 +12,7 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/justenwalker/kevin/internal/command"
+	"github.com/kevin-env/kevin/internal/command"
 )
 
 // Binary is the command this package runs.

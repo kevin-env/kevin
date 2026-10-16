@@ -4,8 +4,8 @@ import (
 	"maps"
 	"sync"
 
-	"github.com/justenwalker/kevin/internal/output"
-	"github.com/justenwalker/kevin/internal/step"
+	"github.com/kevin-env/kevin/internal/output"
+	"github.com/kevin-env/kevin/internal/step"
 )
 
 // runState is what a run has learned about each step so far, keyed by step

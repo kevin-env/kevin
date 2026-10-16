@@ -16,8 +16,8 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/command/commandtest"
-	"github.com/justenwalker/kevin/internal/uerr"
+	"github.com/kevin-env/kevin/internal/command/commandtest"
+	"github.com/kevin-env/kevin/internal/uerr"
 )
 
 func TestNotInstalled(t *testing.T) {

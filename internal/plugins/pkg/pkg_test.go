@@ -14,7 +14,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/plugins/pkg"
+	"github.com/kevin-env/kevin/internal/plugins/pkg"
 )
 
 // tarEntry is one file or directory to write into a test fixture archive.

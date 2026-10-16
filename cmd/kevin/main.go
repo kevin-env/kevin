@@ -8,8 +8,8 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/justenwalker/kevin/internal/cmd"
-	"github.com/justenwalker/kevin/internal/uerr"
+	"github.com/kevin-env/kevin/internal/cmd"
+	"github.com/kevin-env/kevin/internal/uerr"
 )
 
 // forceQuitCode is the exit status of a run ended by a second interrupt,

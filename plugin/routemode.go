@@ -1,6 +1,6 @@
 package plugin
 
-import "github.com/justenwalker/kevin/protos/pb"
+import "github.com/kevin-env/kevin/protos/pb"
 
 // RouteMode selects how the proxy handles a route's client-facing
 // connection - independent of Route.TLS, which only says whether Upstream

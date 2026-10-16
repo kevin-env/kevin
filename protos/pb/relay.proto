@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package kevin.relay.v1;
 
-option go_package = "github.com/justenwalker/kevin/protos/pb;pb";
+option go_package = "github.com/kevin-env/kevin/protos/pb;pb";
 
 import "pb/plugin.proto";
 

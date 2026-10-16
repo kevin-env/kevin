@@ -11,7 +11,7 @@ import (
 
 	"github.com/jedisct1/go-minisign"
 
-	"github.com/justenwalker/kevin/internal/statedir"
+	"github.com/kevin-env/kevin/internal/statedir"
 )
 
 // Dir is the trusted-keys directory under the user state directory - global, shared across every project.

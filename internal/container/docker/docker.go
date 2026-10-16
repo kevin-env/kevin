@@ -2,8 +2,8 @@
 package docker
 
 import (
-	"github.com/justenwalker/kevin/internal/container"
-	"github.com/justenwalker/kevin/internal/container/clirt"
+	"github.com/kevin-env/kevin/internal/container"
+	"github.com/kevin-env/kevin/internal/container/clirt"
 )
 
 // flavor is the docker [clirt.Dialect].

@@ -7,8 +7,8 @@ import (
 	"net"
 	"strings"
 
-	"github.com/justenwalker/kevin/internal/container"
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/internal/container"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 // wantsCapture reports whether the cluster's nodes should register for

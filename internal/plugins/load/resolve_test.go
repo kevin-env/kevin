@@ -16,15 +16,15 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/command"
-	"github.com/justenwalker/kevin/internal/command/cosign"
-	"github.com/justenwalker/kevin/internal/config"
-	"github.com/justenwalker/kevin/internal/plugins/launcher"
-	"github.com/justenwalker/kevin/internal/plugins/pkg"
-	"github.com/justenwalker/kevin/internal/plugins/signing"
-	"github.com/justenwalker/kevin/internal/plugins/source/httpsrc"
-	"github.com/justenwalker/kevin/internal/plugins/source/ocisrc"
-	"github.com/justenwalker/kevin/internal/statedir"
+	"github.com/kevin-env/kevin/internal/command"
+	"github.com/kevin-env/kevin/internal/command/cosign"
+	"github.com/kevin-env/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/plugins/launcher"
+	"github.com/kevin-env/kevin/internal/plugins/pkg"
+	"github.com/kevin-env/kevin/internal/plugins/signing"
+	"github.com/kevin-env/kevin/internal/plugins/source/httpsrc"
+	"github.com/kevin-env/kevin/internal/plugins/source/ocisrc"
+	"github.com/kevin-env/kevin/internal/statedir"
 )
 
 // writePackage builds a fixture plugin package tar at dir/pkg.tar, with a

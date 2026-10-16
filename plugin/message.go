@@ -1,6 +1,6 @@
 package plugin
 
-import "github.com/justenwalker/kevin/internal/uerr"
+import "github.com/kevin-env/kevin/internal/uerr"
 
 // Wrap attaches a human-facing message to err, built from format and args
 // the way fmt.Sprintf would build it. A Step returns the wrapped error

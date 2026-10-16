@@ -6,10 +6,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/pki/ca"
-	"github.com/justenwalker/kevin/internal/proxy"
-	"github.com/justenwalker/kevin/internal/run/api"
-	"github.com/justenwalker/kevin/internal/statedir"
+	"github.com/kevin-env/kevin/internal/pki/ca"
+	"github.com/kevin-env/kevin/internal/proxy"
+	"github.com/kevin-env/kevin/internal/run/api"
+	"github.com/kevin-env/kevin/internal/statedir"
 )
 
 func TestEgressView(t *testing.T) {

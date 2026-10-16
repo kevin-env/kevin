@@ -3,7 +3,7 @@ package kubernetes
 import (
 	"context"
 
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 // TrustCA checks that every node holds the kevin root certificate. Create

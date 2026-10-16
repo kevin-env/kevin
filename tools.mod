@@ -1,4 +1,4 @@
-module github.com/justenwalker/kevin/tools
+module github.com/kevin-env/kevin/tools
 
 go 1.27.0
 

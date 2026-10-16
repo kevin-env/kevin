@@ -9,10 +9,10 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/justenwalker/kevin/internal/container"
-	"github.com/justenwalker/kevin/internal/relay"
-	"github.com/justenwalker/kevin/internal/relay/cluster"
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/internal/container"
+	"github.com/kevin-env/kevin/internal/relay"
+	"github.com/kevin-env/kevin/internal/relay/cluster"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 // wantsRelay reports whether Up must stand up the SOCKS5 relay.

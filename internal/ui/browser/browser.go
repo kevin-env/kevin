@@ -8,7 +8,7 @@ import (
 	"os/exec"
 	"runtime"
 
-	"github.com/justenwalker/kevin/internal/command"
+	"github.com/kevin-env/kevin/internal/command"
 )
 
 // Open launches the system's default browser on url.

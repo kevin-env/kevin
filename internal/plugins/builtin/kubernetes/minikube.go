@@ -13,10 +13,10 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/justenwalker/kevin/internal/command"
-	minikubecmd "github.com/justenwalker/kevin/internal/command/minikube"
-	"github.com/justenwalker/kevin/internal/container"
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/internal/command"
+	minikubecmd "github.com/kevin-env/kevin/internal/command/minikube"
+	"github.com/kevin-env/kevin/internal/container"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 // minikubeNodeLabel marks every container that minikube creates.

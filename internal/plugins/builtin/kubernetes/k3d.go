@@ -12,10 +12,10 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/justenwalker/kevin/internal/command"
-	k3dcmd "github.com/justenwalker/kevin/internal/command/k3d"
-	"github.com/justenwalker/kevin/internal/container"
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/internal/command"
+	k3dcmd "github.com/kevin-env/kevin/internal/command/k3d"
+	"github.com/kevin-env/kevin/internal/container"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 // k3sKubeconfig is the kubeconfig that a k3s node carries for its own

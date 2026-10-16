@@ -14,10 +14,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/cmd"
-	"github.com/justenwalker/kevin/internal/config"
-	"github.com/justenwalker/kevin/internal/gittest"
-	"github.com/justenwalker/kevin/internal/plugins/index"
+	"github.com/kevin-env/kevin/internal/cmd"
+	"github.com/kevin-env/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/gittest"
+	"github.com/kevin-env/kevin/internal/plugins/index"
 )
 
 func TestMain(m *testing.M) {

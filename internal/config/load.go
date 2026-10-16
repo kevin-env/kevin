@@ -23,7 +23,7 @@ import (
 	"cuelang.org/go/cue/load"
 	"cuelang.org/go/cue/parser"
 
-	"github.com/justenwalker/kevin/internal/uerr"
+	"github.com/kevin-env/kevin/internal/uerr"
 )
 
 // CoreSchema is kevin's environment-file schema (schema.cue), exported so

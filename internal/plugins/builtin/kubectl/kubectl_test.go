@@ -10,8 +10,8 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	kubectlcmd "github.com/justenwalker/kevin/internal/command/kubectl"
-	"github.com/justenwalker/kevin/plugin"
+	kubectlcmd "github.com/kevin-env/kevin/internal/command/kubectl"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 type capture struct{ logs []string }

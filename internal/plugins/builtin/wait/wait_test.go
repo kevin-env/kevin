@@ -16,11 +16,11 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/command/commandtest"
-	kubectlcmd "github.com/justenwalker/kevin/internal/command/kubectl"
-	"github.com/justenwalker/kevin/internal/plugins/plugintest"
-	"github.com/justenwalker/kevin/internal/uerr"
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/internal/command/commandtest"
+	kubectlcmd "github.com/kevin-env/kevin/internal/command/kubectl"
+	"github.com/kevin-env/kevin/internal/plugins/plugintest"
+	"github.com/kevin-env/kevin/internal/uerr"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 type capture struct{ logs []string }

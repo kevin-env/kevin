@@ -6,7 +6,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/justenwalker/kevin/internal/command"
+	"github.com/kevin-env/kevin/internal/command"
 )
 
 // Catalog is every plugin found across every configured [Source]'s cloned

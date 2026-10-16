@@ -13,7 +13,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/config"
 )
 
 // testMinisignKeyText generates a fresh, unencrypted minisign key pair and

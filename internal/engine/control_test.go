@@ -9,13 +9,13 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/config"
-	"github.com/justenwalker/kevin/internal/output"
-	"github.com/justenwalker/kevin/internal/plugins/launcher"
-	"github.com/justenwalker/kevin/internal/proxy"
-	"github.com/justenwalker/kevin/internal/run/api"
-	"github.com/justenwalker/kevin/internal/run/session"
-	"github.com/justenwalker/kevin/internal/step"
+	"github.com/kevin-env/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/output"
+	"github.com/kevin-env/kevin/internal/plugins/launcher"
+	"github.com/kevin-env/kevin/internal/proxy"
+	"github.com/kevin-env/kevin/internal/run/api"
+	"github.com/kevin-env/kevin/internal/run/session"
+	"github.com/kevin-env/kevin/internal/step"
 )
 
 func TestRerun(t *testing.T) {

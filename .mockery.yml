@@ -22,13 +22,13 @@ require-template-schema-exists: true
 template: testify
 template-schema: '{{.Template}}.schema.json'
 packages:
-  github.com/justenwalker/kevin/plugin:
+  github.com/kevin-env/kevin/plugin:
     interfaces:
       Step:
       Downer:
       Exporter:
       ToolProvider:
-  github.com/justenwalker/kevin/internal/command:
+  github.com/kevin-env/kevin/internal/command:
     config:
       dir: internal/command/commandtest
       filename: mocks.go
@@ -36,21 +36,21 @@ packages:
     interfaces:
       Runner:
       Starter:
-  github.com/justenwalker/kevin/internal/plugins/builtin/helm:
+  github.com/kevin-env/kevin/internal/plugins/builtin/helm:
     interfaces:
       cli:
-  github.com/justenwalker/kevin/internal/plugins/builtin/kubectl:
+  github.com/kevin-env/kevin/internal/plugins/builtin/kubectl:
     interfaces:
       cli:
-  github.com/justenwalker/kevin/internal/plugins/builtin/wait:
+  github.com/kevin-env/kevin/internal/plugins/builtin/wait:
     interfaces:
       kubectlCLI:
-  github.com/justenwalker/kevin/internal/plugins/builtin/kubernetes:
+  github.com/kevin-env/kevin/internal/plugins/builtin/kubernetes:
     interfaces:
       kindCLI:
       k3dCLI:
       minikubeCLI:
-  github.com/justenwalker/kevin/internal/engine:
+  github.com/kevin-env/kevin/internal/engine:
     interfaces:
       stepPlugin:
       routeTable:

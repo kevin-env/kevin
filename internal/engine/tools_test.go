@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/config"
 )
 
 func TestCallTool(t *testing.T) {

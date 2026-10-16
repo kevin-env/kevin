@@ -8,7 +8,7 @@ import (
 	"net"
 	"slices"
 
-	"github.com/justenwalker/kevin/protos/pb"
+	"github.com/kevin-env/kevin/protos/pb"
 )
 
 // captureTarget is one registered network namespace: the path applyCapture

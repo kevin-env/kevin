@@ -8,8 +8,8 @@ import (
 
 	"cuelang.org/go/cue"
 
-	"github.com/justenwalker/kevin/internal/command"
-	"github.com/justenwalker/kevin/internal/command/git"
+	"github.com/kevin-env/kevin/internal/command"
+	"github.com/kevin-env/kevin/internal/command/git"
 )
 
 // AddResult reports the outcome of [AddSource]: how many plugins the

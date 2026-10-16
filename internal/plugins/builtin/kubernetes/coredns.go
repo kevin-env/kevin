@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/justenwalker/kevin/internal/plugins/builtin/kubernetes/corefile"
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/internal/plugins/builtin/kubernetes/corefile"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 // wantsCoreDNSPatch reports whether Up must patch the cluster DNS. A relay

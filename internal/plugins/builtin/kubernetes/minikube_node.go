@@ -10,7 +10,7 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 // minikubeCAPath is where minikube installs a certificate from the certs

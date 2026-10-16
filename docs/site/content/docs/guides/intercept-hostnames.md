@@ -86,5 +86,5 @@ If the local service runs in the cluster, use its Service address as the route `
 
 ## Related
 
-- [`examples/intercept`](https://github.com/justenwalker/kevin/tree/main/examples/intercept): this example, with a probe that uses the AWS CLI to create a bucket and upload a file.
+- [`examples/intercept`](https://github.com/kevin-env/kevin/tree/main/examples/intercept): this example, with a probe that uses the AWS CLI to create a bucket and upload a file.
 - [Relay]({{< relref "/docs/concepts/relay" >}}): how kevin sends container and pod traffic to the proxy.

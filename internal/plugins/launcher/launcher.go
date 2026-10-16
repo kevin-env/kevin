@@ -15,11 +15,11 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"github.com/justenwalker/kevin/internal/logging"
-	"github.com/justenwalker/kevin/internal/plugins/wire"
-	"github.com/justenwalker/kevin/internal/step"
-	"github.com/justenwalker/kevin/internal/uerr"
-	"github.com/justenwalker/kevin/protos/pb"
+	"github.com/kevin-env/kevin/internal/logging"
+	"github.com/kevin-env/kevin/internal/plugins/wire"
+	"github.com/kevin-env/kevin/internal/step"
+	"github.com/kevin-env/kevin/internal/uerr"
+	"github.com/kevin-env/kevin/protos/pb"
 )
 
 var log = logging.New("pluginhost")

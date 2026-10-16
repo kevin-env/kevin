@@ -25,11 +25,11 @@ import (
 
 	"github.com/a-h/templ"
 
-	"github.com/justenwalker/kevin/internal/logging"
-	"github.com/justenwalker/kevin/internal/run/api"
-	"github.com/justenwalker/kevin/internal/run/session"
-	"github.com/justenwalker/kevin/internal/ui/browser"
-	"github.com/justenwalker/kevin/internal/ui/mcpserver"
+	"github.com/kevin-env/kevin/internal/logging"
+	"github.com/kevin-env/kevin/internal/run/api"
+	"github.com/kevin-env/kevin/internal/run/session"
+	"github.com/kevin-env/kevin/internal/ui/browser"
+	"github.com/kevin-env/kevin/internal/ui/mcpserver"
 )
 
 var log = logging.New("console")

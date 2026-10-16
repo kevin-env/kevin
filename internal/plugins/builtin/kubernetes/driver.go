@@ -6,8 +6,8 @@ import (
 	"io"
 	"time"
 
-	"github.com/justenwalker/kevin/internal/container"
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/internal/container"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 // createSpec is what a driver needs at cluster creation beyond its own

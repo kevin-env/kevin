@@ -8,9 +8,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/output"
-	"github.com/justenwalker/kevin/internal/run/session"
-	"github.com/justenwalker/kevin/internal/step"
+	"github.com/kevin-env/kevin/internal/output"
+	"github.com/kevin-env/kevin/internal/run/session"
+	"github.com/kevin-env/kevin/internal/step"
 )
 
 func TestExposePort(t *testing.T) {

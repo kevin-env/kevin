@@ -130,11 +130,11 @@ func repoRoot() string {
 }
 
 func buildKevin() (string, error) {
-	return buildBinary("kevin", "github.com/justenwalker/kevin/cmd/kevin")
+	return buildBinary("kevin", "github.com/kevin-env/kevin/cmd/kevin")
 }
 
 func buildEchoPlugin() (string, error) {
-	return buildBinary("kevin-plugin-echo", "github.com/justenwalker/kevin/cmd/kevin-plugin-echo")
+	return buildBinary("kevin-plugin-echo", "github.com/kevin-env/kevin/cmd/kevin-plugin-echo")
 }
 
 // buildBinary builds pkg into a fresh temp dir, the same way

@@ -16,8 +16,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/pki/ca"
-	"github.com/justenwalker/kevin/internal/proxy"
+	"github.com/kevin-env/kevin/internal/pki/ca"
+	"github.com/kevin-env/kevin/internal/proxy"
 )
 
 // mintTestLeaf signs a leaf certificate for host with authority's own

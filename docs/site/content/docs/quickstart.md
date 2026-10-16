@@ -14,13 +14,13 @@ In this tutorial you install kevin, start an example environment with an nginx c
 - A clone of the kevin repository, for the example environment:
 
   ```sh
-  git clone https://github.com/justenwalker/kevin.git
+  git clone https://github.com/kevin-env/kevin.git
   cd kevin
   ```
 
 ## Install kevin
 
-Download the archive for your OS and architecture from the [GitHub releases page](https://github.com/justenwalker/kevin/releases), or use `curl`:
+Download the archive for your OS and architecture from the [GitHub releases page](https://github.com/kevin-env/kevin/releases), or use `curl`:
 
 ```sh
 VERSION={{% version %}}
@@ -28,7 +28,7 @@ OS=darwin      # or: linux
 ARCH=arm64     # or: amd64
 
 curl -fsSL -o kevin.tar.gz \
-  "https://github.com/justenwalker/kevin/releases/download/v${VERSION}/kevin_${VERSION}_${OS}_${ARCH}.tar.gz"
+  "https://github.com/kevin-env/kevin/releases/download/v${VERSION}/kevin_${VERSION}_${OS}_${ARCH}.tar.gz"
 tar -xzf kevin.tar.gz kevin
 sudo mv kevin /usr/local/bin/kevin
 kevin --version
@@ -38,7 +38,7 @@ To verify the archive, download the release's `checksums.txt` and check it:
 
 ```sh
 curl -fsSL -o checksums.txt \
-  "https://github.com/justenwalker/kevin/releases/download/v${VERSION}/checksums.txt"
+  "https://github.com/kevin-env/kevin/releases/download/v${VERSION}/checksums.txt"
 grep "kevin_${VERSION}_${OS}_${ARCH}.tar.gz" checksums.txt | shasum -a 256 -c -
 ```
 

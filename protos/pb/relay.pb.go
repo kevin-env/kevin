@@ -453,7 +453,7 @@ const file_pb_relay_proto_rawDesc = "" +
 	"\n" +
 	"ApplyFault\x12!.kevin.relay.v1.ApplyFaultRequest\x1a\".kevin.relay.v1.ApplyFaultResponse\x12S\n" +
 	"\n" +
-	"ClearFault\x12!.kevin.relay.v1.ClearFaultRequest\x1a\".kevin.relay.v1.ClearFaultResponseB,Z*github.com/justenwalker/kevin/protos/pb;pbb\x06proto3"
+	"ClearFault\x12!.kevin.relay.v1.ClearFaultRequest\x1a\".kevin.relay.v1.ClearFaultResponseB)Z'github.com/kevin-env/kevin/protos/pb;pbb\x06proto3"
 
 var (
 	file_pb_relay_proto_rawDescOnce sync.Once

@@ -16,10 +16,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/justenwalker/kevin/internal/container"
-	"github.com/justenwalker/kevin/internal/container/engines"
-	"github.com/justenwalker/kevin/internal/relay/cluster"
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/internal/container"
+	"github.com/kevin-env/kevin/internal/container/engines"
+	"github.com/kevin-env/kevin/internal/relay/cluster"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 //go:embed schema.cue

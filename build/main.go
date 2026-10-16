@@ -181,7 +181,7 @@ var echoPluginIndexVersionPattern = regexp.MustCompile(`^[0-9]+\.[0-9]+\.[0-9]+(
 
 // EchoPluginOCIRepo is the OCI repository PublishEchoPlugin pushes the echo
 // plugin to.
-const EchoPluginOCIRepo = "ghcr.io/justenwalker/kevin/plugin-echo"
+const EchoPluginOCIRepo = "ghcr.io/kevin-env/kevin/plugin-echo"
 
 var PublishEchoPlugin = GnobMakeTarget{
 	Name: "publish-echo-plugin",
@@ -600,7 +600,7 @@ var Fmt = GnobMakeTarget{
 	LongDesc: "Applies gofumpt and orders imports with gci.",
 	Body: func(ctx context.Context, _ *GnobMakefile) error {
 		if err := tool(ctx, "gci", "write",
-			"-s", "standard", "-s", "default", "-s", "prefix(github.com/justenwalker/kevin)",
+			"-s", "standard", "-s", "default", "-s", "prefix(github.com/kevin-env/kevin)",
 			"--skip-generated", "./"); err != nil {
 			return err
 		}
@@ -724,7 +724,7 @@ func dropGeneratedCoverage(in, out string) error {
 
 // modulePath is the Go module path that prefixes every file in a coverage
 // profile.
-const modulePath = "github.com/justenwalker/kevin"
+const modulePath = "github.com/kevin-env/kevin"
 
 var generatedHeader = regexp.MustCompile(`^// Code generated .* DO NOT EDIT\.$`)
 

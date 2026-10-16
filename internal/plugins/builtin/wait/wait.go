@@ -23,10 +23,10 @@ import (
 
 	"golang.org/x/net/proxy"
 
-	"github.com/justenwalker/kevin/internal/command"
-	kubectlcmd "github.com/justenwalker/kevin/internal/command/kubectl"
-	"github.com/justenwalker/kevin/internal/relay/portforward"
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/internal/command"
+	kubectlcmd "github.com/kevin-env/kevin/internal/command/kubectl"
+	"github.com/kevin-env/kevin/internal/relay/portforward"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 //go:embed schema.cue

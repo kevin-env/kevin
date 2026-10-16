@@ -1,6 +1,6 @@
 package plugin
 
-import "github.com/justenwalker/kevin/protos/pb"
+import "github.com/kevin-env/kevin/protos/pb"
 
 // StepKind classifies what a step type is, for documentation and the
 // console. It is descriptive metadata and does not change

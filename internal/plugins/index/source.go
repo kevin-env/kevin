@@ -9,9 +9,9 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/justenwalker/kevin/internal/command"
-	"github.com/justenwalker/kevin/internal/config"
-	"github.com/justenwalker/kevin/internal/statedir"
+	"github.com/kevin-env/kevin/internal/command"
+	"github.com/kevin-env/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/statedir"
 )
 
 // RootDir is the plugin-index directory under the user state directory - global, shared across every project.

@@ -13,9 +13,9 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	minikubecmd "github.com/justenwalker/kevin/internal/command/minikube"
-	"github.com/justenwalker/kevin/internal/container"
-	"github.com/justenwalker/kevin/plugin"
+	minikubecmd "github.com/kevin-env/kevin/internal/command/minikube"
+	"github.com/kevin-env/kevin/internal/container"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 func TestNewMinikubeDriver(t *testing.T) {

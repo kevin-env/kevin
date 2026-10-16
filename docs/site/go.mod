@@ -1,4 +1,4 @@
-module github.com/justenwalker/kevin/site
+module github.com/kevin-env/kevin/site
 
 go 1.26.6
 

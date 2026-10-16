@@ -32,7 +32,7 @@ psql -h 127.0.0.1 -p <port> -U postgres
 
 ## Use a mirrored relay image
 
-By default, kevin pulls the relay image from `ghcr.io/justenwalker/kevin/relay`, with a tag that matches the kevin version. To use a copy in your own registry, set one of:
+By default, kevin pulls the relay image from `ghcr.io/kevin-env/kevin/relay`, with a tag that matches the kevin version. To use a copy in your own registry, set one of:
 
 | Setting | Changes |
 |:--------|:--------|

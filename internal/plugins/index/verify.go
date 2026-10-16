@@ -7,10 +7,10 @@ import (
 
 	"github.com/jedisct1/go-minisign"
 
-	"github.com/justenwalker/kevin/internal/command"
-	"github.com/justenwalker/kevin/internal/command/cosign"
-	"github.com/justenwalker/kevin/internal/config"
-	"github.com/justenwalker/kevin/internal/plugins/signing"
+	"github.com/kevin-env/kevin/internal/command"
+	"github.com/kevin-env/kevin/internal/command/cosign"
+	"github.com/kevin-env/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/plugins/signing"
 )
 
 // verifyVersionFile checks path against whichever detached signature

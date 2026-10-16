@@ -13,7 +13,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/plugins/signing"
+	"github.com/kevin-env/kevin/internal/plugins/signing"
 )
 
 // testKey is a freshly generated, unencrypted minisign key pair, for

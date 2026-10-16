@@ -13,12 +13,12 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/command"
-	kindcmd "github.com/justenwalker/kevin/internal/command/kind"
-	"github.com/justenwalker/kevin/internal/container"
-	"github.com/justenwalker/kevin/internal/container/docker"
-	"github.com/justenwalker/kevin/internal/relay/cluster"
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/internal/command"
+	kindcmd "github.com/kevin-env/kevin/internal/command/kind"
+	"github.com/kevin-env/kevin/internal/container"
+	"github.com/kevin-env/kevin/internal/container/docker"
+	"github.com/kevin-env/kevin/internal/relay/cluster"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 // dockerClient inspects docker resources directly in tests - every test

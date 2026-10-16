@@ -8,7 +8,7 @@ import (
 	"context"
 	"os/exec"
 
-	"github.com/justenwalker/kevin/internal/command"
+	"github.com/kevin-env/kevin/internal/command"
 	mock "github.com/stretchr/testify/mock"
 )
 

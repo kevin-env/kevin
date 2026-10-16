@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/justenwalker/kevin/internal/run/runstate"
+	"github.com/kevin-env/kevin/internal/run/runstate"
 )
 
 // Error is a constant sentinel error.

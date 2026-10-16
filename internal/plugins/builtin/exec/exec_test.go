@@ -14,8 +14,8 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/command/commandtest"
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/internal/command/commandtest"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 type capture struct{ logs []string }

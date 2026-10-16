@@ -8,9 +8,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/config"
-	"github.com/justenwalker/kevin/internal/plugins/index"
-	"github.com/justenwalker/kevin/internal/plugins/signing"
+	"github.com/kevin-env/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/plugins/index"
+	"github.com/kevin-env/kevin/internal/plugins/signing"
 )
 
 func TestInstall(t *testing.T) {

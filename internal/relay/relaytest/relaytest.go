@@ -14,7 +14,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/relay"
+	"github.com/kevin-env/kevin/internal/relay"
 )
 
 // Tag is the image that Build produces. It matches RelayImageTag in

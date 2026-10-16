@@ -7,15 +7,15 @@ package builtin
 import (
 	"slices"
 
-	"github.com/justenwalker/kevin/internal/plugins/builtin/container"
-	"github.com/justenwalker/kevin/internal/plugins/builtin/exec"
-	"github.com/justenwalker/kevin/internal/plugins/builtin/fault"
-	"github.com/justenwalker/kevin/internal/plugins/builtin/helm"
-	"github.com/justenwalker/kevin/internal/plugins/builtin/kubectl"
-	"github.com/justenwalker/kevin/internal/plugins/builtin/kubernetes"
-	"github.com/justenwalker/kevin/internal/plugins/builtin/route"
-	"github.com/justenwalker/kevin/internal/plugins/builtin/wait"
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/internal/plugins/builtin/container"
+	"github.com/kevin-env/kevin/internal/plugins/builtin/exec"
+	"github.com/kevin-env/kevin/internal/plugins/builtin/fault"
+	"github.com/kevin-env/kevin/internal/plugins/builtin/helm"
+	"github.com/kevin-env/kevin/internal/plugins/builtin/kubectl"
+	"github.com/kevin-env/kevin/internal/plugins/builtin/kubernetes"
+	"github.com/kevin-env/kevin/internal/plugins/builtin/route"
+	"github.com/kevin-env/kevin/internal/plugins/builtin/wait"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 // Name identifies the builtin provider. A project reaches it through the

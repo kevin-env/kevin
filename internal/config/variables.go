@@ -9,8 +9,8 @@ import (
 	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/cuecontext"
 
-	"github.com/justenwalker/kevin/internal/config/expr"
-	"github.com/justenwalker/kevin/internal/config/varfile"
+	"github.com/kevin-env/kevin/internal/config/expr"
+	"github.com/kevin-env/kevin/internal/config/varfile"
 )
 
 // Variable is one declared entry of an environment's variables: block.

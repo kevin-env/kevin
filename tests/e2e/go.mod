@@ -1,4 +1,4 @@
-module github.com/justenwalker/kevin/tests/e2e
+module github.com/kevin-env/kevin/tests/e2e
 
 go 1.26.6
 

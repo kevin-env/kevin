@@ -6,8 +6,8 @@ import (
 	"mime"
 	"net/http"
 
-	"github.com/justenwalker/kevin/internal/run/api"
-	"github.com/justenwalker/kevin/internal/run/session"
+	"github.com/kevin-env/kevin/internal/run/api"
+	"github.com/kevin-env/kevin/internal/run/session"
 )
 
 // status writes the running environment's current step states as JSON.

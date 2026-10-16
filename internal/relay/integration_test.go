@@ -8,9 +8,9 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	"github.com/justenwalker/kevin/internal/container"
-	"github.com/justenwalker/kevin/internal/relay"
-	"github.com/justenwalker/kevin/internal/relay/relaytest"
+	"github.com/kevin-env/kevin/internal/container"
+	"github.com/kevin-env/kevin/internal/relay"
+	"github.com/kevin-env/kevin/internal/relay/relaytest"
 )
 
 // relayProject names every docker resource that this suite creates. The name

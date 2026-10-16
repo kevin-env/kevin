@@ -29,16 +29,16 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 
-	"github.com/justenwalker/kevin/internal/config"
-	"github.com/justenwalker/kevin/internal/container"
-	"github.com/justenwalker/kevin/internal/pki/ca"
-	"github.com/justenwalker/kevin/internal/step"
-	"github.com/justenwalker/kevin/internal/version"
-	"github.com/justenwalker/kevin/protos/pb"
+	"github.com/kevin-env/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/container"
+	"github.com/kevin-env/kevin/internal/pki/ca"
+	"github.com/kevin-env/kevin/internal/step"
+	"github.com/kevin-env/kevin/internal/version"
+	"github.com/kevin-env/kevin/protos/pb"
 )
 
 // imageRepo is the registry path .goreleaser.yaml publishes kevin-relay to.
-const imageRepo = "ghcr.io/justenwalker/kevin/relay"
+const imageRepo = "ghcr.io/kevin-env/kevin/relay"
 
 // Image is the relay image kevin runs by default: imageRepo tagged with
 // kevin's own version, or the image relay-image builds locally when

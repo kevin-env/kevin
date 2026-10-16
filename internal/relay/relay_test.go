@@ -7,9 +7,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/pki/ca"
-	"github.com/justenwalker/kevin/internal/relay"
-	"github.com/justenwalker/kevin/internal/statedir"
+	"github.com/kevin-env/kevin/internal/pki/ca"
+	"github.com/kevin-env/kevin/internal/relay"
+	"github.com/kevin-env/kevin/internal/statedir"
 )
 
 // newTestAuthority builds a fresh project authority for a test - Start
@@ -71,14 +71,14 @@ func TestRefRepoTagOverride(t *testing.T) {
 		{
 			name:       "repo override keeps configured's tag",
 			repo:       "mirror.example.com/kevin-relay",
-			configured: "ghcr.io/justenwalker/kevin/relay:v1.2.3",
+			configured: "ghcr.io/kevin-env/kevin/relay:v1.2.3",
 			want:       "mirror.example.com/kevin-relay:v1.2.3",
 		},
 		{
 			name:       "tag override keeps configured's repo",
 			tag:        "canary",
-			configured: "ghcr.io/justenwalker/kevin/relay:v1.2.3",
-			want:       "ghcr.io/justenwalker/kevin/relay:canary",
+			configured: "ghcr.io/kevin-env/kevin/relay:v1.2.3",
+			want:       "ghcr.io/kevin-env/kevin/relay:canary",
 		},
 		{
 			name:       "a registry:port isn't mistaken for a tag separator",

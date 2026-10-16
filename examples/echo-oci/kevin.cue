@@ -6,7 +6,7 @@
 //	kevin plugin trust add ~/.minisign/minisign.pub   # once, if not done already
 //	kevin -C examples/echo-oci run
 //
-// kevin fetches ghcr.io/justenwalker/kevin/plugin-echo:0.0.1, verifies its
+// kevin fetches ghcr.io/kevin-env/kevin/plugin-echo:0.0.1, verifies its
 // minisign signature against the local trust store, caches the blob under
 // ~/.kevin/pkg-cache/, and extracts it into .kevin/plugins/echo/ - same
 // provider as examples/echo, just packaged and signed.
@@ -21,7 +21,7 @@ proxy: {
 console: listen: "127.0.0.1:18112"
 
 plugins: echo: {
-	oci: "ghcr.io/justenwalker/kevin/plugin-echo:0.0.1"
+	oci: "ghcr.io/kevin-env/kevin/plugin-echo:0.0.1"
 	signing: scheme: "minisign"
 	config: greeting: "hello from the OCI-packaged provider"
 }

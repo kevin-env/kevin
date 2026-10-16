@@ -2807,7 +2807,7 @@ const file_pb_plugin_proto_rawDesc = "" +
 	"\x02Up\x12\x1a.kevin.plugin.v1.UpRequest\x1a\x16.kevin.plugin.v1.Event0\x01\x12>\n" +
 	"\x04Down\x12\x1c.kevin.plugin.v1.DownRequest\x1a\x16.kevin.plugin.v1.Event0\x01\x12I\n" +
 	"\x06Export\x12\x1e.kevin.plugin.v1.ExportRequest\x1a\x1f.kevin.plugin.v1.ExportResponse\x12O\n" +
-	"\bCallTool\x12 .kevin.plugin.v1.ToolCallRequest\x1a!.kevin.plugin.v1.ToolCallResponseB,Z*github.com/justenwalker/kevin/protos/pb;pbb\x06proto3"
+	"\bCallTool\x12 .kevin.plugin.v1.ToolCallRequest\x1a!.kevin.plugin.v1.ToolCallResponseB)Z'github.com/kevin-env/kevin/protos/pb;pbb\x06proto3"
 
 var (
 	file_pb_plugin_proto_rawDescOnce sync.Once

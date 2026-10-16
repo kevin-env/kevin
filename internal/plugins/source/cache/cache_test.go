@@ -11,7 +11,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/plugins/source/cache"
+	"github.com/kevin-env/kevin/internal/plugins/source/cache"
 )
 
 func TestDirIsUnderTheUserStateDirectory(t *testing.T) {

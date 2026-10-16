@@ -19,13 +19,13 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/justenwalker/kevin/internal/config"
-	"github.com/justenwalker/kevin/internal/container"
-	"github.com/justenwalker/kevin/internal/container/docker"
-	"github.com/justenwalker/kevin/internal/pki/ca"
-	"github.com/justenwalker/kevin/internal/relay"
-	"github.com/justenwalker/kevin/internal/statedir"
-	"github.com/justenwalker/kevin/internal/step"
+	"github.com/kevin-env/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/container"
+	"github.com/kevin-env/kevin/internal/container/docker"
+	"github.com/kevin-env/kevin/internal/pki/ca"
+	"github.com/kevin-env/kevin/internal/relay"
+	"github.com/kevin-env/kevin/internal/statedir"
+	"github.com/kevin-env/kevin/internal/step"
 )
 
 // newTestAuthority builds a fresh project authority for a test - relay.Start
@@ -195,7 +195,7 @@ func buildEchoPlugin() (string, error) {
 	}
 	bin := filepath.Join(dir, "kevin-plugin-echo")
 	cmd := exec.CommandContext(context.Background(), "go", "build", "-o", bin,
-		"github.com/justenwalker/kevin/cmd/kevin-plugin-echo")
+		"github.com/kevin-env/kevin/cmd/kevin-plugin-echo")
 	if out, buildErr := cmd.CombinedOutput(); buildErr != nil {
 		return "", fmt.Errorf("build echo plugin: %w: %s", buildErr, out)
 	}

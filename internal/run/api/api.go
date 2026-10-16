@@ -6,8 +6,8 @@ package api
 import (
 	"time"
 
-	"github.com/justenwalker/kevin/internal/config"
-	"github.com/justenwalker/kevin/internal/run/session"
+	"github.com/kevin-env/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/run/session"
 )
 
 // StepSummary is one step's status.

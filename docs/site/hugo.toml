@@ -1,4 +1,4 @@
-baseURL = "https://justenwalker.github.io/kevin/"
+baseURL = "https://kevin-env.dev/"
 locale = "en-us"
 title = "kevin"
 
@@ -23,11 +23,11 @@ title = "kevin"
   BookTheme = "auto"
   BookSearch = true
   BookSection = "docs"
-  BookRepo = "https://github.com/justenwalker/kevin"
+  BookRepo = "https://github.com/kevin-env/kevin"
   BookEditPath = "edit/main/docs/site/content"
   BookFavicon = "favicon.svg"
 
 [[menu.after]]
   name = "GitHub"
-  url = "https://github.com/justenwalker/kevin"
+  url = "https://github.com/kevin-env/kevin"
   weight = 10

@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/justenwalker/kevin/internal/logging"
+	"github.com/kevin-env/kevin/internal/logging"
 )
 
 var log = logging.New("portforward")

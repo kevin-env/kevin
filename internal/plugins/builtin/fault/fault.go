@@ -28,7 +28,7 @@ import (
 	_ "embed"
 	"fmt"
 
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 //go:embed schema.cue

@@ -6,11 +6,11 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/justenwalker/kevin/internal/command"
-	"github.com/justenwalker/kevin/internal/config"
-	"github.com/justenwalker/kevin/internal/plugins/launcher"
-	"github.com/justenwalker/kevin/internal/plugins/pkg"
-	"github.com/justenwalker/kevin/internal/statedir"
+	"github.com/kevin-env/kevin/internal/command"
+	"github.com/kevin-env/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/plugins/launcher"
+	"github.com/kevin-env/kevin/internal/plugins/pkg"
+	"github.com/kevin-env/kevin/internal/statedir"
 )
 
 // pluginPkgDir holds the extracted contents of every file: source plugin,

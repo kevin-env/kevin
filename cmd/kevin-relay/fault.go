@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/justenwalker/kevin/protos/pb"
+	"github.com/kevin-env/kevin/protos/pb"
 )
 
 // faultConfig is one ApplyFault call's parameters, decoded off the proto

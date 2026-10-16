@@ -16,9 +16,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/justenwalker/kevin/internal/command"
-	"github.com/justenwalker/kevin/internal/container"
-	"github.com/justenwalker/kevin/internal/uerr"
+	"github.com/kevin-env/kevin/internal/command"
+	"github.com/kevin-env/kevin/internal/container"
+	"github.com/kevin-env/kevin/internal/uerr"
 )
 
 // Dialect is what differs between the docker-compatible engines.

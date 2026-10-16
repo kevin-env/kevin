@@ -9,7 +9,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/gittest"
+	"github.com/kevin-env/kevin/internal/gittest"
 )
 
 func TestMain(m *testing.M) {

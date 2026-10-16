@@ -21,7 +21,7 @@ import (
 	"context"
 	_ "embed"
 
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 //go:embed schema.cue

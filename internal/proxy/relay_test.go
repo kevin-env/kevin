@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/things-go/go-socks5"
 
-	"github.com/justenwalker/kevin/internal/proxy"
+	"github.com/kevin-env/kevin/internal/proxy"
 )
 
 // startSOCKS5 runs a bare SOCKS5 server on a loopback port until the test

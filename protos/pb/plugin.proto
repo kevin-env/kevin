@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package kevin.plugin.v1;
 
-option go_package = "github.com/justenwalker/kevin/protos/pb;pb";
+option go_package = "github.com/kevin-env/kevin/protos/pb;pb";
 
 // Plugin is the service that every kevin provider implements. A plugin
 // exports one or more steps.

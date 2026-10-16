@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"maps"
 
-	"github.com/justenwalker/kevin/internal/config"
-	"github.com/justenwalker/kevin/internal/config/expr"
-	"github.com/justenwalker/kevin/internal/output"
-	"github.com/justenwalker/kevin/internal/plugins/launcher"
-	"github.com/justenwalker/kevin/internal/step"
+	"github.com/kevin-env/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/config/expr"
+	"github.com/kevin-env/kevin/internal/output"
+	"github.com/kevin-env/kevin/internal/plugins/launcher"
+	"github.com/kevin-env/kevin/internal/step"
 )
 
 // Export asks name's plugin how to reach what it created, against this

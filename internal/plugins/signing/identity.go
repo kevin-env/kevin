@@ -9,7 +9,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/justenwalker/kevin/internal/statedir"
+	"github.com/kevin-env/kevin/internal/statedir"
 )
 
 // IdentityDir is the trusted-identities directory under the user state directory - global, shared across every

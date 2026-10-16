@@ -4,11 +4,11 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/justenwalker/kevin/internal/config"
-	"github.com/justenwalker/kevin/internal/config/cueschema"
-	"github.com/justenwalker/kevin/internal/config/expr"
-	"github.com/justenwalker/kevin/internal/output"
-	"github.com/justenwalker/kevin/internal/plugins/launcher"
+	"github.com/kevin-env/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/config/cueschema"
+	"github.com/kevin-env/kevin/internal/config/expr"
+	"github.com/kevin-env/kevin/internal/output"
+	"github.com/kevin-env/kevin/internal/plugins/launcher"
 )
 
 // scopesFor builds the expr.Scopes name's `with` block renders against:

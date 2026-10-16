@@ -7,7 +7,7 @@ import (
 	"slices"
 	"time"
 
-	"github.com/justenwalker/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/config"
 )
 
 // State is where a step is in its life.

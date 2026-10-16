@@ -65,7 +65,7 @@ dockers_v2:
       - kevin-relay
     dockerfile: build/relay.Dockerfile
     images:
-      - ghcr.io/justenwalker/kevin/relay
+      - ghcr.io/kevin-env/kevin/relay
     tags:
       - "{{ .Version }}"
       - "{{ if not .Prerelease }}latest{{ end }}"
@@ -75,7 +75,7 @@ dockers_v2:
 
 release:
   github:
-    owner: justenwalker
+    owner: kevin-env
     name: kevin
   target_commitish: "{{ .FullCommit }}"
   prerelease: auto

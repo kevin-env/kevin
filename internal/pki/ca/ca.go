@@ -22,7 +22,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/justenwalker/kevin/internal/statedir"
+	"github.com/kevin-env/kevin/internal/statedir"
 )
 
 // Manager loads or generates the root and per-project certificate
@@ -45,7 +45,7 @@ type Options struct {
 
 // NewManager creates a Manager for a project rooted at cwd. name isolates
 // the manager's state directory for one named environment in cwd ("" for
-// the unnamed environment, see [github.com/justenwalker/kevin/internal/config.Load]);
+// the unnamed environment, see [github.com/kevin-env/kevin/internal/config.Load]);
 // project names the CA cert's CommonName.
 func NewManager(cwd, name, project string, opt Options) *Manager {
 	if opt.RootLifetime == 0 {

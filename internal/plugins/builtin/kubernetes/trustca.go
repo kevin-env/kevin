@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 // systemBundlePath is the file that update-ca-certificates writes inside a

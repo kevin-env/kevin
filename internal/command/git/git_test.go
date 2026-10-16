@@ -13,11 +13,11 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/command"
-	"github.com/justenwalker/kevin/internal/command/commandtest"
-	"github.com/justenwalker/kevin/internal/command/git"
-	"github.com/justenwalker/kevin/internal/gittest"
-	"github.com/justenwalker/kevin/internal/uerr"
+	"github.com/kevin-env/kevin/internal/command"
+	"github.com/kevin-env/kevin/internal/command/commandtest"
+	"github.com/kevin-env/kevin/internal/command/git"
+	"github.com/kevin-env/kevin/internal/gittest"
+	"github.com/kevin-env/kevin/internal/uerr"
 )
 
 func TestMain(m *testing.M) {

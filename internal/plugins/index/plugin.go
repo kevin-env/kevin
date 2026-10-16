@@ -13,8 +13,8 @@ import (
 	"github.com/jedisct1/go-minisign"
 	"golang.org/x/mod/semver"
 
-	"github.com/justenwalker/kevin/internal/command"
-	"github.com/justenwalker/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/command"
+	"github.com/kevin-env/kevin/internal/config"
 )
 
 // Plugin is one plugins/<name> directory of an index repo: its identity

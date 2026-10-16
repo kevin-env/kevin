@@ -38,8 +38,8 @@ import (
 	"golang.org/x/net/http2"
 	"golang.org/x/sync/errgroup"
 
-	"github.com/justenwalker/kevin/internal/logging"
-	"github.com/justenwalker/kevin/internal/pki/ca"
+	"github.com/kevin-env/kevin/internal/logging"
+	"github.com/kevin-env/kevin/internal/pki/ca"
 )
 
 var log = logging.New("proxy")

@@ -16,8 +16,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/justenwalker/kevin/internal/plugins/source/cache"
-	"github.com/justenwalker/kevin/internal/plugins/source/transport"
+	"github.com/kevin-env/kevin/internal/plugins/source/cache"
+	"github.com/kevin-env/kevin/internal/plugins/source/transport"
 )
 
 // Fetch downloads rawURL and returns the local path of its cached

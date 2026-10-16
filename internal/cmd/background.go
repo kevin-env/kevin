@@ -8,11 +8,11 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/justenwalker/kevin/internal/command"
-	"github.com/justenwalker/kevin/internal/config"
-	"github.com/justenwalker/kevin/internal/run/runstate"
-	"github.com/justenwalker/kevin/internal/statedir"
-	"github.com/justenwalker/kevin/internal/step"
+	"github.com/kevin-env/kevin/internal/command"
+	"github.com/kevin-env/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/run/runstate"
+	"github.com/kevin-env/kevin/internal/statedir"
+	"github.com/kevin-env/kevin/internal/step"
 )
 
 // logFileName is the log of a detached run, in the run directory.

@@ -7,8 +7,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/justenwalker/kevin/internal/engine"
-	"github.com/justenwalker/kevin/internal/step"
+	"github.com/kevin-env/kevin/internal/engine"
+	"github.com/kevin-env/kevin/internal/step"
 )
 
 func doCommand(opts *options) *cobra.Command {

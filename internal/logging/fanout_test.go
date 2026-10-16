@@ -11,7 +11,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/logging"
+	"github.com/kevin-env/kevin/internal/logging"
 )
 
 // stubHandler is a minimal slog.Handler whose Handle always returns err, for

@@ -7,7 +7,7 @@ package helm
 import (
 	"context"
 
-	"github.com/justenwalker/kevin/internal/command/helm"
+	"github.com/kevin-env/kevin/internal/command/helm"
 	mock "github.com/stretchr/testify/mock"
 )
 

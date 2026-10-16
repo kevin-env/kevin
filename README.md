@@ -2,7 +2,7 @@
 
 Getting a local environment running usually means a page of setup steps, a pile of shell scripts, and leftovers to clean up when something fails. kevin replaces all of that with a single description of your environment. It starts every piece in the right order, makes your services reachable by name, and cleans up after itself when you are done.
 
-**[Documentation](https://justenwalker.github.io/kevin/)** · **[Quickstart](https://justenwalker.github.io/kevin/docs/quickstart/)** · **[Examples](examples)**
+**[Documentation](https://kevin-env.dev/)** · **[Quickstart](https://kevin-env.dev/docs/quickstart/)** · **[Examples](examples)**
 
 ## Features
 
@@ -17,12 +17,12 @@ Getting a local environment running usually means a page of setup steps, a pile 
 You need Docker or Podman running.
 
 ```sh
-git clone https://github.com/justenwalker/kevin.git && cd kevin
-go install github.com/justenwalker/kevin/cmd/kevin@latest
+git clone https://github.com/kevin-env/kevin.git && cd kevin
+go install github.com/kevin-env/kevin/cmd/kevin@latest
 kevin -C examples/web run    # Ctrl-C to stop and remove everything
 ```
 
-Prebuilt binaries are on the [releases page](https://github.com/justenwalker/kevin/releases).
+Prebuilt binaries are on the [releases page](https://github.com/kevin-env/kevin/releases).
 
 ## An environment file
 
@@ -53,8 +53,8 @@ env: {
 
 ## Learn more
 
-- [Quickstart](https://justenwalker.github.io/kevin/docs/quickstart/): install kevin and run an example environment.
-- [Guides](https://justenwalker.github.io/kevin/docs/guides/): Kubernetes clusters, proxy and egress, hostname interception, and more.
-- [Environment file](https://justenwalker.github.io/kevin/docs/reference/environment-file/): write a `kevin.cue` for your own project.
-- [kevin vs. other tools](https://justenwalker.github.io/kevin/docs/comparison/): Docker Compose, Tilt, Garden, and others.
-- [Contributing](https://justenwalker.github.io/kevin/docs/contributing/): build kevin from source and run the tests.
+- [Quickstart](https://kevin-env.dev/docs/quickstart/): install kevin and run an example environment.
+- [Guides](https://kevin-env.dev/docs/guides/): Kubernetes clusters, proxy and egress, hostname interception, and more.
+- [Environment file](https://kevin-env.dev/docs/reference/environment-file/): write a `kevin.cue` for your own project.
+- [kevin vs. other tools](https://kevin-env.dev/docs/comparison/): Docker Compose, Tilt, Garden, and others.
+- [Contributing](https://kevin-env.dev/docs/contributing/): build kevin from source and run the tests.

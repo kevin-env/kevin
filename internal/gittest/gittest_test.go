@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/justenwalker/kevin/internal/gittest"
+	"github.com/kevin-env/kevin/internal/gittest"
 )
 
 func TestIsolate(t *testing.T) {

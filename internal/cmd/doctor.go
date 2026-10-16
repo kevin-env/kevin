@@ -9,11 +9,11 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/justenwalker/kevin/internal/config"
-	"github.com/justenwalker/kevin/internal/container/engines"
-	trustinstall "github.com/justenwalker/kevin/internal/pki/truststore"
-	"github.com/justenwalker/kevin/internal/step"
-	"github.com/justenwalker/kevin/internal/uerr"
+	"github.com/kevin-env/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/container/engines"
+	trustinstall "github.com/kevin-env/kevin/internal/pki/truststore"
+	"github.com/kevin-env/kevin/internal/step"
+	"github.com/kevin-env/kevin/internal/uerr"
 )
 
 // doctorCommand checks the container engine, the kevin CA, and (if a project

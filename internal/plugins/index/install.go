@@ -3,8 +3,8 @@ package index
 import (
 	"fmt"
 
-	"github.com/justenwalker/kevin/internal/config"
-	"github.com/justenwalker/kevin/internal/plugins/signing"
+	"github.com/kevin-env/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/plugins/signing"
 )
 
 // InstallRequest asks [Install] to add a plugin version to a project.

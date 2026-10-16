@@ -5,7 +5,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/justenwalker/kevin/internal/plugins/signing"
+	"github.com/kevin-env/kevin/internal/plugins/signing"
 )
 
 // pluginTrustCommand groups the subcommands that manage the local trust

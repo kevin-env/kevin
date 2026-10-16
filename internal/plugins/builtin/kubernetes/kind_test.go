@@ -13,8 +13,8 @@ import (
 	"github.com/stretchr/testify/require"
 	"go.yaml.in/yaml/v3"
 
-	kindcmd "github.com/justenwalker/kevin/internal/command/kind"
-	"github.com/justenwalker/kevin/plugin"
+	kindcmd "github.com/kevin-env/kevin/internal/command/kind"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 func TestResolvePath(t *testing.T) {

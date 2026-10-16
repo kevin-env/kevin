@@ -42,8 +42,8 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 
-	"github.com/justenwalker/kevin/internal/logging"
-	"github.com/justenwalker/kevin/protos/pb"
+	"github.com/kevin-env/kevin/internal/logging"
+	"github.com/kevin-env/kevin/protos/pb"
 )
 
 var log = logging.New("relay")

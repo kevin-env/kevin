@@ -13,8 +13,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/justenwalker/kevin/internal/command"
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/internal/command"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 //go:embed schema.cue

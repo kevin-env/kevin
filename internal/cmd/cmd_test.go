@@ -10,9 +10,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/cmd"
-	"github.com/justenwalker/kevin/internal/config"
-	"github.com/justenwalker/kevin/internal/container/engines"
+	"github.com/kevin-env/kevin/internal/cmd"
+	"github.com/kevin-env/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/container/engines"
 )
 
 // listenBlockDefault is a "proxy: {...}, console: {...}" CUE snippet

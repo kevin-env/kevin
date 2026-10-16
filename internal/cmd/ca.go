@@ -7,9 +7,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/justenwalker/kevin/internal/pki/ca"
-	trustinstall "github.com/justenwalker/kevin/internal/pki/truststore"
-	"github.com/justenwalker/kevin/internal/statedir"
+	"github.com/kevin-env/kevin/internal/pki/ca"
+	trustinstall "github.com/kevin-env/kevin/internal/pki/truststore"
+	"github.com/kevin-env/kevin/internal/statedir"
 )
 
 // caCommand groups the subcommands that manage the kevin root CA in the

@@ -21,19 +21,19 @@ go test ./internal/dag/... -run TestName -v
 go test -C tests/e2e -tags e2e -run TestName ./...    # an end-to-end test: tests/e2e is its own Go module
 ```
 
-`golangci-lint` (`.golangci.yaml`) enables every linter, then disables some. The comments in the file give the reason for each. Read them before you add a `//nolint`. [`docs/GO_CONVENTIONS.md`](https://github.com/justenwalker/kevin/blob/main/docs/GO_CONVENTIONS.md) covers the style rules that the linter cannot check.
+`golangci-lint` (`.golangci.yaml`) enables every linter, then disables some. The comments in the file give the reason for each. Read them before you add a `//nolint`. [`docs/GO_CONVENTIONS.md`](https://github.com/kevin-env/kevin/blob/main/docs/GO_CONVENTIONS.md) covers the style rules that the linter cannot check.
 
 See [Architecture]({{< relref "/docs/concepts/architecture" >}}) for how the parts of kevin fit together.
 
 ## Tests
 
-kevin has three kinds of test: unit, integration, and end-to-end. [ADR-0008](https://github.com/justenwalker/kevin/blob/main/docs/adr/0008-test-tiers-by-who-observes-the-behavior.md) describes them.
+kevin has three kinds of test: unit, integration, and end-to-end. [ADR-0008](https://github.com/kevin-env/kevin/blob/main/docs/adr/0008-test-tiers-by-who-observes-the-behavior.md) describes them.
 
 To choose where a new test goes, pick the first case that fits:
 
 1. The test needs no daemon. Write a unit test next to the code, with fakes.
-2. The test needs a real dependency such as Docker or a cluster, inspects what kevin left behind, or injects a failure. Write an integration test. Put it in a `*_integration_test.go` file behind the `integration` build tag, as [GO-017](https://github.com/justenwalker/kevin/blob/main/docs/GO_CONVENTIONS.md#go-017-an-integration-test-is-a-testify-suitesuite-gated-by-both-the-build-tag-and-a-runtime-skip) describes.
-3. A user can see the behavior without knowing how kevin works, and no unit or integration test already proves it. Write an end-to-end test in `tests/e2e`, one suite for each user task, with the task named in its doc comment as [GO-020](https://github.com/justenwalker/kevin/blob/main/docs/GO_CONVENTIONS.md#go-020-an-integration-or-e2e-suites-doc-comment-ends-with-its-tier) describes.
+2. The test needs a real dependency such as Docker or a cluster, inspects what kevin left behind, or injects a failure. Write an integration test. Put it in a `*_integration_test.go` file behind the `integration` build tag, as [GO-017](https://github.com/kevin-env/kevin/blob/main/docs/GO_CONVENTIONS.md#go-017-an-integration-test-is-a-testify-suitesuite-gated-by-both-the-build-tag-and-a-runtime-skip) describes.
+3. A user can see the behavior without knowing how kevin works, and no unit or integration test already proves it. Write an end-to-end test in `tests/e2e`, one suite for each user task, with the task named in its doc comment as [GO-020](https://github.com/kevin-env/kevin/blob/main/docs/GO_CONVENTIONS.md#go-020-an-integration-or-e2e-suites-doc-comment-ends-with-its-tier) describes.
 
 Run each kind with its own target:
 

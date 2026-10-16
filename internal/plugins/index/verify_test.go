@@ -15,10 +15,10 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/justenwalker/kevin/internal/command"
-	"github.com/justenwalker/kevin/internal/command/commandtest"
-	"github.com/justenwalker/kevin/internal/command/cosign"
-	"github.com/justenwalker/kevin/internal/config"
+	"github.com/kevin-env/kevin/internal/command"
+	"github.com/kevin-env/kevin/internal/command/commandtest"
+	"github.com/kevin-env/kevin/internal/command/cosign"
+	"github.com/kevin-env/kevin/internal/config"
 )
 
 // testSignerKey is a freshly generated, unencrypted minisign key pair,

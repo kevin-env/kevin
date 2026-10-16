@@ -25,4 +25,4 @@ kevin gives you:
 - [Extending kevin]({{< relref "docs/extending" >}}): write and publish a plugin.
 - [kevin vs. other tools]({{< relref "docs/comparison" >}}): how kevin compares to Docker Compose, Terraform, Tilt, Garden, and shell scripts.
 
-Source: [github.com/justenwalker/kevin](https://github.com/justenwalker/kevin)
+Source: [github.com/kevin-env/kevin](https://github.com/kevin-env/kevin)

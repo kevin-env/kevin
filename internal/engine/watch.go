@@ -6,8 +6,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/justenwalker/kevin/internal/run/session"
-	"github.com/justenwalker/kevin/internal/run/watch"
+	"github.com/kevin-env/kevin/internal/run/session"
+	"github.com/kevin-env/kevin/internal/run/watch"
 )
 
 const (

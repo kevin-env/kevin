@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	trustinstall "github.com/justenwalker/kevin/internal/pki/truststore"
+	trustinstall "github.com/kevin-env/kevin/internal/pki/truststore"
 )
 
 func TestReport(t *testing.T) {

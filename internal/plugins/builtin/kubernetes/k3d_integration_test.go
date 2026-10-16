@@ -15,15 +15,15 @@ import (
 	"github.com/stretchr/testify/suite"
 	"golang.org/x/net/proxy"
 
-	"github.com/justenwalker/kevin/internal/command"
-	k3dcmd "github.com/justenwalker/kevin/internal/command/k3d"
-	"github.com/justenwalker/kevin/internal/container"
-	"github.com/justenwalker/kevin/internal/container/podman"
-	"github.com/justenwalker/kevin/internal/pki/ca"
-	"github.com/justenwalker/kevin/internal/relay"
-	"github.com/justenwalker/kevin/internal/relay/relaytest"
-	"github.com/justenwalker/kevin/internal/statedir"
-	"github.com/justenwalker/kevin/plugin"
+	"github.com/kevin-env/kevin/internal/command"
+	k3dcmd "github.com/kevin-env/kevin/internal/command/k3d"
+	"github.com/kevin-env/kevin/internal/container"
+	"github.com/kevin-env/kevin/internal/container/podman"
+	"github.com/kevin-env/kevin/internal/pki/ca"
+	"github.com/kevin-env/kevin/internal/relay"
+	"github.com/kevin-env/kevin/internal/relay/relaytest"
+	"github.com/kevin-env/kevin/internal/statedir"
+	"github.com/kevin-env/kevin/plugin"
 )
 
 // k3dProject names every docker and k3d resource that this suite creates, so
