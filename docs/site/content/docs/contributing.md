@@ -44,7 +44,7 @@ Run each kind with its own target:
 ./build/gnob coverage       # merge the three runs into coverage/coverage.html
 ```
 
-The k3d and minikube integration suites need those binaries on `PATH`. An end-to-end suite skips when a tool it needs (`k3d`, `minikube`, `kubectl`, or Chrome) is missing.
+The k3d and minikube integration suites need those binaries on `PATH`. An end-to-end suite skips when a tool it needs (`k3d`, `minikube`, `kubectl`, or Chrome) is missing. Set `KEVIN_E2E_CHROME` to the path of a Chrome or Chromium binary to use it instead of the browser chromedp finds. A path that does not start a browser also skips the suite.
 
 ## Changelog
 

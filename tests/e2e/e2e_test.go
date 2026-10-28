@@ -386,13 +386,17 @@ func (s *e2eSuite) startKevinOnPTY(dir string, args ...string) *kevinProc {
 }
 
 // newChromeTab starts a headless Chrome with extra allocator options and
-// returns one tab as a context, closed when the test ends. The test skips
-// when this machine has no usable Chrome.
+// returns one tab as a context, closed when the test ends. KEVIN_E2E_CHROME
+// names the browser binary to use instead of the one chromedp finds. The test
+// skips when this machine has no usable Chrome.
 func (s *e2eSuite) newChromeTab(extra ...chromedp.ExecAllocatorOption) context.Context {
 	t := s.T()
 	t.Helper()
 
 	opts := append(slices.Clone(chromedp.DefaultExecAllocatorOptions[:]), chromedp.Headless)
+	if path := os.Getenv("KEVIN_E2E_CHROME"); path != "" {
+		opts = append(opts, chromedp.ExecPath(path))
+	}
 	alloc, cancelAlloc := chromedp.NewExecAllocator(t.Context(), append(opts, extra...)...)
 	t.Cleanup(cancelAlloc)
 	tab, cancelTab := chromedp.NewContext(alloc)
