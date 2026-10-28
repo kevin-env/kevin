@@ -1,14 +1,17 @@
 package proxy_test
 
 import (
+	"bytes"
 	"context"
 	"crypto/tls"
 	"fmt"
 	"io"
+	"log/slog"
 	"net"
 	"net/http"
 	"net/http/httptest"
 	"net/url"
+	"os"
 	"sync"
 	"testing"
 	"time"
@@ -20,6 +23,32 @@ import (
 	"github.com/kevin-env/kevin/internal/proxy"
 	"github.com/kevin-env/kevin/internal/statedir"
 )
+
+// debugLog collects what the package logger writes. The logger binds to
+// slog.Default on first use, so TestMain installs it before any test runs.
+var debugLog syncBuffer
+
+type syncBuffer struct {
+	mu  sync.Mutex
+	buf bytes.Buffer
+}
+
+func (b *syncBuffer) Write(p []byte) (int, error) {
+	b.mu.Lock()
+	defer b.mu.Unlock()
+	return b.buf.Write(p)
+}
+
+func (b *syncBuffer) String() string {
+	b.mu.Lock()
+	defer b.mu.Unlock()
+	return b.buf.String()
+}
+
+func TestMain(m *testing.M) {
+	slog.SetDefault(slog.New(slog.NewTextHandler(&debugLog, &slog.HandlerOptions{Level: slog.LevelDebug})))
+	os.Exit(m.Run())
+}
 
 func TestRoutes(t *testing.T) {
 	t.Run("plain HTTP by host", func(t *testing.T) {
@@ -69,6 +98,8 @@ func TestRoutes(t *testing.T) {
 		resp, _ := getTestURL(t, client, "http://dead.kevin.test/")
 
 		assert.Equal(t, http.StatusBadGateway, resp.StatusCode)
+		assert.Contains(t, debugLog.String(), "upstream request failed")
+		assert.Contains(t, debugLog.String(), "dead.kevin.test")
 	})
 
 	t.Run("a wildcard route matches a subdomain", func(t *testing.T) {
