@@ -269,7 +269,15 @@ func New(authority *ca.CA, opt Options) (*Proxy, error) {
 	transport := defaultTransport.Clone()
 	transport.DialContext = p.dialContext
 	transport.DialTLSContext = p.dialTLSContext
-	p.rp = &httputil.ReverseProxy{Rewrite: func(*httputil.ProxyRequest) {}, Transport: transport}
+	// The default ErrorHandler writes to stderr, which corrupts the TUI.
+	p.rp = &httputil.ReverseProxy{
+		Rewrite:   func(*httputil.ProxyRequest) {},
+		Transport: transport,
+		ErrorHandler: func(w http.ResponseWriter, r *http.Request, err error) {
+			log.Ctx(r.Context()).Debug("upstream request failed", "host", r.Host, "error", err)
+			w.WriteHeader(http.StatusBadGateway)
+		},
+	}
 
 	// A browser fetches the proxy auto-config file directly, not through the
 	// proxy, thus it arrives with a path and no absolute URI.
