@@ -50,6 +50,10 @@ linters:
       skip-tests: true
     errcheck:
       check-type-assertions: true
+    exhaustive:
+      # A switch on a CUE kind (a bitmask, not a closed enum) handles the
+      # kinds it cares about and falls through to default for the rest.
+      default-signifies-exhaustive: true
     goconst:
       # A docker subcommand or flag, or a cobra subcommand's Use string, is
       # not a magic constant.

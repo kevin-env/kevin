@@ -586,7 +586,7 @@ env: {
 	waitForCount(t, w, fmt.Sprintf("%-16s %s", "b", "ready"), 2, 3*time.Second)
 
 	cancel()
-	<-done
+	<-done //nolint:errcheck // the exit error after cancel is not under test
 }
 
 // TestRunRerunDoesNotDuplicateAStepsCardDetails proves upStep's

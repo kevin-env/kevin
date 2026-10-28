@@ -119,7 +119,7 @@ func (s *RelayProcessSuite) startInterceptRelay() (*relayProcess, pb.RelayContro
 	t.Cleanup(func() {
 		_ = conn.Close()
 		cancel()
-		<-done
+		<-done //nolint:errcheck // the exit error after cancel is not under test
 	})
 	return proc, pb.NewRelayControlClient(conn)
 }

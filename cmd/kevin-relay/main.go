@@ -339,7 +339,7 @@ func (p *relayProcess) runControl(ctx context.Context) error {
 		return nil
 	case <-ctx.Done():
 		p.controlSrv.GracefulStop()
-		<-errCh
+		<-errCh //nolint:errcheck // the server is shutting down, so its exit error is moot
 		return nil
 	}
 }

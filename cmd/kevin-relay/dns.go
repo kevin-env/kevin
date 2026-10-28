@@ -243,8 +243,8 @@ func runDNSServer(ctx context.Context, srv *dns.Server) error {
 		select {
 		case <-started:
 			_ = srv.ShutdownContext(context.WithoutCancel(ctx))
-			<-errCh
-		case <-errCh:
+			<-errCh //nolint:errcheck // the server is shutting down, so its exit error is moot
+		case <-errCh: //nolint:errcheck // same
 		}
 		return nil
 	}

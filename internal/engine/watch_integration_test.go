@@ -44,7 +44,7 @@ env: {
 		waitForCount(t, w, "p                ready", 2, 10*time.Second)
 
 		cancel()
-		<-done
+		<-done //nolint:errcheck // the exit error after cancel is not under test
 	})
 
 	t.Run("a change during a rerun causes one more rerun", func(t *testing.T) {
@@ -74,6 +74,6 @@ env: a: {uses: "echo:echo", watch: ["src"], with: {message: "A", delay: "1s"}}
 		assert.Equal(t, 2, strings.Count(w.String(), ", rerunning"))
 
 		cancel()
-		<-done
+		<-done //nolint:errcheck // the exit error after cancel is not under test
 	})
 }
