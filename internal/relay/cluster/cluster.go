@@ -95,9 +95,15 @@ func StartForwarder(ctx context.Context, rt container.Containers, spec Forwarder
 	cmd := []string{"port-forward", "--target", spec.Target, "--tcp", strconv.Itoa(NodePort)}
 	if poolSize > 0 {
 		cmd = append(cmd, "--udp-relay-ports", fmt.Sprintf("%d-%d", UDPNodePortBase, UDPNodePortBase+poolSize-1))
-		for i := range poolSize {
-			ports = append(ports, fmt.Sprintf("127.0.0.1::%d/udp", UDPNodePortBase+i))
+		nodePorts := make([]int, poolSize)
+		for i := range nodePorts {
+			nodePorts[i] = UDPNodePortBase + i
 		}
+		udpSpecs, specErr := relay.UDPPublishSpecs(nodePorts)
+		if specErr != nil {
+			return Forwarder{}, fmt.Errorf("cluster: %w", specErr)
+		}
+		ports = append(ports, udpSpecs...)
 	}
 	_, err = rt.Run(ctx, container.RunSpec{
 		Image:   spec.Image,

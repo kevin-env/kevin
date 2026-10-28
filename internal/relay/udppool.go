@@ -16,6 +16,11 @@ import (
 // either learning it from the other.
 const UDPPoolSizeEnvVar = "KEVIN_RELAY_UDP_POOL_SIZE"
 
+// UDPHostPortsEnvVar names the environment variable that confines the host
+// ports of the UDP pool to a "low-high" range. Unset, the engine picks any
+// free port.
+const UDPHostPortsEnvVar = "KEVIN_RELAY_UDP_HOST_PORTS"
+
 // defaultUDPPoolSize is the number of UDP relay ports published when
 // UDPPoolSizeEnvVar is unset.
 const defaultUDPPoolSize = 16
@@ -41,6 +46,31 @@ func UDPPoolSize() (int, error) {
 		return 0, ErrInvalidUDPPoolSize
 	}
 	return n, nil
+}
+
+// UDPPublishSpecs returns the loopback publish spec for each of
+// containerPorts: Docker's choice of free port when UDPHostPortsEnvVar is
+// unset, otherwise a free port inside that range. It returns
+// [ErrInvalidUDPHostPorts] when the variable is not a valid range, and
+// nothing when containerPorts is empty, so a pool size of 0 ignores it.
+func UDPPublishSpecs(containerPorts []int) ([]string, error) {
+	if len(containerPorts) == 0 {
+		return nil, nil
+	}
+	hostPorts := os.Getenv(UDPHostPortsEnvVar)
+	if hostPorts != "" {
+		lo, hi, ok := strings.Cut(hostPorts, "-")
+		l, errLo := strconv.Atoi(lo)
+		h, errHi := strconv.Atoi(hi)
+		if !ok || errLo != nil || errHi != nil || l < 1 || h > 65535 || l > h {
+			return nil, ErrInvalidUDPHostPorts
+		}
+	}
+	specs := make([]string, len(containerPorts))
+	for i, p := range containerPorts {
+		specs[i] = fmt.Sprintf("127.0.0.1:%s:%d/udp", hostPorts, p)
+	}
+	return specs, nil
 }
 
 // udpRelayPorts lists n container-side UDP ports, starting at

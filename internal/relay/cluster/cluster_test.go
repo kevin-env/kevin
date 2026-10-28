@@ -65,7 +65,7 @@ func (f *fakeRuntime) Run(_ context.Context, spec container.RunSpec) (string, er
 	f.runs = append(f.runs, spec)
 	ports := map[string]string{"1080/tcp": "127.0.0.1:50000"}
 	for i, p := range spec.Ports[1:] {
-		container := strings.TrimPrefix(p, "127.0.0.1::")
+		container := p[strings.LastIndex(p, ":")+1:]
 		ports[container] = "127.0.0.1:" + strconv.Itoa(51000+i)
 	}
 	f.container = &container.Container{
@@ -102,6 +102,17 @@ func TestStartForwarder(t *testing.T) {
 		assert.Equal(t, "p:env:cluster", rt.runs[0].Labels[container.LabelURN])
 		assert.Equal(t, "127.0.0.1:50000", got.Addr)
 		assert.Len(t, got.UDPAddrs, 2)
+	})
+
+	t.Run("publishes udp ports inside the configured host range", func(t *testing.T) {
+		t.Setenv(relay.UDPPoolSizeEnvVar, "1")
+		t.Setenv(relay.UDPHostPortsEnvVar, "41000-41009")
+		rt := &fakeRuntime{}
+
+		_, err := StartForwarder(t.Context(), rt, testSpec("node-a"))
+		require.NoError(t, err)
+
+		assert.Equal(t, []string{"127.0.0.1::1080", "127.0.0.1:41000-41009:40000/udp"}, rt.runs[0].Ports)
 	})
 
 	t.Run("a disabled pool publishes no udp port", func(t *testing.T) {

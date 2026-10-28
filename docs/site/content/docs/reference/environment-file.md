@@ -349,4 +349,5 @@ Change an `intercept` range only when it overlaps a network your workloads use.
 | `KEVIN_RELAY_IMAGE` | Relay image. Overrides `relay.image`. |
 | `KEVIN_RELAY_REPO` | Relay image repository, keeping the default tag. |
 | `KEVIN_RELAY_TAG` | Relay image tag, keeping the default repository. |
+| `KEVIN_RELAY_UDP_HOST_PORTS` | Host port range as `low-high`, such as `40000-40099`, that the UDP ports of the relay and of a cluster's forwarder are published on, on loopback only. A value that is not a range within 1 to 65535 is an error, unless `KEVIN_RELAY_UDP_POOL_SIZE` is `0`. A running relay or forwarder keeps its published ports until it is replaced. Default: unset, so the container engine picks any free port. |
 | `KEVIN_RELAY_UDP_POOL_SIZE` | Number of UDP ports the relay reserves for UDP `expose` entries with `relay: true`. Default: `16`. `0` disables UDP relaying. |

@@ -44,6 +44,37 @@ func TestUDPPoolSize(t *testing.T) {
 	})
 }
 
+func TestUDPPublishSpecs(t *testing.T) {
+	t.Run("lets docker pick the host port when unset", func(t *testing.T) {
+		t.Setenv(UDPHostPortsEnvVar, "")
+		got, err := UDPPublishSpecs([]int{40000, 40001})
+		require.NoError(t, err)
+		assert.Equal(t, []string{"127.0.0.1::40000/udp", "127.0.0.1::40001/udp"}, got)
+	})
+
+	t.Run("confines the host port to the configured range", func(t *testing.T) {
+		t.Setenv(UDPHostPortsEnvVar, "41000-41099")
+		got, err := UDPPublishSpecs([]int{40000, 40001})
+		require.NoError(t, err)
+		assert.Equal(t, []string{"127.0.0.1:41000-41099:40000/udp", "127.0.0.1:41000-41099:40001/udp"}, got)
+	})
+
+	t.Run("ignores an invalid range when there are no ports", func(t *testing.T) {
+		t.Setenv(UDPHostPortsEnvVar, "nope")
+		got, err := UDPPublishSpecs(nil)
+		require.NoError(t, err)
+		assert.Empty(t, got)
+	})
+
+	for _, v := range []string{"41000", "a-b", "41099-41000", "0-10", "1-70000"} {
+		t.Run("rejects "+v, func(t *testing.T) {
+			t.Setenv(UDPHostPortsEnvVar, v)
+			_, err := UDPPublishSpecs([]int{40000})
+			require.ErrorIs(t, err, ErrInvalidUDPHostPorts)
+		})
+	}
+}
+
 func TestUDPRelayPorts(t *testing.T) {
 	assert.Equal(t, []int{40000, 40001, 40002}, udpRelayPorts(3))
 	assert.Empty(t, udpRelayPorts(0))

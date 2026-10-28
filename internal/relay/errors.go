@@ -25,3 +25,7 @@ const ErrUnsupportedControlKey = Error("relay: the control certificate's key is 
 // ErrInvalidUDPPoolSize reports that UDPPoolSizeEnvVar holds a value that
 // is not a non-negative integer.
 const ErrInvalidUDPPoolSize = Error("relay: " + UDPPoolSizeEnvVar + " must be a non-negative integer")
+
+// ErrInvalidUDPHostPorts reports that UDPHostPortsEnvVar holds a value
+// that is not a "low-high" port range.
+const ErrInvalidUDPHostPorts = Error("relay: " + UDPHostPortsEnvVar + ` must be a port range such as "40000-40099"`)

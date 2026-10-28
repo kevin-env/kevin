@@ -244,10 +244,11 @@ func create(ctx context.Context, client container.Containers, name string, opts 
 	if err != nil {
 		return nil, err
 	}
-	ports := []string{"127.0.0.1::1080", "127.0.0.1::8053"}
-	for _, p := range udpRelayPorts(poolSize) {
-		ports = append(ports, fmt.Sprintf("127.0.0.1::%d/udp", p))
+	udpSpecs, err := UDPPublishSpecs(udpRelayPorts(poolSize))
+	if err != nil {
+		return nil, err
 	}
+	ports := append([]string{"127.0.0.1::1080", "127.0.0.1::8053"}, udpSpecs...)
 
 	spec := container.RunSpec{
 		Image:   opts.Image,
