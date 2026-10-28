@@ -78,7 +78,7 @@ func (s *PluginIndexSuite) gitCommit(dir, message string) {
 		run("init", "-q", "-b", "main")
 	}
 	run("add", "-A")
-	run("commit", "-q", "-m", message)
+	run("-c", "commit.gpgsign=false", "commit", "-q", "-m", message)
 }
 
 // e2eSignerKey is a freshly generated, unencrypted minisign key pair, for
