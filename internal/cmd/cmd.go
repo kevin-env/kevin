@@ -30,8 +30,9 @@ import (
 	"github.com/kevin-env/kevin/plugin"
 )
 
-// Version holds the version string.
-var Version = version.String
+// Version holds the version string, with the commit it was built from when
+// the build records one.
+var Version = version.Full()
 
 // CommandError reports a usage error, such as an unknown command or a bad
 // flag. Cmd is the command to print the usage text of.
