@@ -4,7 +4,20 @@ All notable changes to kevin are listed here, newest first. kevin is
 pre-1.0, so any release may contain breaking changes; they are marked
 under Breaking.
 
-## v0.1.0 (2026-10-15)
+## v0.1.1 (2026-10-29)
+
+### Added
+
+- `KEVIN_RELAY_UDP_HOST_PORTS` confines the host ports the relay publishes its UDP pool on to a range, for hosts that only allow known loopback ports.
+- Added some web console style changes, including the kevin logo, a version footer, and better accessibility.
+
+### Changed
+
+- `kevin --version` shows the commit the binary was built from, such as `v0.1.0 (2171a43)`, when the build records one.
+
+### Fixed
+
+- The proxy logs a failed upstream request at debug level instead of writing it to stderr, where it corrupted the TUI.## v0.1.0 (2026-10-15)
 
 ### Changed
 
