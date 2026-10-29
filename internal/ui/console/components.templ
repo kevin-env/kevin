@@ -28,7 +28,7 @@ templ Page(v View) {
 		<body>
 			<header>
 				<div class="brand">
-					<a class="logo" href="https://kevin-env.dev/" target="_blank" rel="noreferrer" aria-label="kevin documentation">
+					<a class="logo" href="https://kevin-env.dev/" target="_blank" rel="noreferrer" aria-label="kevin documentation (opens in a new tab)">
 						<img src="/static/logo.svg" alt="" width="36" height="36"/>
 					</a>
 					<h1>kevin</h1>
@@ -63,7 +63,7 @@ templ Page(v View) {
 					<h2>Steps</h2>
 					<svg id="dep-lines" aria-hidden="true">
 						<defs>
-							<marker id="dep-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+							<marker id="dep-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
 								<path d="M0,0 L10,5 L0,10 z" style="fill:context-stroke"></path>
 							</marker>
 						</defs>
@@ -162,10 +162,8 @@ templ Page(v View) {
 	</html>
 }
 
-// copyButton renders a button that copies value via copyAddr. label names
-// what is copied, for the tooltip and screen readers. The status span beside
-// it announces the copy, and sits next to the button rather than in one page
-// region so it still speaks inside a modal detail dialog.
+// copyButton renders a button that copies value via copyAddr, and a status
+// span that announces the copy. label names what is copied.
 templ copyButton(value, label string) {
 	<button type="button" class="copy-btn" data-copy={ value } onclick="copyAddr(this)" title={ label } aria-label={ label }>
 		<svg class="icon-copy" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -313,30 +311,68 @@ func crossScopeNeeds(needs []config.Need) []string {
 	return out
 }
 
-// kindIcon returns the icon that marks a step's kind, or "" for none.
-func kindIcon(kind string) string {
+// kindIcon marks a step's kind, and draws nothing for an unknown kind.
+templ kindIcon(kind string) {
 	switch kind {
-	case "resource":
-		return "📦"
-	case "action":
-		return "⚡"
-	case "probe":
-		return "🔍"
-	default:
-		return ""
+		case "resource", "action", "probe":
+			@icon(kind)
 	}
 }
 
+// icon is a decorative line icon that takes its color and size from the
+// surrounding text. A control that holds one must carry its own accessible
+// name.
+templ icon(name string) {
+	<svg class="icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+		switch name {
+			case "resource":
+				<path d="M8 2l6 3-6 3-6-3z"></path>
+				<path d="M2 8l6 3 6-3"></path>
+				<path d="M2 11l6 3 6-3"></path>
+			case "action":
+				<path d="M5 3l8 5-8 5z"></path>
+			case "probe":
+				<path d="M1.5 8h3l2-4.5 3 9 2-4.5h3"></path>
+			case "plugin":
+				<path d="M5.5 1.5v3M10.5 1.5v3"></path>
+				<path d="M4 4.5h8v2.5a4 4 0 0 1-8 0z"></path>
+				<path d="M8 11v3.5"></path>
+			case "rerun":
+				<path d="M13 8a5 5 0 1 1-1.6-3.7"></path>
+				<path d="M13 2.5v3h-3"></path>
+			case "rerun-all":
+				<path d="M13 8a5 5 0 1 1-1.6-3.7"></path>
+				<path d="M13 2.5v3h-3"></path>
+				<path d="M8 6v4M6 8h4"></path>
+			case "caret":
+				<path d="M4 6l4 4 4-4"></path>
+			case "chevron":
+				<path d="M6 3.5l4.5 4.5L6 12.5"></path>
+			case "close":
+				<path d="M3.5 3.5l9 9M12.5 3.5l-9 9"></path>
+			case "idempotent":
+				<path d="M13 8a5 5 0 1 1-1.6-3.7"></path>
+				<path d="M13 2.5v3h-3"></path>
+				<path d="M6 8.2l1.4 1.4L10 6.8"></path>
+			case "setup":
+				<path d="M8 2v8M5 7l3 3 3-3"></path>
+				<path d="M2.5 11v2.5h11V11"></path>
+		}
+	</svg>
+}
+
 // pluginIcon marks which plugin backs a step: its own icon when it gave
-// one, alt text carrying the plugin name. builtin never gets a puzzle
-// piece - that placeholder means "third-party plugin, no icon given";
+// one, alt text carrying the plugin name. builtin never gets a plug
+// - that placeholder means "third-party plugin, no icon given";
 // builtin isn't a plugin missing an icon, it's the thing everything
 // else is being distinguished from.
 templ pluginIcon(s session.Step) {
 	if len(s.Icon) > 0 {
 		<img class="plugin-icon" src={ iconDataURI(s.Icon) } alt={ s.Provider }/>
 	} else if s.Provider != "builtin" {
-		<span class="plugin-icon plugin-icon-default" title={ s.Provider }>🧩</span>
+		<span class="plugin-icon plugin-icon-default" title={ s.Provider } role="img" aria-label={ s.Provider }>
+			@icon("plugin")
+		</span>
 	}
 }
 
@@ -361,7 +397,7 @@ templ fullStepItem(s session.Step) {
 		</span>
 		<span class="status-line">
 			if s.Kind != "" {
-				<span class={ "kind-text", "kind-" + s.Kind }>{ kindIcon(s.Kind) } { s.Kind }</span>
+				<span class={ "kind-text", "kind-" + s.Kind }>@kindIcon(s.Kind) { s.Kind }</span>
 				<span class="dot">·</span>
 			}
 			<span class="status-text">{ string(s.State) }</span>
@@ -436,7 +472,7 @@ templ GroupItem(s session.Step, members []session.Step) {
 // the group reads expanded or collapsed) untouched.
 templ groupHeader(s session.Step) {
 	<span id={ "group-header-" + s.Name } hx-swap-oob="true" class={ "group-header-content", "state-" + string(s.State) }>
-		<span class="disclosure">▸</span>
+		<span class="disclosure">@icon("chevron")</span>
 		<span class="name">{ s.Label }</span>
 		<span class="pill">{ string(s.State) }</span>
 		if s.Message != "" {
@@ -450,7 +486,7 @@ templ groupHeader(s session.Step) {
 // rerun directly.
 templ idempotentBadge(s session.Step) {
 	if s.Idempotent {
-		<span class="badge-idempotent" title="idempotent - safe to include in a cascading rerun of a step this depends on">♻</span>
+		<span class="badge-idempotent" title="idempotent - safe to include in a cascading rerun of a step this depends on" role="img" aria-label="idempotent">@icon("idempotent")</span>
 	}
 }
 
@@ -458,7 +494,7 @@ templ idempotentBadge(s session.Step) {
 // outputs, naming them in the tooltip instead of drawing a line for each.
 templ crossScopeBadge(s session.Step) {
 	if names := crossScopeNeeds(s.Needs); len(names) > 0 {
-		<span class="badge-cross-scope" title={ "reads setup: " + strings.Join(names, ", ") }>↗ setup</span>
+		<span class="badge-cross-scope" title={ "reads setup: " + strings.Join(names, ", ") }>@icon("setup") setup</span>
 	}
 }
 
@@ -474,25 +510,25 @@ templ rerunActions(s session.Step) {
 	if s.State == session.Failed {
 		<div class="rerun-actions">
 			<div class="split cascade-only">
-				<button type="button" class="split-btn" hx-post={ "/steps/" + s.Name + "/rerun" } hx-vals="{&#34;cascade&#34;:&#34;true&#34;}" hx-swap="none" title="rerun - also retries the steps this failure skipped">⇶ rerun + skipped</button>
+				<button type="button" class="split-btn" hx-post={ "/steps/" + s.Name + "/rerun" } hx-vals="{&#34;cascade&#34;:&#34;true&#34;}" hx-swap="none" title="rerun - also retries the steps this failure skipped">@icon("rerun-all") rerun + skipped</button>
 			</div>
 		</div>
 	} else if s.State == session.Ready {
 		<div class="rerun-actions">
 			<div class="split">
 				<div class="split-controls">
-					<button type="button" class="split-btn" hx-post={ "/steps/" + s.Name + "/rerun" } hx-vals="{&#34;cascade&#34;:&#34;false&#34;}" hx-swap="none" title="rerun just this step">↻ rerun</button>
-					<label for={ "rerun-menu-" + s.Name } class="split-caret" title="more rerun options">⌄</label>
+					<button type="button" class="split-btn" hx-post={ "/steps/" + s.Name + "/rerun" } hx-vals="{&#34;cascade&#34;:&#34;false&#34;}" hx-swap="none" title="rerun just this step">@icon("rerun") rerun</button>
+					<label for={ "rerun-menu-" + s.Name } class="split-caret" title="more rerun options">@icon("caret")</label>
 				</div>
 				<!-- Outside .split-controls, as .rerun-menu's own sibling -
 				     "overflow: hidden" clips only the button pair, and the
 				     ":checked ~ .rerun-menu" rule below needs them to share
 				     one parent; the label still reaches this input by id,
 				     position doesn't matter for that. -->
-				<input type="checkbox" id={ "rerun-menu-" + s.Name } class="rerun-menu-toggle"/>
+				<input type="checkbox" id={ "rerun-menu-" + s.Name } class="rerun-menu-toggle" aria-label="more rerun options"/>
 				<div class="rerun-menu">
-					<button type="button" hx-post={ "/steps/" + s.Name + "/rerun" } hx-vals="{&#34;cascade&#34;:&#34;false&#34;}" hx-swap="none">↻ just this step</button>
-					<button type="button" class="cascade" hx-post={ "/steps/" + s.Name + "/rerun" } hx-vals="{&#34;cascade&#34;:&#34;true&#34;}" hx-swap="none">⇶ + idempotent deps</button>
+					<button type="button" hx-post={ "/steps/" + s.Name + "/rerun" } hx-vals="{&#34;cascade&#34;:&#34;false&#34;}" hx-swap="none">@icon("rerun") just this step</button>
+					<button type="button" class="cascade" hx-post={ "/steps/" + s.Name + "/rerun" } hx-vals="{&#34;cascade&#34;:&#34;true&#34;}" hx-swap="none">@icon("rerun-all") + idempotent deps</button>
 				</div>
 			</div>
 		</div>
@@ -539,7 +575,7 @@ templ StepCard(s session.Step) {
 			{ s.Label }
 		</h3>
 		if s.Kind != "" {
-			<span class={ "pill", "kind-" + s.Kind }>{ kindIcon(s.Kind) } { s.Kind }</span>
+			<span class={ "pill", "kind-" + s.Kind }>@kindIcon(s.Kind) { s.Kind }</span>
 		}
 		@idempotentBadge(s)
 		<span class="pill">{ string(s.State) }</span>
@@ -586,10 +622,10 @@ templ stepDetailDialog(s session.Step) {
 			@pluginIcon(s)
 			<strong>{ s.Label }</strong>
 			if s.Kind != "" {
-				<span class={ "pill", "kind-" + s.Kind }>{ kindIcon(s.Kind) } { s.Kind }</span>
+				<span class={ "pill", "kind-" + s.Kind }>@kindIcon(s.Kind) { s.Kind }</span>
 			}
 			<span class="pill">{ string(s.State) }</span>
-			<button type="button" class="dialog-close" onclick="this.closest('dialog').close()" title="close">✕</button>
+			<button type="button" class="dialog-close" onclick="this.closest('dialog').close()" title="close" aria-label="close">@icon("close")</button>
 		</div>
 		<div class="tabbar">
 			<label for={ "dtab-" + s.Name + "-details" }>Details</label>
@@ -702,9 +738,7 @@ templ styles() {
 			background: var(--bg); color: var(--fg);
 			font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
 		}
-		/* A full-width band: the negative margin cancels the body padding. The
-		   brand (logo and name) is one row, the project and its details the
-		   next. */
+		/* The negative margin cancels the body padding so the band runs full width. */
 		body > header {
 			display: flex; flex-direction: column; gap: var(--sp-5);
 			margin: calc(-1 * var(--sp-9)) calc(-1 * var(--sp-9)) 0;
@@ -716,8 +750,6 @@ templ styles() {
 		h1 { font-size: 1.3rem; margin: 0; letter-spacing: .02em; }
 		.header-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-4) var(--sp-7); }
 		.header-meta .proj { font-weight: 600; }
-		/* The footer rests at the bottom of a short page and follows the
-		   content on a long one. */
 		body { min-height: 100vh; display: flex; flex-direction: column; }
 		body > footer {
 			margin-top: auto; padding-top: var(--sp-9);
@@ -781,6 +813,7 @@ templ styles() {
 			border: 1px solid var(--line); border-radius: 6px; padding: var(--sp-2);
 		}
 		.rerun-menu-toggle:checked ~ .rerun-menu { display: flex; }
+		.split:has(.rerun-menu-toggle:focus-visible) .split-caret { outline: 2px solid var(--brand); outline-offset: -2px; }
 		.rerun-menu button {
 			border: none; background: none; color: var(--fg); text-align: left; cursor: pointer; font: inherit;
 			font-size: var(--text-2xs); padding: var(--sp-2) var(--sp-3); border-radius: 4px;
@@ -946,7 +979,11 @@ templ styles() {
 		.copy-btn svg { width: 1em; height: 1em; display: block; }
 		.copy-btn .icon-check, .copy-btn.copied .icon-copy { display: none; }
 		.copy-btn.copied .icon-check { display: block; }
-		.icon-warn { width: 1em; height: 1em; vertical-align: -.125em; }
+		.icon-warn, .icon { width: 1em; height: 1em; vertical-align: -.125em; }
+		.split-btn, .rerun-menu button, .badge-cross-scope { display: inline-flex; align-items: center; gap: var(--sp-2); }
+		.split-caret .icon, .dialog-close .icon { display: block; }
+		.dialog-close .icon { width: 1rem; height: 1rem; }
+		.plugin-icon-default .icon { display: block; width: 16px; height: 16px; }
 
 		/* A step's detail dialog: opened by clicking its name/card header. */
 		#sidebar .name[data-step] { cursor: pointer; }
@@ -980,6 +1017,9 @@ templ scripts() {
 					btn.classList.remove('copied');
 					status.textContent = '';
 				}, 1000);
+			}, function() {
+				status.textContent = 'copy failed';
+				setTimeout(function() { status.textContent = ''; }, 1000);
 			});
 		}
 
@@ -1084,14 +1124,16 @@ templ scripts() {
 				});
 			});
 
-			var baseDepth = 8, laneGap = 7;
+			var baseDepth = 14, laneGap = 7;
 			var laneCount = laneOf(edges);
 			var gutter = baseDepth + Math.max(0, laneCount - 1) * laneGap + 8;
 			steps.style.marginLeft = gutter + 'px';
 
 			var svgNS = 'http://www.w3.org/2000/svg';
 			var cornerRadius = 4;
-			edges.forEach(function (e) {
+			// SVG paints in document order, so draw running edges last to keep
+			// them on top.
+			edges.filter(function (e) { return !e.running; }).concat(edges.filter(function (e) { return e.running; })).forEach(function (e) {
 				// depth is constant per lane - every edge in lane N sits at
 				// the same x, whatever its own span, so a lane reads as one
 				// straight track rather than wobbling in from edge to edge.

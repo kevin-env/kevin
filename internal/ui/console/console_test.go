@@ -416,7 +416,7 @@ func TestHeader(t *testing.T) {
 		assert.Contains(t, rec.Body.String(), "<footer>kevin "+version.Full()+"</footer>")
 	})
 
-	t.Run("links the favicon and styles keyboard focus", func(t *testing.T) {
+	t.Run("links the favicon and draws a brand focus ring", func(t *testing.T) {
 		s := New(Config{Project: "demo", Network: "kevin-demo", Store: session.NewStore()})
 
 		rec := httptest.NewRecorder()
@@ -424,7 +424,7 @@ func TestHeader(t *testing.T) {
 
 		body := rec.Body.String()
 		assert.Contains(t, body, `<link rel="icon" href="/static/logo.svg"`)
-		assert.Contains(t, body, ":focus-visible")
+		assert.Contains(t, body, ":focus-visible { outline: 2px solid var(--brand)")
 	})
 
 	t.Run("draws every copy button and the banner with SVG icons", func(t *testing.T) {

@@ -67,7 +67,7 @@ func Page(v View) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</head><body><header><div class=\"brand\"><a class=\"logo\" href=\"https://kevin-env.dev/\" target=\"_blank\" rel=\"noreferrer\" aria-label=\"kevin documentation\"><img src=\"/static/logo.svg\" alt=\"\" width=\"36\" height=\"36\"></a><h1>kevin</h1></div><div class=\"header-meta\"><span class=\"proj\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</head><body><header><div class=\"brand\"><a class=\"logo\" href=\"https://kevin-env.dev/\" target=\"_blank\" rel=\"noreferrer\" aria-label=\"kevin documentation (opens in a new tab)\"><img src=\"/static/logo.svg\" alt=\"\" width=\"36\" height=\"36\"></a><h1>kevin</h1></div><div class=\"header-meta\"><span class=\"proj\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -143,7 +143,7 @@ func Page(v View) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 10, "Disconnected from kevin - this page is showing the last known state until it reconnects.</div><!-- One connection feeds every region. Each message is an out of\n\t\t\t     band fragment that names its own target. --><div hx-sse:connect=\"/events\" hx-swap=\"none\" hidden></div><div class=\"layout\"><aside id=\"sidebar\"><h2>Steps</h2><svg id=\"dep-lines\" aria-hidden=\"true\"><defs><marker id=\"dep-arrow\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" style=\"fill:context-stroke\"></path></marker></defs> <g id=\"dep-edges\"></g></svg><ul id=\"steps\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 10, "Disconnected from kevin - this page is showing the last known state until it reconnects.</div><!-- One connection feeds every region. Each message is an out of\n\t\t\t     band fragment that names its own target. --><div hx-sse:connect=\"/events\" hx-swap=\"none\" hidden></div><div class=\"layout\"><aside id=\"sidebar\"><h2>Steps</h2><svg id=\"dep-lines\" aria-hidden=\"true\"><defs><marker id=\"dep-arrow\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerUnits=\"userSpaceOnUse\" markerWidth=\"9\" markerHeight=\"9\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" style=\"fill:context-stroke\"></path></marker></defs> <g id=\"dep-edges\"></g></svg><ul id=\"steps\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -329,10 +329,8 @@ func Page(v View) templ.Component {
 	})
 }
 
-// copyButton renders a button that copies value via copyAddr. label names
-// what is copied, for the tooltip and screen readers. The status span beside
-// it announces the copy, and sits next to the button rather than in one page
-// region so it still speaks inside a modal detail dialog.
+// copyButton renders a button that copies value via copyAddr, and a status
+// span that announces the copy. label names what is copied.
 func copyButton(value, label string) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
@@ -361,7 +359,7 @@ func copyButton(value, label string) templ.Component {
 		var templ_7745c5c3_Var13 string
 		templ_7745c5c3_Var13, templ_7745c5c3_Err = templ.ResolveAttributeValue(value)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 170, Col: 57}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 168, Col: 57}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var13)
 		if templ_7745c5c3_Err != nil {
@@ -374,7 +372,7 @@ func copyButton(value, label string) templ.Component {
 		var templ_7745c5c3_Var14 string
 		templ_7745c5c3_Var14, templ_7745c5c3_Err = templ.ResolveAttributeValue(label)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 170, Col: 98}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 168, Col: 98}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var14)
 		if templ_7745c5c3_Err != nil {
@@ -387,7 +385,7 @@ func copyButton(value, label string) templ.Component {
 		var templ_7745c5c3_Var15 string
 		templ_7745c5c3_Var15, templ_7745c5c3_Err = templ.ResolveAttributeValue(label)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 170, Col: 119}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 168, Col: 119}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var15)
 		if templ_7745c5c3_Err != nil {
@@ -463,7 +461,7 @@ func proxySetup(v View) templ.Component {
 		var templ_7745c5c3_Var18 string
 		templ_7745c5c3_Var18, templ_7745c5c3_Err = templ.JoinStringErrs(exportLine(v.ProxyAddr))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 200, Col: 35}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 198, Col: 35}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var18))
 		if templ_7745c5c3_Err != nil {
@@ -484,7 +482,7 @@ func proxySetup(v View) templ.Component {
 		var templ_7745c5c3_Var19 string
 		templ_7745c5c3_Var19, templ_7745c5c3_Err = templ.JoinStringErrs(pacURL(v.ProxyAddr))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 207, Col: 31}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 205, Col: 31}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var19))
 		if templ_7745c5c3_Err != nil {
@@ -511,7 +509,7 @@ func proxySetup(v View) templ.Component {
 			var templ_7745c5c3_Var20 templ.SafeURL
 			templ_7745c5c3_Var20, templ_7745c5c3_Err = templ.JoinURLErrs(firefoxAddonsURL)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 214, Col: 303}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 212, Col: 303}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var20))
 			if templ_7745c5c3_Err != nil {
@@ -529,7 +527,7 @@ func proxySetup(v View) templ.Component {
 			var templ_7745c5c3_Var21 string
 			templ_7745c5c3_Var21, templ_7745c5c3_Err = templ.JoinStringErrs(pacURL(v.ProxyAddr))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 216, Col: 145}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 214, Col: 145}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var21))
 			if templ_7745c5c3_Err != nil {
@@ -542,7 +540,7 @@ func proxySetup(v View) templ.Component {
 			var templ_7745c5c3_Var22 templ.SafeURL
 			templ_7745c5c3_Var22, templ_7745c5c3_Err = templ.JoinURLErrs(chromeWebStoreURL)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 216, Col: 231}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 214, Col: 231}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var22))
 			if templ_7745c5c3_Err != nil {
@@ -608,7 +606,7 @@ func mcpSetup(v View) templ.Component {
 		var templ_7745c5c3_Var24 string
 		templ_7745c5c3_Var24, templ_7745c5c3_Err = templ.JoinStringErrs(claudeMcpAddCmd(v.McpURL))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 241, Col: 37}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 239, Col: 37}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var24))
 		if templ_7745c5c3_Err != nil {
@@ -629,7 +627,7 @@ func mcpSetup(v View) templ.Component {
 		var templ_7745c5c3_Var25 string
 		templ_7745c5c3_Var25, templ_7745c5c3_Err = templ.JoinStringErrs(v.McpURL)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 248, Col: 20}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 246, Col: 20}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var25))
 		if templ_7745c5c3_Err != nil {
@@ -709,26 +707,8 @@ func crossScopeNeeds(needs []config.Need) []string {
 	return out
 }
 
-// kindIcon returns the icon that marks a step's kind, or "" for none.
-func kindIcon(kind string) string {
-	switch kind {
-	case "resource":
-		return "📦"
-	case "action":
-		return "⚡"
-	case "probe":
-		return "🔍"
-	default:
-		return ""
-	}
-}
-
-// pluginIcon marks which plugin backs a step: its own icon when it gave
-// one, alt text carrying the plugin name. builtin never gets a puzzle
-// piece - that placeholder means "third-party plugin, no icon given";
-// builtin isn't a plugin missing an icon, it's the thing everything
-// else is being distinguished from.
-func pluginIcon(s session.Step) templ.Component {
+// kindIcon marks a step's kind, and draws nothing for an unknown kind.
+func kindIcon(kind string) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
@@ -749,52 +729,203 @@ func pluginIcon(s session.Step) templ.Component {
 			templ_7745c5c3_Var26 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
+		switch kind {
+		case "resource", "action", "probe":
+			templ_7745c5c3_Err = icon(kind).Render(ctx, templ_7745c5c3_Buffer)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+		}
+		return nil
+	})
+}
+
+// icon is a decorative line icon that takes its color and size from the
+// surrounding text. A control that holds one must carry its own accessible
+// name.
+func icon(name string) templ.Component {
+	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
+		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
+		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
+			return templ_7745c5c3_CtxErr
+		}
+		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templruntime.GetBuffer(templ_7745c5c3_W)
+		if !templ_7745c5c3_IsBuffer {
+			defer func() {
+				templ_7745c5c3_BufErr := templruntime.ReleaseBuffer(templ_7745c5c3_Buffer)
+				if templ_7745c5c3_Err == nil {
+					templ_7745c5c3_Err = templ_7745c5c3_BufErr
+				}
+			}()
+		}
+		ctx = templ.InitializeContext(ctx)
+		templ_7745c5c3_Var27 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var27 == nil {
+			templ_7745c5c3_Var27 = templ.NopComponent
+		}
+		ctx = templ.ClearChildren(ctx)
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 52, "<svg class=\"icon\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		switch name {
+		case "resource":
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 53, "<path d=\"M8 2l6 3-6 3-6-3z\"></path> <path d=\"M2 8l6 3 6-3\"></path> <path d=\"M2 11l6 3 6-3\"></path>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+		case "action":
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 54, "<path d=\"M5 3l8 5-8 5z\"></path>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+		case "probe":
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 55, "<path d=\"M1.5 8h3l2-4.5 3 9 2-4.5h3\"></path>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+		case "plugin":
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 56, "<path d=\"M5.5 1.5v3M10.5 1.5v3\"></path> <path d=\"M4 4.5h8v2.5a4 4 0 0 1-8 0z\"></path> <path d=\"M8 11v3.5\"></path>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+		case "rerun":
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 57, "<path d=\"M13 8a5 5 0 1 1-1.6-3.7\"></path> <path d=\"M13 2.5v3h-3\"></path>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+		case "rerun-all":
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 58, "<path d=\"M13 8a5 5 0 1 1-1.6-3.7\"></path> <path d=\"M13 2.5v3h-3\"></path> <path d=\"M8 6v4M6 8h4\"></path>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+		case "caret":
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 59, "<path d=\"M4 6l4 4 4-4\"></path>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+		case "chevron":
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 60, "<path d=\"M6 3.5l4.5 4.5L6 12.5\"></path>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+		case "close":
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 61, "<path d=\"M3.5 3.5l9 9M12.5 3.5l-9 9\"></path>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+		case "idempotent":
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 62, "<path d=\"M13 8a5 5 0 1 1-1.6-3.7\"></path> <path d=\"M13 2.5v3h-3\"></path> <path d=\"M6 8.2l1.4 1.4L10 6.8\"></path>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+		case "setup":
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 63, "<path d=\"M8 2v8M5 7l3 3 3-3\"></path> <path d=\"M2.5 11v2.5h11V11\"></path>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 64, "</svg>")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		return nil
+	})
+}
+
+// pluginIcon marks which plugin backs a step: its own icon when it gave
+// one, alt text carrying the plugin name. builtin never gets a plug
+// - that placeholder means "third-party plugin, no icon given";
+// builtin isn't a plugin missing an icon, it's the thing everything
+// else is being distinguished from.
+func pluginIcon(s session.Step) templ.Component {
+	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
+		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
+		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
+			return templ_7745c5c3_CtxErr
+		}
+		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templruntime.GetBuffer(templ_7745c5c3_W)
+		if !templ_7745c5c3_IsBuffer {
+			defer func() {
+				templ_7745c5c3_BufErr := templruntime.ReleaseBuffer(templ_7745c5c3_Buffer)
+				if templ_7745c5c3_Err == nil {
+					templ_7745c5c3_Err = templ_7745c5c3_BufErr
+				}
+			}()
+		}
+		ctx = templ.InitializeContext(ctx)
+		templ_7745c5c3_Var28 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var28 == nil {
+			templ_7745c5c3_Var28 = templ.NopComponent
+		}
+		ctx = templ.ClearChildren(ctx)
 		if len(s.Icon) > 0 {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 52, "<img class=\"plugin-icon\" src=\"")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			var templ_7745c5c3_Var27 string
-			templ_7745c5c3_Var27, templ_7745c5c3_Err = templ.ResolveAttributeValue(iconDataURI(s.Icon))
-			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 337, Col: 52}
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var27)
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 53, "\" alt=\"")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			var templ_7745c5c3_Var28 string
-			templ_7745c5c3_Var28, templ_7745c5c3_Err = templ.ResolveAttributeValue(s.Provider)
-			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 337, Col: 71}
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var28)
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 54, "\">")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-		} else if s.Provider != "builtin" {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 55, "<span class=\"plugin-icon plugin-icon-default\" title=\"")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 65, "<img class=\"plugin-icon\" src=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var29 string
-			templ_7745c5c3_Var29, templ_7745c5c3_Err = templ.ResolveAttributeValue(s.Provider)
+			templ_7745c5c3_Var29, templ_7745c5c3_Err = templ.ResolveAttributeValue(iconDataURI(s.Icon))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 339, Col: 66}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 371, Col: 52}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var29)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 56, "\">🧩</span>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 66, "\" alt=\"")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var30 string
+			templ_7745c5c3_Var30, templ_7745c5c3_Err = templ.ResolveAttributeValue(s.Provider)
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 371, Col: 71}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var30)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 67, "\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+		} else if s.Provider != "builtin" {
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 68, "<span class=\"plugin-icon plugin-icon-default\" title=\"")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var31 string
+			templ_7745c5c3_Var31, templ_7745c5c3_Err = templ.ResolveAttributeValue(s.Provider)
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 373, Col: 66}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var31)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 69, "\" role=\"img\" aria-label=\"")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var32 string
+			templ_7745c5c3_Var32, templ_7745c5c3_Err = templ.ResolveAttributeValue(s.Provider)
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 373, Col: 103}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var32)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 70, "\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = icon("plugin").Render(ctx, templ_7745c5c3_Buffer)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 71, "</span>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -824,9 +955,9 @@ func StepItem(s session.Step) templ.Component {
 			}()
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var30 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var30 == nil {
-			templ_7745c5c3_Var30 = templ.NopComponent
+		templ_7745c5c3_Var33 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var33 == nil {
+			templ_7745c5c3_Var33 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
 		if s.Compact {
@@ -860,69 +991,69 @@ func fullStepItem(s session.Step) templ.Component {
 			}()
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var31 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var31 == nil {
-			templ_7745c5c3_Var31 = templ.NopComponent
+		templ_7745c5c3_Var34 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var34 == nil {
+			templ_7745c5c3_Var34 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		var templ_7745c5c3_Var32 = []any{"state-" + string(s.State)}
-		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var32...)
+		var templ_7745c5c3_Var35 = []any{"state-" + string(s.State)}
+		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var35...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 57, "<li id=\"")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var33 string
-		templ_7745c5c3_Var33, templ_7745c5c3_Err = templ.ResolveAttributeValue("step-" + s.Name)
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 357, Col: 26}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var33)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 58, "\" hx-swap-oob=\"true\" class=\"")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var34 string
-		templ_7745c5c3_Var34, templ_7745c5c3_Err = templ.ResolveAttributeValue(templ.CSSClasses(templ_7745c5c3_Var32).String())
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 1, Col: 0}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var34)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 59, "\" data-needs=\"")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var35 string
-		templ_7745c5c3_Var35, templ_7745c5c3_Err = templ.ResolveAttributeValue(strings.Join(sameScopeNeeds(s.Needs), ","))
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 357, Col: 140}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var35)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 60, "\"><span class=\"name\" data-step=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 72, "<li id=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var36 string
-		templ_7745c5c3_Var36, templ_7745c5c3_Err = templ.ResolveAttributeValue(s.Name)
+		templ_7745c5c3_Var36, templ_7745c5c3_Err = templ.ResolveAttributeValue("step-" + s.Name)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 358, Col: 39}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 393, Col: 26}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var36)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 61, "\" onclick=\"openDetail(this)\" title=\"view details, inputs, and outputs\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 73, "\" hx-swap-oob=\"true\" class=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var37 string
+		templ_7745c5c3_Var37, templ_7745c5c3_Err = templ.ResolveAttributeValue(templ.CSSClasses(templ_7745c5c3_Var35).String())
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 1, Col: 0}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var37)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 74, "\" data-needs=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var38 string
+		templ_7745c5c3_Var38, templ_7745c5c3_Err = templ.ResolveAttributeValue(strings.Join(sameScopeNeeds(s.Needs), ","))
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 393, Col: 140}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var38)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 75, "\"><span class=\"name\" data-step=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var39 string
+		templ_7745c5c3_Var39, templ_7745c5c3_Err = templ.ResolveAttributeValue(s.Name)
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 394, Col: 39}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var39)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 76, "\" onclick=\"openDetail(this)\" title=\"view details, inputs, and outputs\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -930,83 +1061,83 @@ func fullStepItem(s session.Step) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var37 string
-		templ_7745c5c3_Var37, templ_7745c5c3_Err = templ.JoinStringErrs(s.Label)
+		var templ_7745c5c3_Var40 string
+		templ_7745c5c3_Var40, templ_7745c5c3_Err = templ.JoinStringErrs(s.Label)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 360, Col: 12}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 396, Col: 12}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var37))
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var40))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 62, "</span> <span class=\"status-line\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 77, "</span> <span class=\"status-line\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		if s.Kind != "" {
-			var templ_7745c5c3_Var38 = []any{"kind-text", "kind-" + s.Kind}
-			templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var38...)
+			var templ_7745c5c3_Var41 = []any{"kind-text", "kind-" + s.Kind}
+			templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var41...)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 63, "<span class=\"")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 78, "<span class=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			var templ_7745c5c3_Var39 string
-			templ_7745c5c3_Var39, templ_7745c5c3_Err = templ.ResolveAttributeValue(templ.CSSClasses(templ_7745c5c3_Var38).String())
+			var templ_7745c5c3_Var42 string
+			templ_7745c5c3_Var42, templ_7745c5c3_Err = templ.ResolveAttributeValue(templ.CSSClasses(templ_7745c5c3_Var41).String())
 			if templ_7745c5c3_Err != nil {
 				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 1, Col: 0}
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var39)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var42)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 64, "\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 79, "\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			var templ_7745c5c3_Var40 string
-			templ_7745c5c3_Var40, templ_7745c5c3_Err = templ.JoinStringErrs(kindIcon(s.Kind))
-			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 364, Col: 68}
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var40))
+			templ_7745c5c3_Var43 := templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
+				templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
+				templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templruntime.GetBuffer(templ_7745c5c3_W)
+				if !templ_7745c5c3_IsBuffer {
+					defer func() {
+						templ_7745c5c3_BufErr := templruntime.ReleaseBuffer(templ_7745c5c3_Buffer)
+						if templ_7745c5c3_Err == nil {
+							templ_7745c5c3_Err = templ_7745c5c3_BufErr
+						}
+					}()
+				}
+				ctx = templ.InitializeContext(ctx)
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 80, "s.Kind ")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				return nil
+			})
+			templ_7745c5c3_Err = kindIcon(s.Kind).Render(templ.WithChildren(ctx, templ_7745c5c3_Var43), templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 65, " ")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			var templ_7745c5c3_Var41 string
-			templ_7745c5c3_Var41, templ_7745c5c3_Err = templ.JoinStringErrs(s.Kind)
-			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 364, Col: 79}
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var41))
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 66, "</span> <span class=\"dot\">·</span> ")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 81, "</span> <span class=\"dot\">·</span> ")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 67, "<span class=\"status-text\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 82, "<span class=\"status-text\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var42 string
-		templ_7745c5c3_Var42, templ_7745c5c3_Err = templ.JoinStringErrs(string(s.State))
+		var templ_7745c5c3_Var44 string
+		templ_7745c5c3_Var44, templ_7745c5c3_Err = templ.JoinStringErrs(string(s.State))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 367, Col: 46}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 403, Col: 46}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var42))
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var44))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 68, "</span>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 83, "</span>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -1018,7 +1149,7 @@ func fullStepItem(s session.Step) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 69, "</span> ")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 84, "</span> ")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -1029,20 +1160,20 @@ func fullStepItem(s session.Step) templ.Component {
 			}
 		}
 		if s.Message != "" {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 70, "<span class=\"msg\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 85, "<span class=\"msg\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			var templ_7745c5c3_Var43 string
-			templ_7745c5c3_Var43, templ_7745c5c3_Err = templ.JoinStringErrs(s.Message)
+			var templ_7745c5c3_Var45 string
+			templ_7745c5c3_Var45, templ_7745c5c3_Err = templ.JoinStringErrs(s.Message)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 375, Col: 32}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 411, Col: 32}
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var43))
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var45))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 71, "</span>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 86, "</span>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -1051,7 +1182,7 @@ func fullStepItem(s session.Step) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 72, "</li>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 87, "</li>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -1078,56 +1209,56 @@ func progressBar(name string, progress float64) templ.Component {
 			}()
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var44 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var44 == nil {
-			templ_7745c5c3_Var44 = templ.NopComponent
+		templ_7745c5c3_Var46 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var46 == nil {
+			templ_7745c5c3_Var46 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		var templ_7745c5c3_Var45 = []any{"bar", templ.KV("bar-hidden", progress <= 0)}
-		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var45...)
+		var templ_7745c5c3_Var47 = []any{"bar", templ.KV("bar-hidden", progress <= 0)}
+		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var47...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 73, "<div id=\"")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var46 string
-		templ_7745c5c3_Var46, templ_7745c5c3_Err = templ.ResolveAttributeValue("bar-" + name)
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 385, Col: 24}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var46)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 74, "\" class=\"")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var47 string
-		templ_7745c5c3_Var47, templ_7745c5c3_Err = templ.ResolveAttributeValue(templ.CSSClasses(templ_7745c5c3_Var45).String())
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 1, Col: 0}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var47)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 75, "\"><div class=\"bar-fill\" style=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 88, "<div id=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var48 string
-		templ_7745c5c3_Var48, templ_7745c5c3_Err = templruntime.SanitizeStyleAttributeValues(fmt.Sprintf("width:%.0f%%", progress*100))
+		templ_7745c5c3_Var48, templ_7745c5c3_Err = templ.ResolveAttributeValue("bar-" + name)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 386, Col: 73}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 421, Col: 24}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var48))
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var48)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 76, "\"></div></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 89, "\" class=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var49 string
+		templ_7745c5c3_Var49, templ_7745c5c3_Err = templ.ResolveAttributeValue(templ.CSSClasses(templ_7745c5c3_Var47).String())
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 1, Col: 0}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var49)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 90, "\"><div class=\"bar-fill\" style=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var50 string
+		templ_7745c5c3_Var50, templ_7745c5c3_Err = templruntime.SanitizeStyleAttributeValues(fmt.Sprintf("width:%.0f%%", progress*100))
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 422, Col: 73}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var50))
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 91, "\"></div></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -1153,25 +1284,25 @@ func oobProgress(p session.StepProgress) templ.Component {
 			}()
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var49 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var49 == nil {
-			templ_7745c5c3_Var49 = templ.NopComponent
+		templ_7745c5c3_Var51 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var51 == nil {
+			templ_7745c5c3_Var51 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 77, "<hx-partial hx-target=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 92, "<hx-partial hx-target=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var50 string
-		templ_7745c5c3_Var50, templ_7745c5c3_Err = templ.ResolveAttributeValue("#bar-" + p.Name)
+		var templ_7745c5c3_Var52 string
+		templ_7745c5c3_Var52, templ_7745c5c3_Err = templ.ResolveAttributeValue("#bar-" + p.Name)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 393, Col: 41}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 429, Col: 41}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var50)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var52)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 78, "\" hx-swap=\"outerHTML\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 93, "\" hx-swap=\"outerHTML\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -1179,7 +1310,7 @@ func oobProgress(p session.StepProgress) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 79, "</hx-partial>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 94, "</hx-partial>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -1203,69 +1334,69 @@ func compactStepItem(s session.Step) templ.Component {
 			}()
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var51 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var51 == nil {
-			templ_7745c5c3_Var51 = templ.NopComponent
+		templ_7745c5c3_Var53 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var53 == nil {
+			templ_7745c5c3_Var53 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		var templ_7745c5c3_Var52 = []any{"compact", "state-" + string(s.State)}
-		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var52...)
+		var templ_7745c5c3_Var54 = []any{"compact", "state-" + string(s.State)}
+		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var54...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 80, "<li id=\"")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var53 string
-		templ_7745c5c3_Var53, templ_7745c5c3_Err = templ.ResolveAttributeValue("step-" + s.Name)
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 399, Col: 26}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var53)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 81, "\" hx-swap-oob=\"true\" class=\"")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var54 string
-		templ_7745c5c3_Var54, templ_7745c5c3_Err = templ.ResolveAttributeValue(templ.CSSClasses(templ_7745c5c3_Var52).String())
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 1, Col: 0}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var54)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 82, "\" data-needs=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 95, "<li id=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var55 string
-		templ_7745c5c3_Var55, templ_7745c5c3_Err = templ.ResolveAttributeValue(strings.Join(sameScopeNeeds(s.Needs), ","))
+		templ_7745c5c3_Var55, templ_7745c5c3_Err = templ.ResolveAttributeValue("step-" + s.Name)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 399, Col: 151}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 435, Col: 26}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var55)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 83, "\"><span class=\"name\" data-step=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 96, "\" hx-swap-oob=\"true\" class=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var56 string
-		templ_7745c5c3_Var56, templ_7745c5c3_Err = templ.ResolveAttributeValue(s.Name)
+		templ_7745c5c3_Var56, templ_7745c5c3_Err = templ.ResolveAttributeValue(templ.CSSClasses(templ_7745c5c3_Var54).String())
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 400, Col: 39}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 1, Col: 0}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var56)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 84, "\" onclick=\"openDetail(this)\" title=\"view details, inputs, and outputs\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 97, "\" data-needs=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var57 string
+		templ_7745c5c3_Var57, templ_7745c5c3_Err = templ.ResolveAttributeValue(strings.Join(sameScopeNeeds(s.Needs), ","))
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 435, Col: 151}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var57)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 98, "\"><span class=\"name\" data-step=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var58 string
+		templ_7745c5c3_Var58, templ_7745c5c3_Err = templ.ResolveAttributeValue(s.Name)
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 436, Col: 39}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var58)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 99, "\" onclick=\"openDetail(this)\" title=\"view details, inputs, and outputs\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -1273,16 +1404,16 @@ func compactStepItem(s session.Step) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var57 string
-		templ_7745c5c3_Var57, templ_7745c5c3_Err = templ.JoinStringErrs(s.Label)
+		var templ_7745c5c3_Var59 string
+		templ_7745c5c3_Var59, templ_7745c5c3_Err = templ.JoinStringErrs(s.Label)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 402, Col: 12}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 438, Col: 12}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var57))
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var59))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 85, "</span>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 100, "</span>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -1290,38 +1421,38 @@ func compactStepItem(s session.Step) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 86, "<span class=\"status-text\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 101, "<span class=\"status-text\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var58 string
-		templ_7745c5c3_Var58, templ_7745c5c3_Err = templ.JoinStringErrs(string(s.State))
+		var templ_7745c5c3_Var60 string
+		templ_7745c5c3_Var60, templ_7745c5c3_Err = templ.JoinStringErrs(string(s.State))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 405, Col: 45}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 441, Col: 45}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var58))
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var60))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 87, "</span> ")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 102, "</span> ")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		if s.Message != "" {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 88, "<span class=\"msg\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 103, "<span class=\"msg\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			var templ_7745c5c3_Var59 string
-			templ_7745c5c3_Var59, templ_7745c5c3_Err = templ.JoinStringErrs(s.Message)
+			var templ_7745c5c3_Var61 string
+			templ_7745c5c3_Var61, templ_7745c5c3_Err = templ.JoinStringErrs(s.Message)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 407, Col: 32}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 443, Col: 32}
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var59))
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var61))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 89, "</span>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 104, "</span>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -1330,7 +1461,7 @@ func compactStepItem(s session.Step) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 90, "</li>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 105, "</li>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -1360,64 +1491,64 @@ func GroupItem(s session.Step, members []session.Step) templ.Component {
 			}()
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var60 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var60 == nil {
-			templ_7745c5c3_Var60 = templ.NopComponent
+		templ_7745c5c3_Var62 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var62 == nil {
+			templ_7745c5c3_Var62 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 91, "<li id=\"")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var61 string
-		templ_7745c5c3_Var61, templ_7745c5c3_Err = templ.ResolveAttributeValue("step-" + s.Name)
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 420, Col: 26}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var61)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 92, "\" class=\"group\" data-needs=\"")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var62 string
-		templ_7745c5c3_Var62, templ_7745c5c3_Err = templ.ResolveAttributeValue(strings.Join(sameScopeNeeds(s.Needs), ","))
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 420, Col: 98}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var62)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 93, "\"><input type=\"checkbox\" id=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 106, "<li id=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var63 string
-		templ_7745c5c3_Var63, templ_7745c5c3_Err = templ.ResolveAttributeValue("group-toggle-" + s.Name)
+		templ_7745c5c3_Var63, templ_7745c5c3_Err = templ.ResolveAttributeValue("step-" + s.Name)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 421, Col: 54}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 456, Col: 26}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var63)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 94, "\" class=\"group-toggle\" onchange=\"drawDepLines()\"> <label for=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 107, "\" class=\"group\" data-needs=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var64 string
-		templ_7745c5c3_Var64, templ_7745c5c3_Err = templ.ResolveAttributeValue("group-toggle-" + s.Name)
+		templ_7745c5c3_Var64, templ_7745c5c3_Err = templ.ResolveAttributeValue(strings.Join(sameScopeNeeds(s.Needs), ","))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 422, Col: 39}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 456, Col: 98}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var64)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 95, "\" class=\"group-header\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 108, "\"><input type=\"checkbox\" id=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var65 string
+		templ_7745c5c3_Var65, templ_7745c5c3_Err = templ.ResolveAttributeValue("group-toggle-" + s.Name)
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 457, Col: 54}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var65)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 109, "\" class=\"group-toggle\" onchange=\"drawDepLines()\"> <label for=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var66 string
+		templ_7745c5c3_Var66, templ_7745c5c3_Err = templ.ResolveAttributeValue("group-toggle-" + s.Name)
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 458, Col: 39}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var66)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 110, "\" class=\"group-header\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -1429,7 +1560,7 @@ func GroupItem(s session.Step, members []session.Step) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 96, "</label><ul class=\"group-members\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 111, "</label><ul class=\"group-members\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -1439,7 +1570,7 @@ func GroupItem(s session.Step, members []session.Step) templ.Component {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 97, "</ul></li>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 112, "</ul></li>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -1466,92 +1597,100 @@ func groupHeader(s session.Step) templ.Component {
 			}()
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var65 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var65 == nil {
-			templ_7745c5c3_Var65 = templ.NopComponent
+		templ_7745c5c3_Var67 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var67 == nil {
+			templ_7745c5c3_Var67 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		var templ_7745c5c3_Var66 = []any{"group-header-content", "state-" + string(s.State)}
-		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var66...)
+		var templ_7745c5c3_Var68 = []any{"group-header-content", "state-" + string(s.State)}
+		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var68...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 98, "<span id=\"")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var67 string
-		templ_7745c5c3_Var67, templ_7745c5c3_Err = templ.ResolveAttributeValue("group-header-" + s.Name)
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 438, Col: 36}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var67)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 99, "\" hx-swap-oob=\"true\" class=\"")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var68 string
-		templ_7745c5c3_Var68, templ_7745c5c3_Err = templ.ResolveAttributeValue(templ.CSSClasses(templ_7745c5c3_Var66).String())
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 1, Col: 0}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var68)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 100, "\"><span class=\"disclosure\">▸</span> <span class=\"name\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 113, "<span id=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var69 string
-		templ_7745c5c3_Var69, templ_7745c5c3_Err = templ.JoinStringErrs(s.Label)
+		templ_7745c5c3_Var69, templ_7745c5c3_Err = templ.ResolveAttributeValue("group-header-" + s.Name)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 440, Col: 30}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 474, Col: 36}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var69))
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var69)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 101, "</span> <span class=\"pill\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 114, "\" hx-swap-oob=\"true\" class=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var70 string
-		templ_7745c5c3_Var70, templ_7745c5c3_Err = templ.JoinStringErrs(string(s.State))
+		templ_7745c5c3_Var70, templ_7745c5c3_Err = templ.ResolveAttributeValue(templ.CSSClasses(templ_7745c5c3_Var68).String())
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 441, Col: 38}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 1, Col: 0}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var70))
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var70)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 102, "</span> ")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 115, "\"><span class=\"disclosure\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = icon("chevron").Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 116, "</span> <span class=\"name\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var71 string
+		templ_7745c5c3_Var71, templ_7745c5c3_Err = templ.JoinStringErrs(s.Label)
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 476, Col: 30}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var71))
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 117, "</span> <span class=\"pill\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var72 string
+		templ_7745c5c3_Var72, templ_7745c5c3_Err = templ.JoinStringErrs(string(s.State))
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 477, Col: 38}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var72))
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 118, "</span> ")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		if s.Message != "" {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 103, "<span class=\"msg\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 119, "<span class=\"msg\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			var templ_7745c5c3_Var71 string
-			templ_7745c5c3_Var71, templ_7745c5c3_Err = templ.JoinStringErrs(s.Message)
+			var templ_7745c5c3_Var73 string
+			templ_7745c5c3_Var73, templ_7745c5c3_Err = templ.JoinStringErrs(s.Message)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 443, Col: 32}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 479, Col: 32}
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var71))
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var73))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 104, "</span>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 120, "</span>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 105, "</span>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 121, "</span>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -1578,13 +1717,21 @@ func idempotentBadge(s session.Step) templ.Component {
 			}()
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var72 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var72 == nil {
-			templ_7745c5c3_Var72 = templ.NopComponent
+		templ_7745c5c3_Var74 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var74 == nil {
+			templ_7745c5c3_Var74 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
 		if s.Idempotent {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 106, "<span class=\"badge-idempotent\" title=\"idempotent - safe to include in a cascading rerun of a step this depends on\">♻</span>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 122, "<span class=\"badge-idempotent\" title=\"idempotent - safe to include in a cascading rerun of a step this depends on\" role=\"img\" aria-label=\"idempotent\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = icon("idempotent").Render(ctx, templ_7745c5c3_Buffer)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 123, "</span>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -1611,26 +1758,34 @@ func crossScopeBadge(s session.Step) templ.Component {
 			}()
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var73 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var73 == nil {
-			templ_7745c5c3_Var73 = templ.NopComponent
+		templ_7745c5c3_Var75 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var75 == nil {
+			templ_7745c5c3_Var75 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
 		if names := crossScopeNeeds(s.Needs); len(names) > 0 {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 107, "<span class=\"badge-cross-scope\" title=\"")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 124, "<span class=\"badge-cross-scope\" title=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			var templ_7745c5c3_Var74 string
-			templ_7745c5c3_Var74, templ_7745c5c3_Err = templ.ResolveAttributeValue("reads setup: " + strings.Join(names, ", "))
+			var templ_7745c5c3_Var76 string
+			templ_7745c5c3_Var76, templ_7745c5c3_Err = templ.ResolveAttributeValue("reads setup: " + strings.Join(names, ", "))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 461, Col: 85}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 497, Col: 85}
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var74)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var76)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 108, "\">↗ setup</span>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 125, "\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = icon("setup").Render(ctx, templ_7745c5c3_Buffer)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 126, "setup</span>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -1663,96 +1818,136 @@ func rerunActions(s session.Step) templ.Component {
 			}()
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var75 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var75 == nil {
-			templ_7745c5c3_Var75 = templ.NopComponent
+		templ_7745c5c3_Var77 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var77 == nil {
+			templ_7745c5c3_Var77 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
 		if s.State == session.Failed {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 109, "<div class=\"rerun-actions\"><div class=\"split cascade-only\"><button type=\"button\" class=\"split-btn\" hx-post=\"")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			var templ_7745c5c3_Var76 string
-			templ_7745c5c3_Var76, templ_7745c5c3_Err = templ.ResolveAttributeValue("/steps/" + s.Name + "/rerun")
-			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 477, Col: 83}
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var76)
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 110, "\" hx-vals=\"{&#34;cascade&#34;:&#34;true&#34;}\" hx-swap=\"none\" title=\"rerun - also retries the steps this failure skipped\">⇶ rerun + skipped</button></div></div>")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-		} else if s.State == session.Ready {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 111, "<div class=\"rerun-actions\"><div class=\"split\"><div class=\"split-controls\"><button type=\"button\" class=\"split-btn\" hx-post=\"")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			var templ_7745c5c3_Var77 string
-			templ_7745c5c3_Var77, templ_7745c5c3_Err = templ.ResolveAttributeValue("/steps/" + s.Name + "/rerun")
-			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 484, Col: 84}
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var77)
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 112, "\" hx-vals=\"{&#34;cascade&#34;:&#34;false&#34;}\" hx-swap=\"none\" title=\"rerun just this step\">↻ rerun</button> <label for=\"")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 127, "<div class=\"rerun-actions\"><div class=\"split cascade-only\"><button type=\"button\" class=\"split-btn\" hx-post=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var78 string
-			templ_7745c5c3_Var78, templ_7745c5c3_Err = templ.ResolveAttributeValue("rerun-menu-" + s.Name)
+			templ_7745c5c3_Var78, templ_7745c5c3_Err = templ.ResolveAttributeValue("/steps/" + s.Name + "/rerun")
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 485, Col: 40}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 513, Col: 83}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var78)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 113, "\" class=\"split-caret\" title=\"more rerun options\">⌄</label></div><!-- Outside .split-controls, as .rerun-menu's own sibling -\n\t\t\t\t     \"overflow: hidden\" clips only the button pair, and the\n\t\t\t\t     \":checked ~ .rerun-menu\" rule below needs them to share\n\t\t\t\t     one parent; the label still reaches this input by id,\n\t\t\t\t     position doesn't matter for that. --><input type=\"checkbox\" id=\"")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 128, "\" hx-vals=\"{&#34;cascade&#34;:&#34;true&#34;}\" hx-swap=\"none\" title=\"rerun - also retries the steps this failure skipped\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = icon("rerun-all").Render(ctx, templ_7745c5c3_Buffer)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 129, "rerun + skipped</button></div></div>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+		} else if s.State == session.Ready {
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 130, "<div class=\"rerun-actions\"><div class=\"split\"><div class=\"split-controls\"><button type=\"button\" class=\"split-btn\" hx-post=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var79 string
-			templ_7745c5c3_Var79, templ_7745c5c3_Err = templ.ResolveAttributeValue("rerun-menu-" + s.Name)
+			templ_7745c5c3_Var79, templ_7745c5c3_Err = templ.ResolveAttributeValue("/steps/" + s.Name + "/rerun")
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 492, Col: 54}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 520, Col: 84}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var79)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 114, "\" class=\"rerun-menu-toggle\"><div class=\"rerun-menu\"><button type=\"button\" hx-post=\"")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 131, "\" hx-vals=\"{&#34;cascade&#34;:&#34;false&#34;}\" hx-swap=\"none\" title=\"rerun just this step\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = icon("rerun").Render(ctx, templ_7745c5c3_Buffer)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 132, "rerun</button> <label for=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var80 string
-			templ_7745c5c3_Var80, templ_7745c5c3_Err = templ.ResolveAttributeValue("/steps/" + s.Name + "/rerun")
+			templ_7745c5c3_Var80, templ_7745c5c3_Err = templ.ResolveAttributeValue("rerun-menu-" + s.Name)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 494, Col: 66}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 521, Col: 40}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var80)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 115, "\" hx-vals=\"{&#34;cascade&#34;:&#34;false&#34;}\" hx-swap=\"none\">↻ just this step</button> <button type=\"button\" class=\"cascade\" hx-post=\"")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 133, "\" class=\"split-caret\" title=\"more rerun options\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = icon("caret").Render(ctx, templ_7745c5c3_Buffer)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 134, "</label></div><!-- Outside .split-controls, as .rerun-menu's own sibling -\n\t\t\t\t     \"overflow: hidden\" clips only the button pair, and the\n\t\t\t\t     \":checked ~ .rerun-menu\" rule below needs them to share\n\t\t\t\t     one parent; the label still reaches this input by id,\n\t\t\t\t     position doesn't matter for that. --><input type=\"checkbox\" id=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var81 string
-			templ_7745c5c3_Var81, templ_7745c5c3_Err = templ.ResolveAttributeValue("/steps/" + s.Name + "/rerun")
+			templ_7745c5c3_Var81, templ_7745c5c3_Err = templ.ResolveAttributeValue("rerun-menu-" + s.Name)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 495, Col: 82}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 528, Col: 54}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var81)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 116, "\" hx-vals=\"{&#34;cascade&#34;:&#34;true&#34;}\" hx-swap=\"none\">⇶ + idempotent deps</button></div></div></div>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 135, "\" class=\"rerun-menu-toggle\" aria-label=\"more rerun options\"><div class=\"rerun-menu\"><button type=\"button\" hx-post=\"")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var82 string
+			templ_7745c5c3_Var82, templ_7745c5c3_Err = templ.ResolveAttributeValue("/steps/" + s.Name + "/rerun")
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 530, Col: 66}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var82)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 136, "\" hx-vals=\"{&#34;cascade&#34;:&#34;false&#34;}\" hx-swap=\"none\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = icon("rerun").Render(ctx, templ_7745c5c3_Buffer)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 137, "just this step</button> <button type=\"button\" class=\"cascade\" hx-post=\"")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var83 string
+			templ_7745c5c3_Var83, templ_7745c5c3_Err = templ.ResolveAttributeValue("/steps/" + s.Name + "/rerun")
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 531, Col: 82}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var83)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 138, "\" hx-vals=\"{&#34;cascade&#34;:&#34;true&#34;}\" hx-swap=\"none\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = icon("rerun-all").Render(ctx, templ_7745c5c3_Buffer)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 139, "+ idempotent deps</button></div></div></div>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -1781,122 +1976,122 @@ func detailRows(rows []session.Detail) templ.Component {
 			}()
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var82 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var82 == nil {
-			templ_7745c5c3_Var82 = templ.NopComponent
+		templ_7745c5c3_Var84 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var84 == nil {
+			templ_7745c5c3_Var84 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
 		if len(rows) == 0 {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 117, "<p class=\"empty-inline\">none</p>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 140, "<p class=\"empty-inline\">none</p>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		} else {
 			for _, d := range rows {
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 118, "<div class=\"detail\">")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 141, "<div class=\"detail\">")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				if d.Label != "" {
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 119, "<span class=\"detail-label\">")
-					if templ_7745c5c3_Err != nil {
-						return templ_7745c5c3_Err
-					}
-					var templ_7745c5c3_Var83 string
-					templ_7745c5c3_Var83, templ_7745c5c3_Err = templ.JoinStringErrs(d.Label)
-					if templ_7745c5c3_Err != nil {
-						return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 513, Col: 41}
-					}
-					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var83))
-					if templ_7745c5c3_Err != nil {
-						return templ_7745c5c3_Err
-					}
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 120, "</span>")
-					if templ_7745c5c3_Err != nil {
-						return templ_7745c5c3_Err
-					}
-				}
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 121, "<div class=\"detail-value\">")
-				if templ_7745c5c3_Err != nil {
-					return templ_7745c5c3_Err
-				}
-				if d.Sensitive {
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 122, "<code class=\"detail-sensitive\" title=\"sensitive value, hidden\">••••••••</code> ")
-					if templ_7745c5c3_Err != nil {
-						return templ_7745c5c3_Err
-					}
-				} else if d.Href != "" {
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 123, "<a href=\"")
-					if templ_7745c5c3_Err != nil {
-						return templ_7745c5c3_Err
-					}
-					var templ_7745c5c3_Var84 templ.SafeURL
-					templ_7745c5c3_Var84, templ_7745c5c3_Err = templ.JoinURLErrs(templ.URL(d.Href))
-					if templ_7745c5c3_Err != nil {
-						return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 519, Col: 33}
-					}
-					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var84))
-					if templ_7745c5c3_Err != nil {
-						return templ_7745c5c3_Err
-					}
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 124, "\" target=\"_blank\" rel=\"noreferrer\" title=\"")
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 142, "<span class=\"detail-label\">")
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
 					var templ_7745c5c3_Var85 string
-					templ_7745c5c3_Var85, templ_7745c5c3_Err = templ.ResolveAttributeValue(d.Value)
+					templ_7745c5c3_Var85, templ_7745c5c3_Err = templ.JoinStringErrs(d.Label)
 					if templ_7745c5c3_Err != nil {
-						return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 519, Col: 84}
+						return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 549, Col: 41}
 					}
-					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var85)
+					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var85))
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 125, "\">")
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 143, "</span>")
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
-					var templ_7745c5c3_Var86 string
-					templ_7745c5c3_Var86, templ_7745c5c3_Err = templ.JoinStringErrs(d.Value)
+				}
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 144, "<div class=\"detail-value\">")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				if d.Sensitive {
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 145, "<code class=\"detail-sensitive\" title=\"sensitive value, hidden\">••••••••</code> ")
 					if templ_7745c5c3_Err != nil {
-						return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 519, Col: 96}
+						return templ_7745c5c3_Err
+					}
+				} else if d.Href != "" {
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 146, "<a href=\"")
+					if templ_7745c5c3_Err != nil {
+						return templ_7745c5c3_Err
+					}
+					var templ_7745c5c3_Var86 templ.SafeURL
+					templ_7745c5c3_Var86, templ_7745c5c3_Err = templ.JoinURLErrs(templ.URL(d.Href))
+					if templ_7745c5c3_Err != nil {
+						return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 555, Col: 33}
 					}
 					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var86))
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 126, "</a> ")
-					if templ_7745c5c3_Err != nil {
-						return templ_7745c5c3_Err
-					}
-				} else {
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 127, "<code title=\"")
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 147, "\" target=\"_blank\" rel=\"noreferrer\" title=\"")
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
 					var templ_7745c5c3_Var87 string
 					templ_7745c5c3_Var87, templ_7745c5c3_Err = templ.ResolveAttributeValue(d.Value)
 					if templ_7745c5c3_Err != nil {
-						return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 521, Col: 27}
+						return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 555, Col: 84}
 					}
 					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var87)
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 128, "\">")
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 148, "\">")
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
 					var templ_7745c5c3_Var88 string
 					templ_7745c5c3_Var88, templ_7745c5c3_Err = templ.JoinStringErrs(d.Value)
 					if templ_7745c5c3_Err != nil {
-						return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 521, Col: 39}
+						return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 555, Col: 96}
 					}
 					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var88))
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 129, "</code> ")
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 149, "</a> ")
+					if templ_7745c5c3_Err != nil {
+						return templ_7745c5c3_Err
+					}
+				} else {
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 150, "<code title=\"")
+					if templ_7745c5c3_Err != nil {
+						return templ_7745c5c3_Err
+					}
+					var templ_7745c5c3_Var89 string
+					templ_7745c5c3_Var89, templ_7745c5c3_Err = templ.ResolveAttributeValue(d.Value)
+					if templ_7745c5c3_Err != nil {
+						return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 557, Col: 27}
+					}
+					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var89)
+					if templ_7745c5c3_Err != nil {
+						return templ_7745c5c3_Err
+					}
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 151, "\">")
+					if templ_7745c5c3_Err != nil {
+						return templ_7745c5c3_Err
+					}
+					var templ_7745c5c3_Var90 string
+					templ_7745c5c3_Var90, templ_7745c5c3_Err = templ.JoinStringErrs(d.Value)
+					if templ_7745c5c3_Err != nil {
+						return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 557, Col: 39}
+					}
+					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var90))
+					if templ_7745c5c3_Err != nil {
+						return templ_7745c5c3_Err
+					}
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 152, "</code> ")
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
@@ -1907,7 +2102,7 @@ func detailRows(rows []session.Detail) templ.Component {
 						return templ_7745c5c3_Err
 					}
 				}
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 130, "</div></div>")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 153, "</div></div>")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
@@ -1936,56 +2131,56 @@ func StepCard(s session.Step) templ.Component {
 			}()
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var89 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var89 == nil {
-			templ_7745c5c3_Var89 = templ.NopComponent
+		templ_7745c5c3_Var91 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var91 == nil {
+			templ_7745c5c3_Var91 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		var templ_7745c5c3_Var90 = []any{"card", templ.KV("exposed", len(s.Details) > 0)}
-		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var90...)
+		var templ_7745c5c3_Var92 = []any{"card", templ.KV("exposed", len(s.Details) > 0)}
+		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var92...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 131, "<div id=\"")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var91 string
-		templ_7745c5c3_Var91, templ_7745c5c3_Err = templ.ResolveAttributeValue("card-" + s.Name)
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 536, Col: 27}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var91)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 132, "\" hx-swap-oob=\"true\" class=\"")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var92 string
-		templ_7745c5c3_Var92, templ_7745c5c3_Err = templ.ResolveAttributeValue(templ.CSSClasses(templ_7745c5c3_Var90).String())
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 1, Col: 0}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var92)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 133, "\"><h3 data-step=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 154, "<div id=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var93 string
-		templ_7745c5c3_Var93, templ_7745c5c3_Err = templ.ResolveAttributeValue(s.Name)
+		templ_7745c5c3_Var93, templ_7745c5c3_Err = templ.ResolveAttributeValue("card-" + s.Name)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 537, Col: 24}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 572, Col: 27}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var93)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 134, "\" onclick=\"openDetail(this)\" title=\"view details, inputs, and outputs\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 155, "\" hx-swap-oob=\"true\" class=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var94 string
+		templ_7745c5c3_Var94, templ_7745c5c3_Err = templ.ResolveAttributeValue(templ.CSSClasses(templ_7745c5c3_Var92).String())
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 1, Col: 0}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var94)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 156, "\"><h3 data-step=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var95 string
+		templ_7745c5c3_Var95, templ_7745c5c3_Err = templ.ResolveAttributeValue(s.Name)
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 573, Col: 24}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var95)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 157, "\" onclick=\"openDetail(this)\" title=\"view details, inputs, and outputs\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -1993,65 +2188,65 @@ func StepCard(s session.Step) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var94 string
-		templ_7745c5c3_Var94, templ_7745c5c3_Err = templ.JoinStringErrs(s.Label)
+		var templ_7745c5c3_Var96 string
+		templ_7745c5c3_Var96, templ_7745c5c3_Err = templ.JoinStringErrs(s.Label)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 539, Col: 12}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 575, Col: 12}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var94))
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var96))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 135, "</h3>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 158, "</h3>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		if s.Kind != "" {
-			var templ_7745c5c3_Var95 = []any{"pill", "kind-" + s.Kind}
-			templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var95...)
+			var templ_7745c5c3_Var97 = []any{"pill", "kind-" + s.Kind}
+			templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var97...)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 136, "<span class=\"")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			var templ_7745c5c3_Var96 string
-			templ_7745c5c3_Var96, templ_7745c5c3_Err = templ.ResolveAttributeValue(templ.CSSClasses(templ_7745c5c3_Var95).String())
-			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 1, Col: 0}
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var96)
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 137, "\">")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			var templ_7745c5c3_Var97 string
-			templ_7745c5c3_Var97, templ_7745c5c3_Err = templ.JoinStringErrs(kindIcon(s.Kind))
-			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 542, Col: 62}
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var97))
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 138, " ")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 159, "<span class=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var98 string
-			templ_7745c5c3_Var98, templ_7745c5c3_Err = templ.JoinStringErrs(s.Kind)
+			templ_7745c5c3_Var98, templ_7745c5c3_Err = templ.ResolveAttributeValue(templ.CSSClasses(templ_7745c5c3_Var97).String())
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 542, Col: 73}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 1, Col: 0}
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var98))
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var98)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 139, "</span>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 160, "\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Var99 := templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
+				templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
+				templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templruntime.GetBuffer(templ_7745c5c3_W)
+				if !templ_7745c5c3_IsBuffer {
+					defer func() {
+						templ_7745c5c3_BufErr := templruntime.ReleaseBuffer(templ_7745c5c3_Buffer)
+						if templ_7745c5c3_Err == nil {
+							templ_7745c5c3_Err = templ_7745c5c3_BufErr
+						}
+					}()
+				}
+				ctx = templ.InitializeContext(ctx)
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 161, "s.Kind ")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				return nil
+			})
+			templ_7745c5c3_Err = kindIcon(s.Kind).Render(templ.WithChildren(ctx, templ_7745c5c3_Var99), templ_7745c5c3_Buffer)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 162, "</span>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -2060,20 +2255,20 @@ func StepCard(s session.Step) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 140, "<span class=\"pill\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 163, "<span class=\"pill\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var99 string
-		templ_7745c5c3_Var99, templ_7745c5c3_Err = templ.JoinStringErrs(string(s.State))
+		var templ_7745c5c3_Var100 string
+		templ_7745c5c3_Var100, templ_7745c5c3_Err = templ.JoinStringErrs(string(s.State))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 545, Col: 38}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 581, Col: 38}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var99))
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var100))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 141, "</span>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 164, "</span>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2081,7 +2276,7 @@ func StepCard(s session.Step) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 142, "</div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 165, "</div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2111,25 +2306,25 @@ func detailPanel(id string, rows []session.Detail) templ.Component {
 			}()
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var100 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var100 == nil {
-			templ_7745c5c3_Var100 = templ.NopComponent
+		templ_7745c5c3_Var101 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var101 == nil {
+			templ_7745c5c3_Var101 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 143, "<div id=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 166, "<div id=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var101 string
-		templ_7745c5c3_Var101, templ_7745c5c3_Err = templ.ResolveAttributeValue(id)
+		var templ_7745c5c3_Var102 string
+		templ_7745c5c3_Var102, templ_7745c5c3_Err = templ.ResolveAttributeValue(id)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 557, Col: 13}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 593, Col: 13}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var101)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var102)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 144, "\" hx-swap-oob=\"true\" class=\"panel\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 167, "\" hx-swap-oob=\"true\" class=\"panel\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2137,7 +2332,7 @@ func detailPanel(id string, rows []session.Detail) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 145, "</div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 168, "</div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2166,9 +2361,9 @@ func stepDetailPanels(s session.Step) templ.Component {
 			}()
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var102 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var102 == nil {
-			templ_7745c5c3_Var102 = templ.NopComponent
+		templ_7745c5c3_Var103 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var103 == nil {
+			templ_7745c5c3_Var103 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
 		templ_7745c5c3_Err = detailPanel("dpanel-"+s.Name+"-details", s.Details).Render(ctx, templ_7745c5c3_Buffer)
@@ -2213,25 +2408,25 @@ func stepDetailDialog(s session.Step) templ.Component {
 			}()
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var103 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var103 == nil {
-			templ_7745c5c3_Var103 = templ.NopComponent
+		templ_7745c5c3_Var104 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var104 == nil {
+			templ_7745c5c3_Var104 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 146, "<dialog id=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 169, "<dialog id=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var104 string
-		templ_7745c5c3_Var104, templ_7745c5c3_Err = templ.ResolveAttributeValue("detail-" + s.Name)
+		var templ_7745c5c3_Var105 string
+		templ_7745c5c3_Var105, templ_7745c5c3_Err = templ.ResolveAttributeValue("detail-" + s.Name)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 584, Col: 32}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 620, Col: 32}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var104)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var105)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 147, "\" class=\"detail-dialog\"><div class=\"dialog-head\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 170, "\" class=\"detail-dialog\"><div class=\"dialog-head\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2239,152 +2434,160 @@ func stepDetailDialog(s session.Step) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 148, "<strong>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 171, "<strong>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var105 string
-		templ_7745c5c3_Var105, templ_7745c5c3_Err = templ.JoinStringErrs(s.Label)
+		var templ_7745c5c3_Var106 string
+		templ_7745c5c3_Var106, templ_7745c5c3_Err = templ.JoinStringErrs(s.Label)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 587, Col: 20}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 623, Col: 20}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var105))
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var106))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 149, "</strong> ")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 172, "</strong> ")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		if s.Kind != "" {
-			var templ_7745c5c3_Var106 = []any{"pill", "kind-" + s.Kind}
-			templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var106...)
+			var templ_7745c5c3_Var107 = []any{"pill", "kind-" + s.Kind}
+			templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var107...)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 150, "<span class=\"")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			var templ_7745c5c3_Var107 string
-			templ_7745c5c3_Var107, templ_7745c5c3_Err = templ.ResolveAttributeValue(templ.CSSClasses(templ_7745c5c3_Var106).String())
-			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 1, Col: 0}
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var107)
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 151, "\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 173, "<span class=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var108 string
-			templ_7745c5c3_Var108, templ_7745c5c3_Err = templ.JoinStringErrs(kindIcon(s.Kind))
+			templ_7745c5c3_Var108, templ_7745c5c3_Err = templ.ResolveAttributeValue(templ.CSSClasses(templ_7745c5c3_Var107).String())
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 589, Col: 63}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 1, Col: 0}
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var108))
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 152, " ")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var108)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			var templ_7745c5c3_Var109 string
-			templ_7745c5c3_Var109, templ_7745c5c3_Err = templ.JoinStringErrs(s.Kind)
-			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 589, Col: 74}
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var109))
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 174, "\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 153, "</span> ")
+			templ_7745c5c3_Var109 := templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
+				templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
+				templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templruntime.GetBuffer(templ_7745c5c3_W)
+				if !templ_7745c5c3_IsBuffer {
+					defer func() {
+						templ_7745c5c3_BufErr := templruntime.ReleaseBuffer(templ_7745c5c3_Buffer)
+						if templ_7745c5c3_Err == nil {
+							templ_7745c5c3_Err = templ_7745c5c3_BufErr
+						}
+					}()
+				}
+				ctx = templ.InitializeContext(ctx)
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 175, "s.Kind ")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				return nil
+			})
+			templ_7745c5c3_Err = kindIcon(s.Kind).Render(templ.WithChildren(ctx, templ_7745c5c3_Var109), templ_7745c5c3_Buffer)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 176, "</span> ")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 154, "<span class=\"pill\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 177, "<span class=\"pill\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var110 string
 		templ_7745c5c3_Var110, templ_7745c5c3_Err = templ.JoinStringErrs(string(s.State))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 591, Col: 39}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 627, Col: 39}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var110))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 155, "</span> <button type=\"button\" class=\"dialog-close\" onclick=\"this.closest('dialog').close()\" title=\"close\">✕</button></div><div class=\"tabbar\"><label for=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 178, "</span> <button type=\"button\" class=\"dialog-close\" onclick=\"this.closest('dialog').close()\" title=\"close\" aria-label=\"close\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = icon("close").Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 179, "</button></div><div class=\"tabbar\"><label for=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var111 string
 		templ_7745c5c3_Var111, templ_7745c5c3_Err = templ.ResolveAttributeValue("dtab-" + s.Name + "-details")
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 595, Col: 45}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 631, Col: 45}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var111)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 156, "\">Details</label> <label for=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 180, "\">Details</label> <label for=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var112 string
 		templ_7745c5c3_Var112, templ_7745c5c3_Err = templ.ResolveAttributeValue("dtab-" + s.Name + "-inputs")
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 596, Col: 44}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 632, Col: 44}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var112)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 157, "\">Inputs</label> <label for=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 181, "\">Inputs</label> <label for=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var113 string
 		templ_7745c5c3_Var113, templ_7745c5c3_Err = templ.ResolveAttributeValue("dtab-" + s.Name + "-outputs")
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 597, Col: 45}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 633, Col: 45}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var113)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 158, "\">Outputs</label></div><div class=\"dialog-body\"><input type=\"radio\" name=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 182, "\">Outputs</label></div><div class=\"dialog-body\"><input type=\"radio\" name=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var114 string
 		templ_7745c5c3_Var114, templ_7745c5c3_Err = templ.ResolveAttributeValue("dtab-" + s.Name)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 600, Col: 46}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 636, Col: 46}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var114)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 159, "\" id=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 183, "\" id=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var115 string
 		templ_7745c5c3_Var115, templ_7745c5c3_Err = templ.ResolveAttributeValue("dtab-" + s.Name + "-details")
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 600, Col: 83}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 636, Col: 83}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var115)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 160, "\" class=\"tabinput\" checked>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 184, "\" class=\"tabinput\" checked>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2392,33 +2595,33 @@ func stepDetailDialog(s session.Step) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 161, "<input type=\"radio\" name=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 185, "<input type=\"radio\" name=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var116 string
 		templ_7745c5c3_Var116, templ_7745c5c3_Err = templ.ResolveAttributeValue("dtab-" + s.Name)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 602, Col: 46}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 638, Col: 46}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var116)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 162, "\" id=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 186, "\" id=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var117 string
 		templ_7745c5c3_Var117, templ_7745c5c3_Err = templ.ResolveAttributeValue("dtab-" + s.Name + "-inputs")
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 602, Col: 82}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 638, Col: 82}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var117)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 163, "\" class=\"tabinput\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 187, "\" class=\"tabinput\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2426,33 +2629,33 @@ func stepDetailDialog(s session.Step) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 164, "<input type=\"radio\" name=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 188, "<input type=\"radio\" name=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var118 string
 		templ_7745c5c3_Var118, templ_7745c5c3_Err = templ.ResolveAttributeValue("dtab-" + s.Name)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 604, Col: 46}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 640, Col: 46}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var118)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 165, "\" id=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 189, "\" id=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var119 string
 		templ_7745c5c3_Var119, templ_7745c5c3_Err = templ.ResolveAttributeValue("dtab-" + s.Name + "-outputs")
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 604, Col: 83}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 640, Col: 83}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var119)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 166, "\" class=\"tabinput\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 190, "\" class=\"tabinput\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2460,7 +2663,7 @@ func stepDetailDialog(s session.Step) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 167, "</div></dialog>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 191, "</div></dialog>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2504,7 +2707,7 @@ func StepUpdate(s session.Step) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 168, " ")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 192, " ")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -2548,7 +2751,7 @@ func LogLine(l session.Line) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 169, "<div class=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 193, "<div class=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2561,33 +2764,33 @@ func LogLine(l session.Line) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 170, "\"><span class=\"step\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 194, "\"><span class=\"step\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var124 string
 		templ_7745c5c3_Var124, templ_7745c5c3_Err = templ.JoinStringErrs(l.Step)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 628, Col: 29}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 664, Col: 29}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var124))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 171, "</span> <span class=\"text\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 195, "</span> <span class=\"text\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var125 string
 		templ_7745c5c3_Var125, templ_7745c5c3_Err = templ.JoinStringErrs(l.Text)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 629, Col: 29}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 665, Col: 29}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var125))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 172, "</span></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 196, "</span></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2622,7 +2825,7 @@ func TrafficRow(r session.Request) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 173, "<tr class=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 197, "<tr class=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2635,7 +2838,7 @@ func TrafficRow(r session.Request) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 174, "\"><td>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 198, "\"><td>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2643,7 +2846,7 @@ func TrafficRow(r session.Request) templ.Component {
 			var templ_7745c5c3_Var129 string
 			templ_7745c5c3_Var129, templ_7745c5c3_Err = templ.JoinStringErrs(strconv.Itoa(r.Status))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 638, Col: 28}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 674, Col: 28}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var129))
 			if templ_7745c5c3_Err != nil {
@@ -2653,66 +2856,66 @@ func TrafficRow(r session.Request) templ.Component {
 			var templ_7745c5c3_Var130 string
 			templ_7745c5c3_Var130, templ_7745c5c3_Err = templ.JoinStringErrs("-")
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 640, Col: 9}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 676, Col: 9}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var130))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 175, "</td><td>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 199, "</td><td>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var131 string
 		templ_7745c5c3_Var131, templ_7745c5c3_Err = templ.JoinStringErrs(r.Method)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 643, Col: 16}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 679, Col: 16}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var131))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 176, "</td><td>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 200, "</td><td>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var132 string
 		templ_7745c5c3_Var132, templ_7745c5c3_Err = templ.JoinStringErrs(r.Host)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 644, Col: 14}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 680, Col: 14}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var132))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 177, "</td><td class=\"path\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 201, "</td><td class=\"path\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var133 string
 		templ_7745c5c3_Var133, templ_7745c5c3_Err = templ.JoinStringErrs(r.Path)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 645, Col: 27}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 681, Col: 27}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var133))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 178, "</td><td>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 202, "</td><td>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var134 string
 		templ_7745c5c3_Var134, templ_7745c5c3_Err = templ.JoinStringErrs(strconv.FormatInt(r.Millis, 10))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 646, Col: 39}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 682, Col: 39}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var134))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 179, "</td></tr>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 203, "</td></tr>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2742,7 +2945,7 @@ func oobLog(l session.Line) templ.Component {
 			templ_7745c5c3_Var135 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 180, "<hx-partial hx-target=\"#log-all\" hx-swap=\"beforeend\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 204, "<hx-partial hx-target=\"#log-all\" hx-swap=\"beforeend\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2750,7 +2953,7 @@ func oobLog(l session.Line) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 181, "</hx-partial>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 205, "</hx-partial>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2780,20 +2983,20 @@ func oobStepLog(l session.Line) templ.Component {
 			templ_7745c5c3_Var136 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 182, "<hx-partial hx-target=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 206, "<hx-partial hx-target=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var137 string
 		templ_7745c5c3_Var137, templ_7745c5c3_Err = templ.ResolveAttributeValue("#log-" + l.Step)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 659, Col: 41}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 695, Col: 41}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var137)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 183, "\" hx-swap=\"beforeend\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 207, "\" hx-swap=\"beforeend\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2801,7 +3004,7 @@ func oobStepLog(l session.Line) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 184, "</hx-partial>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 208, "</hx-partial>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2831,7 +3034,7 @@ func oobTraffic(r session.Request) templ.Component {
 			templ_7745c5c3_Var138 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 185, "<hx-partial hx-target=\"#traffic\" hx-swap=\"afterbegin\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 209, "<hx-partial hx-target=\"#traffic\" hx-swap=\"afterbegin\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2839,7 +3042,7 @@ func oobTraffic(r session.Request) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 186, "</hx-partial>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 210, "</hx-partial>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2868,7 +3071,7 @@ func styles() templ.Component {
 			templ_7745c5c3_Var139 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 187, "<style>\n\t\t:root {\n\t\t\tcolor-scheme: light dark;\n\t\t\t--bg: #fff; --fg: #111; --muted: #666; --line: #e3e3e3; --pill: #eee; --bar: #f6f8fa;\n\t\t\t--ok: #1a7f37; --warn: #9a6700; --err: #cf222e; --run: #0969da;\n\t\t\t--k-resource: #6639ba; --k-probe: #0f7b6c;\n\t\t\t/* The logo's orange: focus rings only. State colors stay --ok,\n\t\t\t   --warn, --err and --run, so orange never reads as a state. */\n\t\t\t--brand: #e8613f;\n\t\t\t--font-sans: system-ui, -apple-system, \"Segoe UI\", sans-serif;\n\t\t\t/* Spacing scale for repeated margin/padding/gap values. A\n\t\t\t   one-off size (a fixed icon box, a card's max-width) stays\n\t\t\t   a literal - no reuse to name. */\n\t\t\t--sp-1: .15rem; --sp-2: .2rem; --sp-3: .3rem; --sp-4: .4rem;\n\t\t\t--sp-5: .5rem; --sp-6: .6rem; --sp-7: .75rem; --sp-8: 1rem; --sp-9: 1.5rem;\n\t\t\t/* Type scale: same idea for font-size. */\n\t\t\t--text-2xs: .7rem; --text-xs: .75rem; --text-sm: .8rem; --text-md: .85rem;\n\t\t}\n\t\t@media (prefers-color-scheme: dark) {\n\t\t\t:root {\n\t\t\t\t--bg: #0d1117; --fg: #e6edf3; --muted: #8b949e; --line: #30363d; --pill: #21262d; --bar: #161b22;\n\t\t\t\t--ok: #3fb950; --warn: #d29922; --err: #f85149; --run: #58a6ff;\n\t\t\t\t--k-resource: #a371f7; --k-probe: #39c5bf;\n\t\t\t}\n\t\t}\n\t\t* { box-sizing: border-box; }\n\t\t:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }\n\t\t.empty, .empty-inline, .hint, .conn-banner { font-family: var(--font-sans); }\n\t\tbody {\n\t\t\tmargin: 0; padding: var(--sp-9);\n\t\t\tbackground: var(--bg); color: var(--fg);\n\t\t\tfont: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;\n\t\t}\n\t\t/* A full-width band: the negative margin cancels the body padding. The\n\t\t   brand (logo and name) is one row, the project and its details the\n\t\t   next. */\n\t\tbody > header {\n\t\t\tdisplay: flex; flex-direction: column; gap: var(--sp-5);\n\t\t\tmargin: calc(-1 * var(--sp-9)) calc(-1 * var(--sp-9)) 0;\n\t\t\tpadding: var(--sp-7) var(--sp-9);\n\t\t\tbackground: var(--bar); border-bottom: 1px solid var(--line);\n\t\t}\n\t\t.brand { display: flex; align-items: center; gap: var(--sp-7); }\n\t\t.logo { display: flex; }\n\t\th1 { font-size: 1.3rem; margin: 0; letter-spacing: .02em; }\n\t\t.header-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-4) var(--sp-7); }\n\t\t.header-meta .proj { font-weight: 600; }\n\t\t/* The footer rests at the bottom of a short page and follows the\n\t\t   content on a long one. */\n\t\tbody { min-height: 100vh; display: flex; flex-direction: column; }\n\t\tbody > footer {\n\t\t\tmargin-top: auto; padding-top: var(--sp-9);\n\t\t\tcolor: var(--muted); font-size: var(--text-2xs); text-align: right;\n\t\t}\n\t\th2 { font-size: var(--text-sm); text-transform: uppercase; letter-spacing: .08em;\n\t\t     color: var(--muted); margin: 0 0 var(--sp-7); font-weight: 600; }\n\t\t.header-chips { display: flex; gap: var(--sp-4); flex-wrap: wrap; }\n\t\t.header-chips .chip {\n\t\t\tdisplay: inline-flex; align-items: center; gap: var(--sp-2);\n\t\t\tborder: 1px solid var(--line); border-radius: 999px; padding: var(--sp-1) var(--sp-4);\n\t\t\tfont-size: var(--text-2xs); color: var(--muted);\n\t\t}\n\t\t.header-chips .chip b { color: var(--fg); font-weight: 600; }\n\t\t.conn-banner {\n\t\t\tbackground: var(--err); color: #fff; font-weight: 600;\n\t\t\tpadding: var(--sp-5) var(--sp-8); border-radius: 6px; margin: var(--sp-9) 0;\n\t\t}\n\t\ttable { width: 100%; border-collapse: collapse; }\n\t\tth { text-align: left; font-weight: 600; color: var(--muted);\n\t\t     font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .06em; }\n\t\tth, td { padding: var(--sp-3) var(--sp-6) var(--sp-3) 0; border-bottom: 1px solid var(--line); }\n\t\ttd.path { color: var(--muted); }\n\t\t.pill { padding: .05rem var(--sp-5); border-radius: 999px; background: var(--pill); }\n\t\t.bar { height: 4px; background: var(--pill); border-radius: 2px; margin: var(--sp-3) 0; overflow: hidden; }\n\t\t.bar-hidden { display: none; }\n\t\t.bar-fill { height: 100%; background: var(--run); transition: width .3s linear; }\n\t\t.state-running .pill, .state-running .status-text { color: var(--run); }\n\t\t.state-ready .pill, .state-ready .status-text { color: var(--ok); }\n\t\t.state-failed .pill, .state-failed .status-text { color: var(--err); }\n\t\t.state-removing .pill, .state-removing .status-text,\n\t\t.state-removed .pill, .state-removed .status-text { color: var(--muted); }\n\t\t.state-skipped .pill, .state-skipped .status-text { color: var(--warn); }\n\t\t/* flex-shrink: 0 - a compact row's flex layout would otherwise\n\t\t   squeeze this below its content's width once the row runs out of\n\t\t   space, wrapping \"rerun\" under its icon instead of shrinking the\n\t\t   row's other, more flexible content (its name, its message). */\n\t\t.rerun-actions { display: inline-flex; flex-shrink: 0; margin-left: var(--sp-4); }\n\t\t/* .split-controls (not .split itself) clips the button pair into\n\t\t   one rounded pill - .rerun-menu is .split's other child, and an\n\t\t   ancestor's \"overflow: hidden\" would clip its dropdown too, since\n\t\t   it's positioned relative to .split. */\n\t\t.split { display: inline-flex; position: relative; }\n\t\t.split.cascade-only { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }\n\t\t.split-controls { display: inline-flex; align-items: stretch; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }\n\t\t.split-btn {\n\t\t\tborder: none; background: none; color: var(--muted); cursor: pointer; font: inherit;\n\t\t\tfont-size: var(--text-2xs); padding: var(--sp-1) var(--sp-4); white-space: nowrap;\n\t\t}\n\t\t.split-btn:hover { color: var(--run); background: var(--pill); }\n\t\t.split.cascade-only .split-btn:hover { color: var(--warn); }\n\t\t.split-caret {\n\t\t\tborder-left: 1px solid var(--line); color: var(--muted); cursor: pointer;\n\t\t\tdisplay: flex; align-items: center; padding: var(--sp-1) var(--sp-3);\n\t\t}\n\t\t.split-caret:hover { color: var(--fg); background: var(--pill); }\n\t\t.rerun-menu-toggle { position: absolute; opacity: 0; pointer-events: none; }\n\t\t.rerun-menu {\n\t\t\tdisplay: none; position: absolute; top: 100%; right: 0; margin-top: var(--sp-1); z-index: 1;\n\t\t\tflex-direction: column; min-width: 9rem; background: var(--bg); color: var(--fg);\n\t\t\tborder: 1px solid var(--line); border-radius: 6px; padding: var(--sp-2);\n\t\t}\n\t\t.rerun-menu-toggle:checked ~ .rerun-menu { display: flex; }\n\t\t.rerun-menu button {\n\t\t\tborder: none; background: none; color: var(--fg); text-align: left; cursor: pointer; font: inherit;\n\t\t\tfont-size: var(--text-2xs); padding: var(--sp-2) var(--sp-3); border-radius: 4px;\n\t\t}\n\t\t.rerun-menu button:hover { background: var(--pill); }\n\t\t.rerun-menu button.cascade { color: var(--warn); }\n\t\t.kind-resource { color: var(--k-resource); }\n\t\t.kind-action { color: var(--warn); }\n\t\t.kind-probe { color: var(--k-probe); }\n\t\t.badge-idempotent { color: var(--ok); font-size: var(--text-md); margin: 0 var(--sp-3); cursor: default; }\n\t\t.badge-cross-scope {\n\t\t\tdisplay: inline-flex; align-items: center; gap: var(--sp-2); flex-shrink: 0; white-space: nowrap;\n\t\t\tcolor: var(--muted); font-size: var(--text-2xs); border: 1px solid var(--line);\n\t\t\tborder-radius: 4px; padding: 0 var(--sp-3); margin: 0 var(--sp-3); cursor: default;\n\t\t}\n\t\t.scroll { max-height: 22rem; overflow-y: auto; border: 1px solid var(--line);\n\t\t          border-radius: 6px; padding: var(--sp-5); }\n\t\t.line { display: flex; gap: var(--sp-7); white-space: pre-wrap; word-break: break-word; }\n\t\t.line .step { color: var(--muted); min-width: 6rem; }\n\t\t/* Only \"All\" mixes steps, so only there does the name earn its\n\t\t   column - a single step's own log panel would repeat the same\n\t\t   name on every line, for width the panel needs more now that\n\t\t   .log-steps sits beside it. */\n\t\t.logpanel:not(#log-all) .line .step { display: none; }\n\t\t.stream-stderr .text { color: var(--warn); }\n\t\t.status-2 td:first-child { color: var(--ok); }\n\t\t.status-4 td:first-child, .status-5 td:first-child { color: var(--err); }\n\t\t.direct td { opacity: .65; }\n\t\t.denied td { color: var(--err); opacity: 1; }\n\t\ta { color: var(--run); }\n\n\t\t/* Layout: a sidebar of steps beside a tabbed main area. */\n\t\t.layout { display: flex; align-items: flex-start; gap: var(--sp-9); margin-top: var(--sp-9); }\n\t\t#sidebar { flex: 0 0 14rem; position: relative; }\n\t\t#sidebar ul { list-style: none; margin: 0 0 0 1.1rem; padding: 0; display: flex; flex-direction: column; gap: var(--sp-5); }\n\t\t#sidebar li {\n\t\t\tborder: 1px solid var(--line); border-left-width: 3px; border-radius: 6px;\n\t\t\tpadding: var(--sp-5) var(--sp-6);\n\t\t}\n\t\t/* State reads off the card's left edge instead of a second chip next\n\t\t   to the kind chip - kind and state both stay real words either way,\n\t\t   the color is a bonus cue, never their only carrier. */\n\t\t#sidebar li.state-ready:not(.compact) { border-left-color: var(--ok); }\n\t\t#sidebar li.state-failed:not(.compact) { border-left-color: var(--err); }\n\t\t#sidebar li.state-skipped:not(.compact) { border-left-color: var(--warn); }\n\t\t.status-line { font-size: var(--text-xs); }\n\t\t.status-line .kind-text {\n\t\t\ttext-transform: uppercase; letter-spacing: .05em; font-weight: 600; font-size: var(--text-2xs);\n\t\t}\n\t\t.status-line .dot { color: var(--muted); margin: 0 .3em; }\n\t\t/* Compact: a gate step (probe, route) - one muted line, no card. The\n\t\t   left padding matches a bordered card's border + padding-left so a\n\t\t   dependency-line's endpoint dot lands beside the text, not on it. */\n\t\t#sidebar li.compact {\n\t\t\tborder: none; border-radius: 0; padding: var(--sp-1) 0 var(--sp-1) var(--sp-6);\n\t\t\tdisplay: flex; align-items: baseline; gap: var(--sp-4);\n\t\t\tcolor: var(--muted); font-size: .85em;\n\t\t}\n\t\t#sidebar li.compact .name { font-weight: 400; }\n\t\t/* Step group: a checkbox+label toggle, collapsed by default, no JS\n\t\t   needed for the show/hide itself - drawDepLines still runs on\n\t\t   toggle since a \":checked\" change trips no DOM mutation. A left\n\t\t   accent bar and a bold label set it apart from a plain step card -\n\t\t   not a background tint, which would sit under the header's own\n\t\t   state pill at the same color .pill already uses and hide it. */\n\t\t#sidebar li.group { padding: 0; border-left: 3px solid var(--fg); }\n\t\t.group-toggle { position: absolute; opacity: 0; pointer-events: none; }\n\t\t.group-header { display: flex; align-items: center; gap: var(--sp-4); cursor: pointer; padding: var(--sp-5) var(--sp-6); }\n\t\t.group-header-content { display: contents; }\n\t\t.group-header .name { font-weight: 700; }\n\t\t.disclosure { display: inline-block; color: var(--muted); transition: transform .15s; }\n\t\t.group-toggle:checked ~ .group-header .disclosure { transform: rotate(90deg); }\n\t\t#sidebar ul.group-members { display: none; margin: 0; padding: 0 var(--sp-6) var(--sp-5) 1.3rem; }\n\t\t#sidebar .group-toggle:checked ~ ul.group-members { display: flex; }\n\t\t#dep-lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }\n\t\t.dep-edge { fill: none; stroke: var(--muted); stroke-width: 1.5; opacity: .55; }\n\t\t#dep-arrow path { fill: var(--muted); }\n\t\t/* A running step's outputs aren't there yet - the pulse marks which\n\t\t   card to watch, the flowing dashes on its outgoing edges show where\n\t\t   those outputs are headed once it finishes. Not on a compact row\n\t\t   (a gate step) - StepItem already downplays those, a pulse would\n\t\t   fight that. */\n\t\t@keyframes step-pulse {\n\t\t\t0%, 100% { box-shadow: 0 0 0 0 var(--run); }\n\t\t\t50% { box-shadow: 0 0 5px 1px var(--run); }\n\t\t}\n\t\t#sidebar li.state-running:not(.compact) { border-left-color: var(--run); animation: step-pulse 2.8s ease-in-out infinite; }\n\t\t@keyframes dep-flow { to { stroke-dashoffset: -16; } }\n\t\t.dep-edge-running { stroke-dasharray: 4 4; stroke-width: 2; opacity: 1; animation: dep-flow .6s linear infinite; }\n\t\t@media (prefers-reduced-motion: reduce) {\n\t\t\t#sidebar li.state-running, .dep-edge-running { animation: none; }\n\t\t}\n\t\t#sidebar .name { display: block; font-weight: 600; }\n\t\t.plugin-icon { width: 16px; height: 16px; vertical-align: middle; margin-right: var(--sp-3); border-radius: 3px; }\n\t\t.plugin-icon-default { display: inline-block; font-size: var(--text-sm); line-height: 16px; }\n\t\t#sidebar .msg { display: block; color: var(--muted); font-size: var(--text-sm); margin-top: var(--sp-2); }\n\t\tmain { flex: 1 1 auto; min-width: 0; }\n\n\t\t/* CSS-only tabs: a hidden radio immediately followed by its panel.\n\t\t   Works for a dynamic, per-step set of panels with no per-name rule\n\t\t   and no JS, since the selector never names an id. A label isn't a\n\t\t   sibling of its own input though (grouped together for layout\n\t\t   instead), so \":checked\" can't reach it to mark it active - syncActiveLabels\n\t\t   in scripts() toggles .active on change instead. */\n\t\t.tabbar { display: flex; gap: var(--sp-8); border-bottom: 1px solid var(--line); margin-bottom: var(--sp-5); flex-wrap: wrap; }\n\t\t.tabbar label {\n\t\t\tcursor: pointer; padding: var(--sp-3) 0; margin-bottom: -1px;\n\t\t\tcolor: var(--muted); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .06em;\n\t\t\tborder-bottom: 2px solid transparent;\n\t\t}\n\t\t.tabbar label.active { color: var(--fg); font-weight: 600; border-bottom-color: var(--run); }\n\t\t.tabinput, .logtabinput { position: absolute; opacity: 0; pointer-events: none; }\n\t\t.panel, .logpanel { display: none; }\n\t\t.tabinput:checked + .panel, .logtabinput:checked + .logpanel { display: block; }\n\n\t\t/* Logs: a scrollable step list beside the log content, instead of a\n\t\t   tab row that wraps once there are more steps than fit on one line. */\n\t\t.logs-layout { display: flex; gap: var(--sp-5); }\n\t\t.log-steps {\n\t\t\tflex: 0 1 auto; width: max-content; min-width: 6rem; max-width: 11rem;\n\t\t\tdisplay: flex; flex-direction: column; gap: 1px;\n\t\t\tmax-height: 22rem; overflow-y: auto; border-right: 1px solid var(--line); padding-right: var(--sp-4);\n\t\t}\n\t\t.log-steps label {\n\t\t\tcursor: pointer; padding: var(--sp-2) var(--sp-3); border-radius: 4px; color: var(--muted);\n\t\t\tfont-size: var(--text-xs); display: flex; align-items: center;\n\t\t\twhite-space: nowrap; overflow: hidden; text-overflow: ellipsis;\n\t\t}\n\t\t.log-steps label.active { background: var(--pill); color: var(--fg); font-weight: 600; }\n\t\t.log-live-dot { width: .4rem; height: .4rem; border-radius: 999px; background: var(--run); flex: none; margin-right: var(--sp-2); }\n\t\t.log-panels { flex: 1 1 auto; min-width: 0; }\n\n\t\t/* Services: a card per step, hidden until it has a route. */\n\t\t.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr)); gap: var(--sp-7); }\n\t\t.cards .empty { display: none; grid-column: 1 / -1; color: var(--muted); font-size: var(--text-sm); }\n\t\t.cards:not(:has(.card.exposed)) .empty { display: block; }\n\t\t.card { display: none; border: 1px solid var(--line); border-radius: 8px; padding: var(--sp-7); }\n\t\t.card.exposed { display: block; }\n\t\t.card h3 { margin: 0 0 var(--sp-4); font-size: .95rem; cursor: pointer; }\n\t\t.dialog-head strong { font-size: .95rem; }\n\t\t/* .detail rows: shared by a step's card and its detail dialog's tabs. */\n\t\t.detail { margin-top: var(--sp-5); color: var(--muted); }\n\t\t.detail-label {\n\t\t\tdisplay: block; text-transform: uppercase; font-size: var(--text-2xs);\n\t\t\tletter-spacing: .04em; margin-bottom: var(--sp-1);\n\t\t}\n\t\t.detail-value { display: flex; align-items: center; gap: var(--sp-3); min-width: 0; }\n\t\t.detail-value > a, .detail-value > code {\n\t\t\tflex: 1 1 auto; min-width: 0; overflow: hidden;\n\t\t\twhite-space: nowrap; text-overflow: ellipsis;\n\t\t}\n\t\t.empty-inline { color: var(--muted); font-size: var(--text-sm); margin: var(--sp-5) 0 0; }\n\t\t.copy-btn {\n\t\t\tborder: none; background: none; color: var(--muted); cursor: pointer;\n\t\t\tfont-size: var(--text-md); line-height: 1; padding: 0 var(--sp-2); flex: none;\n\t\t}\n\t\t.copy-btn:hover { color: var(--fg); }\n\t\t.copy-btn.copied { color: var(--ok); cursor: default; }\n\t\t.sr-only {\n\t\t\tposition: absolute; width: 1px; height: 1px; overflow: hidden;\n\t\t\tclip-path: inset(50%); white-space: nowrap;\n\t\t}\n\t\t.copy-btn svg { width: 1em; height: 1em; display: block; }\n\t\t.copy-btn .icon-check, .copy-btn.copied .icon-copy { display: none; }\n\t\t.copy-btn.copied .icon-check { display: block; }\n\t\t.icon-warn { width: 1em; height: 1em; vertical-align: -.125em; }\n\n\t\t/* A step's detail dialog: opened by clicking its name/card header. */\n\t\t#sidebar .name[data-step] { cursor: pointer; }\n\t\t.detail-dialog {\n\t\t\tbackground: var(--bg); color: var(--fg); border: 1px solid var(--line);\n\t\t\tborder-radius: 8px; padding: var(--sp-8); width: min(32rem, 90vw);\n\t\t}\n\t\t.detail-dialog::backdrop { background: rgb(0 0 0 / 40%); }\n\t\t.dialog-head { display: flex; align-items: center; gap: var(--sp-5); margin-bottom: var(--sp-6); }\n\t\t.dialog-close {\n\t\t\tmargin-left: auto; border: none; background: none; color: var(--muted);\n\t\t\tcursor: pointer; font-size: 1rem; line-height: 1;\n\t\t}\n\t\t.dialog-close:hover { color: var(--fg); }\n\t\t.dialog-body .panel { padding-top: var(--sp-5); }\n\t</style>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 211, "<style>\n\t\t:root {\n\t\t\tcolor-scheme: light dark;\n\t\t\t--bg: #fff; --fg: #111; --muted: #666; --line: #e3e3e3; --pill: #eee; --bar: #f6f8fa;\n\t\t\t--ok: #1a7f37; --warn: #9a6700; --err: #cf222e; --run: #0969da;\n\t\t\t--k-resource: #6639ba; --k-probe: #0f7b6c;\n\t\t\t/* The logo's orange: focus rings only. State colors stay --ok,\n\t\t\t   --warn, --err and --run, so orange never reads as a state. */\n\t\t\t--brand: #e8613f;\n\t\t\t--font-sans: system-ui, -apple-system, \"Segoe UI\", sans-serif;\n\t\t\t/* Spacing scale for repeated margin/padding/gap values. A\n\t\t\t   one-off size (a fixed icon box, a card's max-width) stays\n\t\t\t   a literal - no reuse to name. */\n\t\t\t--sp-1: .15rem; --sp-2: .2rem; --sp-3: .3rem; --sp-4: .4rem;\n\t\t\t--sp-5: .5rem; --sp-6: .6rem; --sp-7: .75rem; --sp-8: 1rem; --sp-9: 1.5rem;\n\t\t\t/* Type scale: same idea for font-size. */\n\t\t\t--text-2xs: .7rem; --text-xs: .75rem; --text-sm: .8rem; --text-md: .85rem;\n\t\t}\n\t\t@media (prefers-color-scheme: dark) {\n\t\t\t:root {\n\t\t\t\t--bg: #0d1117; --fg: #e6edf3; --muted: #8b949e; --line: #30363d; --pill: #21262d; --bar: #161b22;\n\t\t\t\t--ok: #3fb950; --warn: #d29922; --err: #f85149; --run: #58a6ff;\n\t\t\t\t--k-resource: #a371f7; --k-probe: #39c5bf;\n\t\t\t}\n\t\t}\n\t\t* { box-sizing: border-box; }\n\t\t:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }\n\t\t.empty, .empty-inline, .hint, .conn-banner { font-family: var(--font-sans); }\n\t\tbody {\n\t\t\tmargin: 0; padding: var(--sp-9);\n\t\t\tbackground: var(--bg); color: var(--fg);\n\t\t\tfont: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;\n\t\t}\n\t\t/* The negative margin cancels the body padding so the band runs full width. */\n\t\tbody > header {\n\t\t\tdisplay: flex; flex-direction: column; gap: var(--sp-5);\n\t\t\tmargin: calc(-1 * var(--sp-9)) calc(-1 * var(--sp-9)) 0;\n\t\t\tpadding: var(--sp-7) var(--sp-9);\n\t\t\tbackground: var(--bar); border-bottom: 1px solid var(--line);\n\t\t}\n\t\t.brand { display: flex; align-items: center; gap: var(--sp-7); }\n\t\t.logo { display: flex; }\n\t\th1 { font-size: 1.3rem; margin: 0; letter-spacing: .02em; }\n\t\t.header-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-4) var(--sp-7); }\n\t\t.header-meta .proj { font-weight: 600; }\n\t\tbody { min-height: 100vh; display: flex; flex-direction: column; }\n\t\tbody > footer {\n\t\t\tmargin-top: auto; padding-top: var(--sp-9);\n\t\t\tcolor: var(--muted); font-size: var(--text-2xs); text-align: right;\n\t\t}\n\t\th2 { font-size: var(--text-sm); text-transform: uppercase; letter-spacing: .08em;\n\t\t     color: var(--muted); margin: 0 0 var(--sp-7); font-weight: 600; }\n\t\t.header-chips { display: flex; gap: var(--sp-4); flex-wrap: wrap; }\n\t\t.header-chips .chip {\n\t\t\tdisplay: inline-flex; align-items: center; gap: var(--sp-2);\n\t\t\tborder: 1px solid var(--line); border-radius: 999px; padding: var(--sp-1) var(--sp-4);\n\t\t\tfont-size: var(--text-2xs); color: var(--muted);\n\t\t}\n\t\t.header-chips .chip b { color: var(--fg); font-weight: 600; }\n\t\t.conn-banner {\n\t\t\tbackground: var(--err); color: #fff; font-weight: 600;\n\t\t\tpadding: var(--sp-5) var(--sp-8); border-radius: 6px; margin: var(--sp-9) 0;\n\t\t}\n\t\ttable { width: 100%; border-collapse: collapse; }\n\t\tth { text-align: left; font-weight: 600; color: var(--muted);\n\t\t     font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .06em; }\n\t\tth, td { padding: var(--sp-3) var(--sp-6) var(--sp-3) 0; border-bottom: 1px solid var(--line); }\n\t\ttd.path { color: var(--muted); }\n\t\t.pill { padding: .05rem var(--sp-5); border-radius: 999px; background: var(--pill); }\n\t\t.bar { height: 4px; background: var(--pill); border-radius: 2px; margin: var(--sp-3) 0; overflow: hidden; }\n\t\t.bar-hidden { display: none; }\n\t\t.bar-fill { height: 100%; background: var(--run); transition: width .3s linear; }\n\t\t.state-running .pill, .state-running .status-text { color: var(--run); }\n\t\t.state-ready .pill, .state-ready .status-text { color: var(--ok); }\n\t\t.state-failed .pill, .state-failed .status-text { color: var(--err); }\n\t\t.state-removing .pill, .state-removing .status-text,\n\t\t.state-removed .pill, .state-removed .status-text { color: var(--muted); }\n\t\t.state-skipped .pill, .state-skipped .status-text { color: var(--warn); }\n\t\t/* flex-shrink: 0 - a compact row's flex layout would otherwise\n\t\t   squeeze this below its content's width once the row runs out of\n\t\t   space, wrapping \"rerun\" under its icon instead of shrinking the\n\t\t   row's other, more flexible content (its name, its message). */\n\t\t.rerun-actions { display: inline-flex; flex-shrink: 0; margin-left: var(--sp-4); }\n\t\t/* .split-controls (not .split itself) clips the button pair into\n\t\t   one rounded pill - .rerun-menu is .split's other child, and an\n\t\t   ancestor's \"overflow: hidden\" would clip its dropdown too, since\n\t\t   it's positioned relative to .split. */\n\t\t.split { display: inline-flex; position: relative; }\n\t\t.split.cascade-only { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }\n\t\t.split-controls { display: inline-flex; align-items: stretch; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }\n\t\t.split-btn {\n\t\t\tborder: none; background: none; color: var(--muted); cursor: pointer; font: inherit;\n\t\t\tfont-size: var(--text-2xs); padding: var(--sp-1) var(--sp-4); white-space: nowrap;\n\t\t}\n\t\t.split-btn:hover { color: var(--run); background: var(--pill); }\n\t\t.split.cascade-only .split-btn:hover { color: var(--warn); }\n\t\t.split-caret {\n\t\t\tborder-left: 1px solid var(--line); color: var(--muted); cursor: pointer;\n\t\t\tdisplay: flex; align-items: center; padding: var(--sp-1) var(--sp-3);\n\t\t}\n\t\t.split-caret:hover { color: var(--fg); background: var(--pill); }\n\t\t.rerun-menu-toggle { position: absolute; opacity: 0; pointer-events: none; }\n\t\t.rerun-menu {\n\t\t\tdisplay: none; position: absolute; top: 100%; right: 0; margin-top: var(--sp-1); z-index: 1;\n\t\t\tflex-direction: column; min-width: 9rem; background: var(--bg); color: var(--fg);\n\t\t\tborder: 1px solid var(--line); border-radius: 6px; padding: var(--sp-2);\n\t\t}\n\t\t.rerun-menu-toggle:checked ~ .rerun-menu { display: flex; }\n\t\t.split:has(.rerun-menu-toggle:focus-visible) .split-caret { outline: 2px solid var(--brand); outline-offset: -2px; }\n\t\t.rerun-menu button {\n\t\t\tborder: none; background: none; color: var(--fg); text-align: left; cursor: pointer; font: inherit;\n\t\t\tfont-size: var(--text-2xs); padding: var(--sp-2) var(--sp-3); border-radius: 4px;\n\t\t}\n\t\t.rerun-menu button:hover { background: var(--pill); }\n\t\t.rerun-menu button.cascade { color: var(--warn); }\n\t\t.kind-resource { color: var(--k-resource); }\n\t\t.kind-action { color: var(--warn); }\n\t\t.kind-probe { color: var(--k-probe); }\n\t\t.badge-idempotent { color: var(--ok); font-size: var(--text-md); margin: 0 var(--sp-3); cursor: default; }\n\t\t.badge-cross-scope {\n\t\t\tdisplay: inline-flex; align-items: center; gap: var(--sp-2); flex-shrink: 0; white-space: nowrap;\n\t\t\tcolor: var(--muted); font-size: var(--text-2xs); border: 1px solid var(--line);\n\t\t\tborder-radius: 4px; padding: 0 var(--sp-3); margin: 0 var(--sp-3); cursor: default;\n\t\t}\n\t\t.scroll { max-height: 22rem; overflow-y: auto; border: 1px solid var(--line);\n\t\t          border-radius: 6px; padding: var(--sp-5); }\n\t\t.line { display: flex; gap: var(--sp-7); white-space: pre-wrap; word-break: break-word; }\n\t\t.line .step { color: var(--muted); min-width: 6rem; }\n\t\t/* Only \"All\" mixes steps, so only there does the name earn its\n\t\t   column - a single step's own log panel would repeat the same\n\t\t   name on every line, for width the panel needs more now that\n\t\t   .log-steps sits beside it. */\n\t\t.logpanel:not(#log-all) .line .step { display: none; }\n\t\t.stream-stderr .text { color: var(--warn); }\n\t\t.status-2 td:first-child { color: var(--ok); }\n\t\t.status-4 td:first-child, .status-5 td:first-child { color: var(--err); }\n\t\t.direct td { opacity: .65; }\n\t\t.denied td { color: var(--err); opacity: 1; }\n\t\ta { color: var(--run); }\n\n\t\t/* Layout: a sidebar of steps beside a tabbed main area. */\n\t\t.layout { display: flex; align-items: flex-start; gap: var(--sp-9); margin-top: var(--sp-9); }\n\t\t#sidebar { flex: 0 0 14rem; position: relative; }\n\t\t#sidebar ul { list-style: none; margin: 0 0 0 1.1rem; padding: 0; display: flex; flex-direction: column; gap: var(--sp-5); }\n\t\t#sidebar li {\n\t\t\tborder: 1px solid var(--line); border-left-width: 3px; border-radius: 6px;\n\t\t\tpadding: var(--sp-5) var(--sp-6);\n\t\t}\n\t\t/* State reads off the card's left edge instead of a second chip next\n\t\t   to the kind chip - kind and state both stay real words either way,\n\t\t   the color is a bonus cue, never their only carrier. */\n\t\t#sidebar li.state-ready:not(.compact) { border-left-color: var(--ok); }\n\t\t#sidebar li.state-failed:not(.compact) { border-left-color: var(--err); }\n\t\t#sidebar li.state-skipped:not(.compact) { border-left-color: var(--warn); }\n\t\t.status-line { font-size: var(--text-xs); }\n\t\t.status-line .kind-text {\n\t\t\ttext-transform: uppercase; letter-spacing: .05em; font-weight: 600; font-size: var(--text-2xs);\n\t\t}\n\t\t.status-line .dot { color: var(--muted); margin: 0 .3em; }\n\t\t/* Compact: a gate step (probe, route) - one muted line, no card. The\n\t\t   left padding matches a bordered card's border + padding-left so a\n\t\t   dependency-line's endpoint dot lands beside the text, not on it. */\n\t\t#sidebar li.compact {\n\t\t\tborder: none; border-radius: 0; padding: var(--sp-1) 0 var(--sp-1) var(--sp-6);\n\t\t\tdisplay: flex; align-items: baseline; gap: var(--sp-4);\n\t\t\tcolor: var(--muted); font-size: .85em;\n\t\t}\n\t\t#sidebar li.compact .name { font-weight: 400; }\n\t\t/* Step group: a checkbox+label toggle, collapsed by default, no JS\n\t\t   needed for the show/hide itself - drawDepLines still runs on\n\t\t   toggle since a \":checked\" change trips no DOM mutation. A left\n\t\t   accent bar and a bold label set it apart from a plain step card -\n\t\t   not a background tint, which would sit under the header's own\n\t\t   state pill at the same color .pill already uses and hide it. */\n\t\t#sidebar li.group { padding: 0; border-left: 3px solid var(--fg); }\n\t\t.group-toggle { position: absolute; opacity: 0; pointer-events: none; }\n\t\t.group-header { display: flex; align-items: center; gap: var(--sp-4); cursor: pointer; padding: var(--sp-5) var(--sp-6); }\n\t\t.group-header-content { display: contents; }\n\t\t.group-header .name { font-weight: 700; }\n\t\t.disclosure { display: inline-block; color: var(--muted); transition: transform .15s; }\n\t\t.group-toggle:checked ~ .group-header .disclosure { transform: rotate(90deg); }\n\t\t#sidebar ul.group-members { display: none; margin: 0; padding: 0 var(--sp-6) var(--sp-5) 1.3rem; }\n\t\t#sidebar .group-toggle:checked ~ ul.group-members { display: flex; }\n\t\t#dep-lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }\n\t\t.dep-edge { fill: none; stroke: var(--muted); stroke-width: 1.5; opacity: .55; }\n\t\t#dep-arrow path { fill: var(--muted); }\n\t\t/* A running step's outputs aren't there yet - the pulse marks which\n\t\t   card to watch, the flowing dashes on its outgoing edges show where\n\t\t   those outputs are headed once it finishes. Not on a compact row\n\t\t   (a gate step) - StepItem already downplays those, a pulse would\n\t\t   fight that. */\n\t\t@keyframes step-pulse {\n\t\t\t0%, 100% { box-shadow: 0 0 0 0 var(--run); }\n\t\t\t50% { box-shadow: 0 0 5px 1px var(--run); }\n\t\t}\n\t\t#sidebar li.state-running:not(.compact) { border-left-color: var(--run); animation: step-pulse 2.8s ease-in-out infinite; }\n\t\t@keyframes dep-flow { to { stroke-dashoffset: -16; } }\n\t\t.dep-edge-running { stroke-dasharray: 4 4; stroke-width: 2; opacity: 1; animation: dep-flow .6s linear infinite; }\n\t\t@media (prefers-reduced-motion: reduce) {\n\t\t\t#sidebar li.state-running, .dep-edge-running { animation: none; }\n\t\t}\n\t\t#sidebar .name { display: block; font-weight: 600; }\n\t\t.plugin-icon { width: 16px; height: 16px; vertical-align: middle; margin-right: var(--sp-3); border-radius: 3px; }\n\t\t.plugin-icon-default { display: inline-block; font-size: var(--text-sm); line-height: 16px; }\n\t\t#sidebar .msg { display: block; color: var(--muted); font-size: var(--text-sm); margin-top: var(--sp-2); }\n\t\tmain { flex: 1 1 auto; min-width: 0; }\n\n\t\t/* CSS-only tabs: a hidden radio immediately followed by its panel.\n\t\t   Works for a dynamic, per-step set of panels with no per-name rule\n\t\t   and no JS, since the selector never names an id. A label isn't a\n\t\t   sibling of its own input though (grouped together for layout\n\t\t   instead), so \":checked\" can't reach it to mark it active - syncActiveLabels\n\t\t   in scripts() toggles .active on change instead. */\n\t\t.tabbar { display: flex; gap: var(--sp-8); border-bottom: 1px solid var(--line); margin-bottom: var(--sp-5); flex-wrap: wrap; }\n\t\t.tabbar label {\n\t\t\tcursor: pointer; padding: var(--sp-3) 0; margin-bottom: -1px;\n\t\t\tcolor: var(--muted); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .06em;\n\t\t\tborder-bottom: 2px solid transparent;\n\t\t}\n\t\t.tabbar label.active { color: var(--fg); font-weight: 600; border-bottom-color: var(--run); }\n\t\t.tabinput, .logtabinput { position: absolute; opacity: 0; pointer-events: none; }\n\t\t.panel, .logpanel { display: none; }\n\t\t.tabinput:checked + .panel, .logtabinput:checked + .logpanel { display: block; }\n\n\t\t/* Logs: a scrollable step list beside the log content, instead of a\n\t\t   tab row that wraps once there are more steps than fit on one line. */\n\t\t.logs-layout { display: flex; gap: var(--sp-5); }\n\t\t.log-steps {\n\t\t\tflex: 0 1 auto; width: max-content; min-width: 6rem; max-width: 11rem;\n\t\t\tdisplay: flex; flex-direction: column; gap: 1px;\n\t\t\tmax-height: 22rem; overflow-y: auto; border-right: 1px solid var(--line); padding-right: var(--sp-4);\n\t\t}\n\t\t.log-steps label {\n\t\t\tcursor: pointer; padding: var(--sp-2) var(--sp-3); border-radius: 4px; color: var(--muted);\n\t\t\tfont-size: var(--text-xs); display: flex; align-items: center;\n\t\t\twhite-space: nowrap; overflow: hidden; text-overflow: ellipsis;\n\t\t}\n\t\t.log-steps label.active { background: var(--pill); color: var(--fg); font-weight: 600; }\n\t\t.log-live-dot { width: .4rem; height: .4rem; border-radius: 999px; background: var(--run); flex: none; margin-right: var(--sp-2); }\n\t\t.log-panels { flex: 1 1 auto; min-width: 0; }\n\n\t\t/* Services: a card per step, hidden until it has a route. */\n\t\t.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr)); gap: var(--sp-7); }\n\t\t.cards .empty { display: none; grid-column: 1 / -1; color: var(--muted); font-size: var(--text-sm); }\n\t\t.cards:not(:has(.card.exposed)) .empty { display: block; }\n\t\t.card { display: none; border: 1px solid var(--line); border-radius: 8px; padding: var(--sp-7); }\n\t\t.card.exposed { display: block; }\n\t\t.card h3 { margin: 0 0 var(--sp-4); font-size: .95rem; cursor: pointer; }\n\t\t.dialog-head strong { font-size: .95rem; }\n\t\t/* .detail rows: shared by a step's card and its detail dialog's tabs. */\n\t\t.detail { margin-top: var(--sp-5); color: var(--muted); }\n\t\t.detail-label {\n\t\t\tdisplay: block; text-transform: uppercase; font-size: var(--text-2xs);\n\t\t\tletter-spacing: .04em; margin-bottom: var(--sp-1);\n\t\t}\n\t\t.detail-value { display: flex; align-items: center; gap: var(--sp-3); min-width: 0; }\n\t\t.detail-value > a, .detail-value > code {\n\t\t\tflex: 1 1 auto; min-width: 0; overflow: hidden;\n\t\t\twhite-space: nowrap; text-overflow: ellipsis;\n\t\t}\n\t\t.empty-inline { color: var(--muted); font-size: var(--text-sm); margin: var(--sp-5) 0 0; }\n\t\t.copy-btn {\n\t\t\tborder: none; background: none; color: var(--muted); cursor: pointer;\n\t\t\tfont-size: var(--text-md); line-height: 1; padding: 0 var(--sp-2); flex: none;\n\t\t}\n\t\t.copy-btn:hover { color: var(--fg); }\n\t\t.copy-btn.copied { color: var(--ok); cursor: default; }\n\t\t.sr-only {\n\t\t\tposition: absolute; width: 1px; height: 1px; overflow: hidden;\n\t\t\tclip-path: inset(50%); white-space: nowrap;\n\t\t}\n\t\t.copy-btn svg { width: 1em; height: 1em; display: block; }\n\t\t.copy-btn .icon-check, .copy-btn.copied .icon-copy { display: none; }\n\t\t.copy-btn.copied .icon-check { display: block; }\n\t\t.icon-warn, .icon { width: 1em; height: 1em; vertical-align: -.125em; }\n\t\t.split-btn, .rerun-menu button, .badge-cross-scope { display: inline-flex; align-items: center; gap: var(--sp-2); }\n\t\t.split-caret .icon, .dialog-close .icon { display: block; }\n\t\t.dialog-close .icon { width: 1rem; height: 1rem; }\n\t\t.plugin-icon-default .icon { display: block; width: 16px; height: 16px; }\n\n\t\t/* A step's detail dialog: opened by clicking its name/card header. */\n\t\t#sidebar .name[data-step] { cursor: pointer; }\n\t\t.detail-dialog {\n\t\t\tbackground: var(--bg); color: var(--fg); border: 1px solid var(--line);\n\t\t\tborder-radius: 8px; padding: var(--sp-8); width: min(32rem, 90vw);\n\t\t}\n\t\t.detail-dialog::backdrop { background: rgb(0 0 0 / 40%); }\n\t\t.dialog-head { display: flex; align-items: center; gap: var(--sp-5); margin-bottom: var(--sp-6); }\n\t\t.dialog-close {\n\t\t\tmargin-left: auto; border: none; background: none; color: var(--muted);\n\t\t\tcursor: pointer; font-size: 1rem; line-height: 1;\n\t\t}\n\t\t.dialog-close:hover { color: var(--fg); }\n\t\t.dialog-body .panel { padding-top: var(--sp-5); }\n\t</style>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2899,7 +3102,7 @@ func scripts() templ.Component {
 			templ_7745c5c3_Var140 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 188, "<script>\n\t\tfunction copyAddr(btn) {\n\t\t\tif (btn.classList.contains('copied')) return;\n\t\t\tvar val = btn.getAttribute('data-copy');\n\t\t\tvar status = btn.nextElementSibling;\n\t\t\tnavigator.clipboard.writeText(val).then(function() {\n\t\t\t\tbtn.classList.add('copied');\n\t\t\t\tstatus.textContent = 'copied';\n\t\t\t\tsetTimeout(function() {\n\t\t\t\t\tbtn.classList.remove('copied');\n\t\t\t\t\tstatus.textContent = '';\n\t\t\t\t}, 1000);\n\t\t\t});\n\t\t}\n\n\t\t// openDetail shows el's step's detail dialog - el carries the step\n\t\t// name in data-step (the sidebar row's name span, or the card's h3).\n\t\tfunction openDetail(el) {\n\t\t\tvar dlg = document.getElementById('detail-' + el.getAttribute('data-step'));\n\t\t\tif (dlg) dlg.showModal();\n\t\t}\n\n\t\t// colorFor picks a color for a step by its position in the sidebar,\n\t\t// so every arrow leaving that step reads as the same color wherever\n\t\t// it lands. Stepping by the golden angle (~137.5deg) spreads however\n\t\t// many steps there are around the whole hue circle with no two\n\t\t// adjacent indices landing near each other - unlike hashing the\n\t\t// name, which can clash by chance for a small, arbitrary set of\n\t\t// names (it did: three short names once landed within a few tens of\n\t\t// degrees of each other, all reading as \"reddish\").\n\t\tfunction colorFor(index) {\n\t\t\treturn 'hsl(' + ((index * 137.508) % 360) + ', 70%, 55%)';\n\t\t}\n\n\t\t// laneOf assigns each edge the lowest lane number whose last edge\n\t\t// already ended above this one's start, so only edges whose y-spans\n\t\t// actually overlap end up in different lanes (classic greedy\n\t\t// interval-graph coloring, same idea as a calendar laying out\n\t\t// overlapping events side by side) - except a lane already carrying\n\t\t// the same source stays available regardless of overlap: same\n\t\t// source means same color, so several edges fanning out of one step\n\t\t// (e.g. a cluster step that a handful of others all need) share one\n\t\t// trunk and read as one line splitting, rather than each claiming\n\t\t// its own lane just because they all start at the same point.\n\t\tfunction laneOf(edges) {\n\t\t\tvar laneEnds = [];\n\t\t\tvar laneSources = [];\n\t\t\tedges.sort(function (a, b) { return a.lo - b.lo || a.hi - b.hi; });\n\t\t\tedges.forEach(function (e) {\n\t\t\t\tvar lane = 0;\n\t\t\t\twhile (lane < laneEnds.length && laneEnds[lane] > e.lo + 2 && laneSources[lane] !== e.source) lane++;\n\t\t\t\te.lane = lane;\n\t\t\t\tlaneEnds[lane] = Math.max(laneEnds[lane] || 0, e.hi);\n\t\t\t\tlaneSources[lane] = e.source;\n\t\t\t});\n\t\t\treturn laneEnds.length;\n\t\t}\n\n\t\t// phaseDelay pins a CSS animation to wall-clock time instead of\n\t\t// element age: drawDepLines rebuilds every dep-edge <path> from\n\t\t// scratch on every call, which would otherwise restart a running\n\t\t// edge's flow animation from 0% before it ever completes a cycle.\n\t\t// A negative delay of \"now mod duration\" starts the fresh path at\n\t\t// the phase the old one would be at right now. Reads the duration\n\t\t// back from el's own computed style, so styles() stays the only\n\t\t// place that names it.\n\t\tfunction phaseDelay(el) {\n\t\t\tvar ms = parseFloat(getComputedStyle(el).animationDuration) * 1000;\n\t\t\treturn (-(Date.now() % ms)) + 'ms';\n\t\t}\n\n\t\t// runningEl returns the element that actually carries a step's\n\t\t// state-* class: a plain step's own <li>, or - since GroupItem\n\t\t// never replaces its outer <li>, only groupHeader's nested span -\n\t\t// a group's header content.\n\t\tfunction runningEl(li) {\n\t\t\treturn li.classList.contains('group') ? li.querySelector('.group-header-content') : li;\n\t\t}\n\n\t\tfunction drawDepLines() {\n\t\t\tvar g = document.getElementById('dep-edges');\n\t\t\tvar sidebar = document.getElementById('sidebar');\n\t\t\tvar steps = document.getElementById('steps');\n\t\t\tif (!g || !sidebar || !steps) return;\n\t\t\tvar sbRect = sidebar.getBoundingClientRect();\n\t\t\tg.innerHTML = '';\n\n\t\t\tvar order = {};\n\t\t\tdocument.querySelectorAll('#steps li').forEach(function (li, i) {\n\t\t\t\torder[li.id.slice('step-'.length)] = i;\n\t\t\t});\n\t\t\tvar edges = [];\n\t\t\tdocument.querySelectorAll('#steps li[data-needs]').forEach(function (li) {\n\t\t\t\t// A collapsed group's members are display:none - getClientRects\n\t\t\t\t// is empty for one, and its getBoundingClientRect would\n\t\t\t\t// otherwise measure as a zero-sized box pinned at (0,0),\n\t\t\t\t// drawing an edge far off in the corner instead of skipping it.\n\t\t\t\tif (li.getClientRects().length === 0) return;\n\t\t\t\tvar needs = li.getAttribute('data-needs');\n\t\t\t\tif (!needs) return;\n\t\t\t\tvar tRect = li.getBoundingClientRect();\n\t\t\t\tvar ty = tRect.top - sbRect.top + tRect.height / 2;\n\t\t\t\tneeds.split(',').forEach(function (name) {\n\t\t\t\t\tif (!name) return;\n\t\t\t\t\tvar src = document.getElementById('step-' + name);\n\t\t\t\t\tif (!src || src.getClientRects().length === 0) return;\n\t\t\t\t\tvar sRect = src.getBoundingClientRect();\n\t\t\t\t\tvar sy = sRect.top - sbRect.top + sRect.height / 2;\n\t\t\t\t\tvar re = runningEl(src);\n\t\t\t\t\tedges.push({\n\t\t\t\t\t\tsy: sy, ty: ty, lo: Math.min(sy, ty), hi: Math.max(sy, ty), source: order[name],\n\t\t\t\t\t\trunning: !!(re && re.classList.contains('state-running')),\n\t\t\t\t\t});\n\t\t\t\t});\n\t\t\t});\n\n\t\t\tvar baseDepth = 8, laneGap = 7;\n\t\t\tvar laneCount = laneOf(edges);\n\t\t\tvar gutter = baseDepth + Math.max(0, laneCount - 1) * laneGap + 8;\n\t\t\tsteps.style.marginLeft = gutter + 'px';\n\n\t\t\tvar svgNS = 'http://www.w3.org/2000/svg';\n\t\t\tvar cornerRadius = 4;\n\t\t\tedges.forEach(function (e) {\n\t\t\t\t// depth is constant per lane - every edge in lane N sits at\n\t\t\t\t// the same x, whatever its own span, so a lane reads as one\n\t\t\t\t// straight track rather than wobbling in from edge to edge.\n\t\t\t\tvar depth = baseDepth + e.lane * laneGap;\n\t\t\t\tvar x = gutter - depth;\n\t\t\t\tvar color = colorFor(e.source);\n\t\t\t\tvar path = document.createElementNS(svgNS, 'path');\n\t\t\t\tpath.setAttribute('class', e.running ? 'dep-edge dep-edge-running' : 'dep-edge');\n\t\t\t\tpath.setAttribute('marker-end', 'url(#dep-arrow)');\n\t\t\t\tpath.style.stroke = color;\n\t\t\t\t// Rounded elbow, not the old diagonal in/straight/diagonal-out\n\t\t\t\t// shape - that one kinked backward whenever sy and ty landed\n\t\t\t\t// close together; r just shrinks to fit instead.\n\t\t\t\tvar dir = e.ty >= e.sy ? 1 : -1;\n\t\t\t\tvar r = Math.min(cornerRadius, depth, Math.abs(e.ty - e.sy) / 2);\n\t\t\t\tpath.setAttribute('d', 'M' + gutter + ',' + e.sy +\n\t\t\t\t\t' L' + (x + r) + ',' + e.sy +\n\t\t\t\t\t' Q' + x + ',' + e.sy + ' ' + x + ',' + (e.sy + dir * r) +\n\t\t\t\t\t' L' + x + ',' + (e.ty - dir * r) +\n\t\t\t\t\t' Q' + x + ',' + e.ty + ' ' + (x + r) + ',' + e.ty +\n\t\t\t\t\t' L' + gutter + ',' + e.ty);\n\t\t\t\tg.appendChild(path);\n\t\t\t\tif (e.running) {\n\t\t\t\t\t// Every call rebuilds every path from scratch, so this one\n\t\t\t\t\t// would otherwise restart mid-flow on every redraw too.\n\t\t\t\t\t// Appended first: getComputedStyle needs it connected to\n\t\t\t\t\t// resolve animation-duration from the stylesheet.\n\t\t\t\t\tpath.style.animationDelay = phaseDelay(path);\n\t\t\t\t}\n\t\t\t\t// A dot at each end anchors the eye on where a line starts\n\t\t\t\t// and ends, independent of how tangled the routing between\n\t\t\t\t// them gets - same color as the line itself.\n\t\t\t\t[e.sy, e.ty].forEach(function (y) {\n\t\t\t\t\tvar dot = document.createElementNS(svgNS, 'circle');\n\t\t\t\t\tdot.setAttribute('class', 'dep-node');\n\t\t\t\t\tdot.setAttribute('cx', gutter);\n\t\t\t\t\tdot.setAttribute('cy', y);\n\t\t\t\t\tdot.setAttribute('r', 3);\n\t\t\t\t\tdot.style.fill = color;\n\t\t\t\t\tg.appendChild(dot);\n\t\t\t\t});\n\t\t\t});\n\t\t}\n\t\tdocument.addEventListener('DOMContentLoaded', drawDepLines);\n\t\twindow.addEventListener('resize', drawDepLines);\n\t\tdocument.addEventListener('DOMContentLoaded', function () {\n\t\t\tnew MutationObserver(drawDepLines).observe(document.getElementById('steps'), { childList: true, subtree: true });\n\t\t});\n\n\t\t// syncActiveLabels marks each radio group's checked input's own\n\t\t// label .active - a label isn't a CSS sibling of its input, so\n\t\t// \":checked\" can't reach it in plain CSS.\n\t\tfunction syncActiveLabels() {\n\t\t\tdocument.querySelectorAll('input[type=radio]:checked').forEach(function (input) {\n\t\t\t\tdocument.getElementsByName(input.name).forEach(function (sibling) {\n\t\t\t\t\tvar l = document.querySelector('label[for=\"' + sibling.id + '\"]');\n\t\t\t\t\tif (l) l.classList.toggle('active', sibling.checked);\n\t\t\t\t});\n\t\t\t});\n\t\t}\n\t\tdocument.addEventListener('change', function (e) {\n\t\t\tif (e.target.matches('input[type=radio]')) syncActiveLabels();\n\t\t});\n\t\tdocument.addEventListener('DOMContentLoaded', syncActiveLabels);\n\n\t\t// Surfaces the SSE extension's own retry state - it also fires\n\t\t// htmx:after:sse:connection on the first connect, so this starts hidden correctly.\n\t\tdocument.addEventListener('htmx:sse:error', function () {\n\t\t\tvar banner = document.getElementById('conn-banner');\n\t\t\tif (banner) banner.hidden = false;\n\t\t});\n\t\tdocument.addEventListener('htmx:after:sse:connection', function () {\n\t\t\tvar banner = document.getElementById('conn-banner');\n\t\t\tif (banner) banner.hidden = true;\n\t\t});\n\t</script>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 212, "<script>\n\t\tfunction copyAddr(btn) {\n\t\t\tif (btn.classList.contains('copied')) return;\n\t\t\tvar val = btn.getAttribute('data-copy');\n\t\t\tvar status = btn.nextElementSibling;\n\t\t\tnavigator.clipboard.writeText(val).then(function() {\n\t\t\t\tbtn.classList.add('copied');\n\t\t\t\tstatus.textContent = 'copied';\n\t\t\t\tsetTimeout(function() {\n\t\t\t\t\tbtn.classList.remove('copied');\n\t\t\t\t\tstatus.textContent = '';\n\t\t\t\t}, 1000);\n\t\t\t}, function() {\n\t\t\t\tstatus.textContent = 'copy failed';\n\t\t\t\tsetTimeout(function() { status.textContent = ''; }, 1000);\n\t\t\t});\n\t\t}\n\n\t\t// openDetail shows el's step's detail dialog - el carries the step\n\t\t// name in data-step (the sidebar row's name span, or the card's h3).\n\t\tfunction openDetail(el) {\n\t\t\tvar dlg = document.getElementById('detail-' + el.getAttribute('data-step'));\n\t\t\tif (dlg) dlg.showModal();\n\t\t}\n\n\t\t// colorFor picks a color for a step by its position in the sidebar,\n\t\t// so every arrow leaving that step reads as the same color wherever\n\t\t// it lands. Stepping by the golden angle (~137.5deg) spreads however\n\t\t// many steps there are around the whole hue circle with no two\n\t\t// adjacent indices landing near each other - unlike hashing the\n\t\t// name, which can clash by chance for a small, arbitrary set of\n\t\t// names (it did: three short names once landed within a few tens of\n\t\t// degrees of each other, all reading as \"reddish\").\n\t\tfunction colorFor(index) {\n\t\t\treturn 'hsl(' + ((index * 137.508) % 360) + ', 70%, 55%)';\n\t\t}\n\n\t\t// laneOf assigns each edge the lowest lane number whose last edge\n\t\t// already ended above this one's start, so only edges whose y-spans\n\t\t// actually overlap end up in different lanes (classic greedy\n\t\t// interval-graph coloring, same idea as a calendar laying out\n\t\t// overlapping events side by side) - except a lane already carrying\n\t\t// the same source stays available regardless of overlap: same\n\t\t// source means same color, so several edges fanning out of one step\n\t\t// (e.g. a cluster step that a handful of others all need) share one\n\t\t// trunk and read as one line splitting, rather than each claiming\n\t\t// its own lane just because they all start at the same point.\n\t\tfunction laneOf(edges) {\n\t\t\tvar laneEnds = [];\n\t\t\tvar laneSources = [];\n\t\t\tedges.sort(function (a, b) { return a.lo - b.lo || a.hi - b.hi; });\n\t\t\tedges.forEach(function (e) {\n\t\t\t\tvar lane = 0;\n\t\t\t\twhile (lane < laneEnds.length && laneEnds[lane] > e.lo + 2 && laneSources[lane] !== e.source) lane++;\n\t\t\t\te.lane = lane;\n\t\t\t\tlaneEnds[lane] = Math.max(laneEnds[lane] || 0, e.hi);\n\t\t\t\tlaneSources[lane] = e.source;\n\t\t\t});\n\t\t\treturn laneEnds.length;\n\t\t}\n\n\t\t// phaseDelay pins a CSS animation to wall-clock time instead of\n\t\t// element age: drawDepLines rebuilds every dep-edge <path> from\n\t\t// scratch on every call, which would otherwise restart a running\n\t\t// edge's flow animation from 0% before it ever completes a cycle.\n\t\t// A negative delay of \"now mod duration\" starts the fresh path at\n\t\t// the phase the old one would be at right now. Reads the duration\n\t\t// back from el's own computed style, so styles() stays the only\n\t\t// place that names it.\n\t\tfunction phaseDelay(el) {\n\t\t\tvar ms = parseFloat(getComputedStyle(el).animationDuration) * 1000;\n\t\t\treturn (-(Date.now() % ms)) + 'ms';\n\t\t}\n\n\t\t// runningEl returns the element that actually carries a step's\n\t\t// state-* class: a plain step's own <li>, or - since GroupItem\n\t\t// never replaces its outer <li>, only groupHeader's nested span -\n\t\t// a group's header content.\n\t\tfunction runningEl(li) {\n\t\t\treturn li.classList.contains('group') ? li.querySelector('.group-header-content') : li;\n\t\t}\n\n\t\tfunction drawDepLines() {\n\t\t\tvar g = document.getElementById('dep-edges');\n\t\t\tvar sidebar = document.getElementById('sidebar');\n\t\t\tvar steps = document.getElementById('steps');\n\t\t\tif (!g || !sidebar || !steps) return;\n\t\t\tvar sbRect = sidebar.getBoundingClientRect();\n\t\t\tg.innerHTML = '';\n\n\t\t\tvar order = {};\n\t\t\tdocument.querySelectorAll('#steps li').forEach(function (li, i) {\n\t\t\t\torder[li.id.slice('step-'.length)] = i;\n\t\t\t});\n\t\t\tvar edges = [];\n\t\t\tdocument.querySelectorAll('#steps li[data-needs]').forEach(function (li) {\n\t\t\t\t// A collapsed group's members are display:none - getClientRects\n\t\t\t\t// is empty for one, and its getBoundingClientRect would\n\t\t\t\t// otherwise measure as a zero-sized box pinned at (0,0),\n\t\t\t\t// drawing an edge far off in the corner instead of skipping it.\n\t\t\t\tif (li.getClientRects().length === 0) return;\n\t\t\t\tvar needs = li.getAttribute('data-needs');\n\t\t\t\tif (!needs) return;\n\t\t\t\tvar tRect = li.getBoundingClientRect();\n\t\t\t\tvar ty = tRect.top - sbRect.top + tRect.height / 2;\n\t\t\t\tneeds.split(',').forEach(function (name) {\n\t\t\t\t\tif (!name) return;\n\t\t\t\t\tvar src = document.getElementById('step-' + name);\n\t\t\t\t\tif (!src || src.getClientRects().length === 0) return;\n\t\t\t\t\tvar sRect = src.getBoundingClientRect();\n\t\t\t\t\tvar sy = sRect.top - sbRect.top + sRect.height / 2;\n\t\t\t\t\tvar re = runningEl(src);\n\t\t\t\t\tedges.push({\n\t\t\t\t\t\tsy: sy, ty: ty, lo: Math.min(sy, ty), hi: Math.max(sy, ty), source: order[name],\n\t\t\t\t\t\trunning: !!(re && re.classList.contains('state-running')),\n\t\t\t\t\t});\n\t\t\t\t});\n\t\t\t});\n\n\t\t\tvar baseDepth = 14, laneGap = 7;\n\t\t\tvar laneCount = laneOf(edges);\n\t\t\tvar gutter = baseDepth + Math.max(0, laneCount - 1) * laneGap + 8;\n\t\t\tsteps.style.marginLeft = gutter + 'px';\n\n\t\t\tvar svgNS = 'http://www.w3.org/2000/svg';\n\t\t\tvar cornerRadius = 4;\n\t\t\t// SVG paints in document order, so draw running edges last to keep\n\t\t\t// them on top.\n\t\t\tedges.filter(function (e) { return !e.running; }).concat(edges.filter(function (e) { return e.running; })).forEach(function (e) {\n\t\t\t\t// depth is constant per lane - every edge in lane N sits at\n\t\t\t\t// the same x, whatever its own span, so a lane reads as one\n\t\t\t\t// straight track rather than wobbling in from edge to edge.\n\t\t\t\tvar depth = baseDepth + e.lane * laneGap;\n\t\t\t\tvar x = gutter - depth;\n\t\t\t\tvar color = colorFor(e.source);\n\t\t\t\tvar path = document.createElementNS(svgNS, 'path');\n\t\t\t\tpath.setAttribute('class', e.running ? 'dep-edge dep-edge-running' : 'dep-edge');\n\t\t\t\tpath.setAttribute('marker-end', 'url(#dep-arrow)');\n\t\t\t\tpath.style.stroke = color;\n\t\t\t\t// Rounded elbow, not the old diagonal in/straight/diagonal-out\n\t\t\t\t// shape - that one kinked backward whenever sy and ty landed\n\t\t\t\t// close together; r just shrinks to fit instead.\n\t\t\t\tvar dir = e.ty >= e.sy ? 1 : -1;\n\t\t\t\tvar r = Math.min(cornerRadius, depth, Math.abs(e.ty - e.sy) / 2);\n\t\t\t\tpath.setAttribute('d', 'M' + gutter + ',' + e.sy +\n\t\t\t\t\t' L' + (x + r) + ',' + e.sy +\n\t\t\t\t\t' Q' + x + ',' + e.sy + ' ' + x + ',' + (e.sy + dir * r) +\n\t\t\t\t\t' L' + x + ',' + (e.ty - dir * r) +\n\t\t\t\t\t' Q' + x + ',' + e.ty + ' ' + (x + r) + ',' + e.ty +\n\t\t\t\t\t' L' + gutter + ',' + e.ty);\n\t\t\t\tg.appendChild(path);\n\t\t\t\tif (e.running) {\n\t\t\t\t\t// Every call rebuilds every path from scratch, so this one\n\t\t\t\t\t// would otherwise restart mid-flow on every redraw too.\n\t\t\t\t\t// Appended first: getComputedStyle needs it connected to\n\t\t\t\t\t// resolve animation-duration from the stylesheet.\n\t\t\t\t\tpath.style.animationDelay = phaseDelay(path);\n\t\t\t\t}\n\t\t\t\t// A dot at each end anchors the eye on where a line starts\n\t\t\t\t// and ends, independent of how tangled the routing between\n\t\t\t\t// them gets - same color as the line itself.\n\t\t\t\t[e.sy, e.ty].forEach(function (y) {\n\t\t\t\t\tvar dot = document.createElementNS(svgNS, 'circle');\n\t\t\t\t\tdot.setAttribute('class', 'dep-node');\n\t\t\t\t\tdot.setAttribute('cx', gutter);\n\t\t\t\t\tdot.setAttribute('cy', y);\n\t\t\t\t\tdot.setAttribute('r', 3);\n\t\t\t\t\tdot.style.fill = color;\n\t\t\t\t\tg.appendChild(dot);\n\t\t\t\t});\n\t\t\t});\n\t\t}\n\t\tdocument.addEventListener('DOMContentLoaded', drawDepLines);\n\t\twindow.addEventListener('resize', drawDepLines);\n\t\tdocument.addEventListener('DOMContentLoaded', function () {\n\t\t\tnew MutationObserver(drawDepLines).observe(document.getElementById('steps'), { childList: true, subtree: true });\n\t\t});\n\n\t\t// syncActiveLabels marks each radio group's checked input's own\n\t\t// label .active - a label isn't a CSS sibling of its input, so\n\t\t// \":checked\" can't reach it in plain CSS.\n\t\tfunction syncActiveLabels() {\n\t\t\tdocument.querySelectorAll('input[type=radio]:checked').forEach(function (input) {\n\t\t\t\tdocument.getElementsByName(input.name).forEach(function (sibling) {\n\t\t\t\t\tvar l = document.querySelector('label[for=\"' + sibling.id + '\"]');\n\t\t\t\t\tif (l) l.classList.toggle('active', sibling.checked);\n\t\t\t\t});\n\t\t\t});\n\t\t}\n\t\tdocument.addEventListener('change', function (e) {\n\t\t\tif (e.target.matches('input[type=radio]')) syncActiveLabels();\n\t\t});\n\t\tdocument.addEventListener('DOMContentLoaded', syncActiveLabels);\n\n\t\t// Surfaces the SSE extension's own retry state - it also fires\n\t\t// htmx:after:sse:connection on the first connect, so this starts hidden correctly.\n\t\tdocument.addEventListener('htmx:sse:error', function () {\n\t\t\tvar banner = document.getElementById('conn-banner');\n\t\t\tif (banner) banner.hidden = false;\n\t\t});\n\t\tdocument.addEventListener('htmx:after:sse:connection', function () {\n\t\t\tvar banner = document.getElementById('conn-banner');\n\t\t\tif (banner) banner.hidden = true;\n\t\t});\n\t</script>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2936,7 +3139,7 @@ func Snapshot(v View) templ.Component {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 189, "<hx-partial hx-target=\"#log-all\" hx-swap=\"innerHTML\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 213, "<hx-partial hx-target=\"#log-all\" hx-swap=\"innerHTML\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2946,25 +3149,25 @@ func Snapshot(v View) templ.Component {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 190, "</hx-partial> ")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 214, "</hx-partial> ")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, s := range v.Steps {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 191, "<hx-partial hx-target=\"")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 215, "<hx-partial hx-target=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var142 string
 			templ_7745c5c3_Var142, templ_7745c5c3_Err = templ.ResolveAttributeValue("#log-" + s.Name)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 1185, Col: 42}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/ui/console/components.templ`, Line: 1227, Col: 42}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var142)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 192, "\" hx-swap=\"innerHTML\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 216, "\" hx-swap=\"innerHTML\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -2974,12 +3177,12 @@ func Snapshot(v View) templ.Component {
 					return templ_7745c5c3_Err
 				}
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 193, "</hx-partial> ")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 217, "</hx-partial> ")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 194, "<hx-partial hx-target=\"#traffic\" hx-swap=\"innerHTML\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 218, "<hx-partial hx-target=\"#traffic\" hx-swap=\"innerHTML\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -2989,7 +3192,7 @@ func Snapshot(v View) templ.Component {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 195, "</hx-partial>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 219, "</hx-partial>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

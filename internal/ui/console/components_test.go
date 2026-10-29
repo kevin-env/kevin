@@ -115,6 +115,39 @@ func TestStepItemKinds(t *testing.T) {
 	}
 }
 
+func TestStepIcons(t *testing.T) {
+	steps := []session.Step{
+		{Name: "infra", Label: "infra", IsGroup: true, State: session.Ready},
+		{Name: "db", Label: "db", Group: "infra", Kind: "resource", Provider: "acme", Idempotent: true, State: session.Ready, Needs: []config.Need{{Setup: true, Step: "cluster"}}},
+		{Name: "job", Label: "job", Kind: "action", Provider: "builtin", State: session.Failed},
+		{Name: "check", Label: "check", Kind: "probe", Provider: "builtin", State: session.Ready},
+	}
+	body := renderString(t, Page(View{View: session.View{Steps: steps}}))
+
+	for _, glyph := range []string{"📦", "⚡", "🔍", "🧩", "♻", "↻", "⇶", "⌄", "✕", "▸", "↗"} {
+		assert.NotContains(t, body, glyph, "icons are SVG, not text glyphs")
+	}
+	assert.Contains(t, body, `aria-label="close"`, "an icon-only button names itself")
+	assert.Contains(t, body, `aria-label="more rerun options"`)
+	assert.Contains(t, body, `aria-label="acme"`, "the default plugin icon names its plugin")
+	assert.Contains(t, body, `aria-label="idempotent"`)
+
+	t.Run("a known kind draws an icon and an unknown one draws none", func(t *testing.T) {
+		for _, kind := range []string{"resource", "action", "probe"} {
+			assert.Contains(t, renderString(t, kindIcon(kind)), "<path", kind)
+		}
+		assert.NotContains(t, renderString(t, kindIcon("other")), "<svg")
+	})
+
+	t.Run("every icon name draws a shape", func(t *testing.T) {
+		names := []string{"resource", "action", "probe", "plugin", "rerun", "rerun-all", "caret", "chevron", "close", "idempotent", "setup"}
+		for _, name := range names {
+			body := renderString(t, icon(name))
+			assert.True(t, strings.Contains(body, "<path") || strings.Contains(body, "<circle"), name)
+		}
+	})
+}
+
 func TestGroupItem(t *testing.T) {
 	t.Run("renders the header, the badge and every member", func(t *testing.T) {
 		group := session.Step{Name: "infra", Label: "infra", IsGroup: true, State: session.Failed, Message: "member failed", Needs: []config.Need{{Setup: true, Step: "cluster"}}}

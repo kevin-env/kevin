@@ -171,7 +171,7 @@ plugin.Plugin{
 
 `Plugin.Icon` is an optional small PNG (48×48 or less) shown next to the
 provider's step types on the console; see `config.go`'s `demoIcon()` for
-a generated-not-checked-in example. No icon shows a puzzle-piece
+a generated-not-checked-in example. No icon shows a plug
 placeholder instead.
 
 ## Error handling
