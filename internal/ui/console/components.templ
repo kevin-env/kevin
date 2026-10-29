@@ -19,6 +19,7 @@ templ Page(v View) {
 			<meta charset="utf-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1"/>
 			<title>kevin: { v.Project }</title>
+			<link rel="icon" href="/static/logo.svg" type="image/svg+xml"/>
 			<script src="/static/htmx.min.js"></script>
 			<script src="/static/hx-sse.min.js"></script>
 			@styles()
@@ -26,18 +27,33 @@ templ Page(v View) {
 		</head>
 		<body>
 			<header>
-				<h1>kevin <span class="proj">· { v.Project }</span></h1>
-				<div class="header-chips">
-					<span class="chip"><b>proxy</b><code>{ v.ProxyAddr }</code><button type="button" class="copy-btn" data-copy={ v.ProxyAddr } onclick="copyAddr(this)" title="copy">⧉</button></span>
-					<span class="chip"><b>mcp</b><code>{ v.McpURL }</code><button type="button" class="copy-btn" data-copy={ v.McpURL } onclick="copyAddr(this)" title="copy">⧉</button></span>
-					<span class="chip"><b>net</b><code>{ v.Network }</code></span>
+				<div class="brand">
+					<a class="logo" href="https://kevin-env.dev/" target="_blank" rel="noreferrer" aria-label="kevin documentation">
+						<img src="/static/logo.svg" alt="" width="36" height="36"/>
+					</a>
+					<h1>kevin</h1>
+				</div>
+				<div class="header-meta">
+					<span class="proj">{ v.Project }</span>
+					<div class="header-chips">
+						<span class="chip">
+							<b>proxy</b><code>{ v.ProxyAddr }</code>
+							@copyButton(v.ProxyAddr, "copy proxy address")
+						</span>
+						<span class="chip">
+							<b>mcp</b><code>{ v.McpURL }</code>
+							@copyButton(v.McpURL, "copy MCP URL")
+						</span>
+						<span class="chip"><b>net</b><code>{ v.Network }</code></span>
+					</div>
 				</div>
 			</header>
 			<!-- Hidden until the SSE connection below reports htmx:sse:error - see
 			     scripts() - since a dropped connection means this page stops
 			     updating without another sign that it's happened. -->
 			<div id="conn-banner" class="conn-banner" hidden role="status">
-				⚠ Disconnected from kevin - this page is showing the last known state until it reconnects.
+				@iconWarn()
+				Disconnected from kevin - this page is showing the last known state until it reconnects.
 			</div>
 			<!-- One connection feeds every region. Each message is an out of
 			     band fragment that names its own target. -->
@@ -136,6 +152,7 @@ templ Page(v View) {
 					</section>
 				</main>
 			</div>
+			<footer>kevin { v.Version }</footer>
 			for _, s := range v.Steps {
 				if !s.IsGroup {
 					@stepDetailDialog(s)
@@ -143,6 +160,31 @@ templ Page(v View) {
 			}
 		</body>
 	</html>
+}
+
+// copyButton renders a button that copies value via copyAddr. label names
+// what is copied, for the tooltip and screen readers. The status span beside
+// it announces the copy, and sits next to the button rather than in one page
+// region so it still speaks inside a modal detail dialog.
+templ copyButton(value, label string) {
+	<button type="button" class="copy-btn" data-copy={ value } onclick="copyAddr(this)" title={ label } aria-label={ label }>
+		<svg class="icon-copy" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+			<rect x="5.5" y="5.5" width="8" height="8" rx="1.5"></rect>
+			<path d="M10.5 3.5v-1a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h1"></path>
+		</svg>
+		<svg class="icon-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+			<path d="M3 8.5l3.2 3.2L13 4.8"></path>
+		</svg>
+	</button>
+	<span class="sr-only" role="status"></span>
+}
+
+// iconWarn is a decorative warning triangle sized to the surrounding text.
+templ iconWarn() {
+	<svg class="icon-warn" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+		<path d="M8 1.8l6.6 11.5H1.4z"></path>
+		<path d="M8 6.5v3.2M8 11.4v.1"></path>
+	</svg>
 }
 
 // proxySetup shows how to point a shell or a browser at the proxy: the PAC
@@ -156,14 +198,14 @@ templ proxySetup(v View) {
 			<span class="detail-label">shell</span>
 			<div class="detail-value">
 				<code>{ exportLine(v.ProxyAddr) }</code>
-				<button type="button" class="copy-btn" data-copy={ exportLine(v.ProxyAddr) } onclick="copyAddr(this)" title="copy">⧉</button>
+				@copyButton(exportLine(v.ProxyAddr), "copy export line")
 			</div>
 		</div>
 		<div class="detail">
 			<span class="detail-label">PAC URL</span>
 			<div class="detail-value">
 				<code>{ pacURL(v.ProxyAddr) }</code>
-				<button type="button" class="copy-btn" data-copy={ pacURL(v.ProxyAddr) } onclick="copyAddr(this)" title="copy">⧉</button>
+				@copyButton(pacURL(v.ProxyAddr), "copy PAC URL")
 			</div>
 		</div>
 		<p class="hint">
@@ -197,14 +239,14 @@ templ mcpSetup(v View) {
 			<span class="detail-label">Claude Code</span>
 			<div class="detail-value">
 				<code>{ claudeMcpAddCmd(v.McpURL) }</code>
-				<button type="button" class="copy-btn" data-copy={ claudeMcpAddCmd(v.McpURL) } onclick="copyAddr(this)" title="copy">⧉</button>
+				@copyButton(claudeMcpAddCmd(v.McpURL), "copy claude mcp add command")
 			</div>
 		</div>
 		<div class="detail">
 			<span class="detail-label">URL</span>
 			<div class="detail-value">
 				<code>{ v.McpURL }</code>
-				<button type="button" class="copy-btn" data-copy={ v.McpURL } onclick="copyAddr(this)" title="copy">⧉</button>
+				@copyButton(v.McpURL, "copy MCP URL")
 			</div>
 		</div>
 		<p class="hint">
@@ -479,7 +521,7 @@ templ detailRows(rows []session.Detail) {
 						<code title={ d.Value }>{ d.Value }</code>
 					}
 					if d.Copyable {
-						<button type="button" class="copy-btn" data-copy={ d.Value } onclick="copyAddr(this)" title="copy">⧉</button>
+						@copyButton(d.Value, "copy "+d.Label)
 					}
 				</div>
 			</div>
@@ -630,9 +672,13 @@ templ styles() {
 	<style>
 		:root {
 			color-scheme: light dark;
-			--bg: #fff; --fg: #111; --muted: #666; --line: #e3e3e3; --pill: #eee;
+			--bg: #fff; --fg: #111; --muted: #666; --line: #e3e3e3; --pill: #eee; --bar: #f6f8fa;
 			--ok: #1a7f37; --warn: #9a6700; --err: #cf222e; --run: #0969da;
 			--k-resource: #6639ba; --k-probe: #0f7b6c;
+			/* The logo's orange: focus rings only. State colors stay --ok,
+			   --warn, --err and --run, so orange never reads as a state. */
+			--brand: #e8613f;
+			--font-sans: system-ui, -apple-system, "Segoe UI", sans-serif;
 			/* Spacing scale for repeated margin/padding/gap values. A
 			   one-off size (a fixed icon box, a card's max-width) stays
 			   a literal - no reuse to name. */
@@ -643,19 +689,40 @@ templ styles() {
 		}
 		@media (prefers-color-scheme: dark) {
 			:root {
-				--bg: #0d1117; --fg: #e6edf3; --muted: #8b949e; --line: #30363d; --pill: #21262d;
+				--bg: #0d1117; --fg: #e6edf3; --muted: #8b949e; --line: #30363d; --pill: #21262d; --bar: #161b22;
 				--ok: #3fb950; --warn: #d29922; --err: #f85149; --run: #58a6ff;
 				--k-resource: #a371f7; --k-probe: #39c5bf;
 			}
 		}
 		* { box-sizing: border-box; }
+		:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+		.empty, .empty-inline, .hint, .conn-banner { font-family: var(--font-sans); }
 		body {
 			margin: 0; padding: var(--sp-9);
 			background: var(--bg); color: var(--fg);
 			font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
 		}
-		h1 { font-size: 1.3rem; margin: 0 0 var(--sp-4); letter-spacing: .02em; }
-		h1 .proj { color: var(--muted); font-weight: 400; }
+		/* A full-width band: the negative margin cancels the body padding. The
+		   brand (logo and name) is one row, the project and its details the
+		   next. */
+		body > header {
+			display: flex; flex-direction: column; gap: var(--sp-5);
+			margin: calc(-1 * var(--sp-9)) calc(-1 * var(--sp-9)) 0;
+			padding: var(--sp-7) var(--sp-9);
+			background: var(--bar); border-bottom: 1px solid var(--line);
+		}
+		.brand { display: flex; align-items: center; gap: var(--sp-7); }
+		.logo { display: flex; }
+		h1 { font-size: 1.3rem; margin: 0; letter-spacing: .02em; }
+		.header-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-4) var(--sp-7); }
+		.header-meta .proj { font-weight: 600; }
+		/* The footer rests at the bottom of a short page and follows the
+		   content on a long one. */
+		body { min-height: 100vh; display: flex; flex-direction: column; }
+		body > footer {
+			margin-top: auto; padding-top: var(--sp-9);
+			color: var(--muted); font-size: var(--text-2xs); text-align: right;
+		}
 		h2 { font-size: var(--text-sm); text-transform: uppercase; letter-spacing: .08em;
 		     color: var(--muted); margin: 0 0 var(--sp-7); font-weight: 600; }
 		.header-chips { display: flex; gap: var(--sp-4); flex-wrap: wrap; }
@@ -667,7 +734,7 @@ templ styles() {
 		.header-chips .chip b { color: var(--fg); font-weight: 600; }
 		.conn-banner {
 			background: var(--err); color: #fff; font-weight: 600;
-			padding: var(--sp-5) var(--sp-8); border-radius: 6px; margin-bottom: var(--sp-9);
+			padding: var(--sp-5) var(--sp-8); border-radius: 6px; margin: var(--sp-9) 0;
 		}
 		table { width: 100%; border-collapse: collapse; }
 		th { text-align: left; font-weight: 600; color: var(--muted);
@@ -871,7 +938,15 @@ templ styles() {
 			font-size: var(--text-md); line-height: 1; padding: 0 var(--sp-2); flex: none;
 		}
 		.copy-btn:hover { color: var(--fg); }
-		.copy-btn:disabled { color: var(--ok); cursor: default; }
+		.copy-btn.copied { color: var(--ok); cursor: default; }
+		.sr-only {
+			position: absolute; width: 1px; height: 1px; overflow: hidden;
+			clip-path: inset(50%); white-space: nowrap;
+		}
+		.copy-btn svg { width: 1em; height: 1em; display: block; }
+		.copy-btn .icon-check, .copy-btn.copied .icon-copy { display: none; }
+		.copy-btn.copied .icon-check { display: block; }
+		.icon-warn { width: 1em; height: 1em; vertical-align: -.125em; }
 
 		/* A step's detail dialog: opened by clicking its name/card header. */
 		#sidebar .name[data-step] { cursor: pointer; }
@@ -895,14 +970,15 @@ templ styles() {
 templ scripts() {
 	<script>
 		function copyAddr(btn) {
+			if (btn.classList.contains('copied')) return;
 			var val = btn.getAttribute('data-copy');
+			var status = btn.nextElementSibling;
 			navigator.clipboard.writeText(val).then(function() {
-				var orig = btn.textContent;
-				btn.textContent = '✓';
-				btn.disabled = true;
+				btn.classList.add('copied');
+				status.textContent = 'copied';
 				setTimeout(function() {
-					btn.textContent = orig;
-					btn.disabled = false;
+					btn.classList.remove('copied');
+					status.textContent = '';
 				}, 1000);
 			});
 		}

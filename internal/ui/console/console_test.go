@@ -19,6 +19,7 @@ import (
 	"github.com/kevin-env/kevin/internal/config"
 	"github.com/kevin-env/kevin/internal/run/api"
 	"github.com/kevin-env/kevin/internal/run/session"
+	"github.com/kevin-env/kevin/internal/version"
 )
 
 func TestSSEMessage(t *testing.T) {
@@ -264,7 +265,7 @@ func TestPage(t *testing.T) {
 	t.Run("static assets are embedded", func(t *testing.T) {
 		s := New(Config{Project: "demo", Network: "kevin-demo", Store: session.NewStore()})
 
-		for _, name := range []string{"htmx.min.js", "hx-sse.min.js"} {
+		for _, name := range []string{"htmx.min.js", "hx-sse.min.js", "logo.svg"} {
 			rec := httptest.NewRecorder()
 			s.Handler().ServeHTTP(rec, httptest.NewRequestWithContext(t.Context(), "GET", "/static/"+name, nil))
 
@@ -389,7 +390,7 @@ func TestLogsPanel(t *testing.T) {
 }
 
 func TestHeader(t *testing.T) {
-	t.Run("folds the project into the heading and offers copyable address chips", func(t *testing.T) {
+	t.Run("names the project beside copyable address chips, apart from the brand heading", func(t *testing.T) {
 		store := session.NewStore()
 		s := New(Config{Project: "demo", Network: "kevin-demo", Store: store})
 		store.SetProxyAddr("127.0.0.1:8080")
@@ -398,9 +399,49 @@ func TestHeader(t *testing.T) {
 		s.Handler().ServeHTTP(rec, httptest.NewRequestWithContext(t.Context(), "GET", "/", nil))
 
 		body := rec.Body.String()
-		assert.Contains(t, body, `<h1>kevin <span class="proj">· demo</span></h1>`)
+		assert.Contains(t, body, `<h1>kevin</h1>`)
+		assert.Contains(t, body, `<span class="proj">demo</span>`)
+		assert.Contains(t, body, `<a class="logo" href="https://kevin-env.dev/"`)
+		assert.Contains(t, body, `<img src="/static/logo.svg"`)
 		assert.Contains(t, body, `data-copy="127.0.0.1:8080"`, "the proxy chip stays copyable")
 		assert.Equal(t, 3, strings.Count(body, `class="chip"`), "proxy, mcp, and network each get one chip")
+	})
+
+	t.Run("shows the version being served in a footer", func(t *testing.T) {
+		s := New(Config{Project: "demo", Network: "kevin-demo", Store: session.NewStore()})
+
+		rec := httptest.NewRecorder()
+		s.Handler().ServeHTTP(rec, httptest.NewRequestWithContext(t.Context(), "GET", "/", nil))
+
+		assert.Contains(t, rec.Body.String(), "<footer>kevin "+version.Full()+"</footer>")
+	})
+
+	t.Run("links the favicon and styles keyboard focus", func(t *testing.T) {
+		s := New(Config{Project: "demo", Network: "kevin-demo", Store: session.NewStore()})
+
+		rec := httptest.NewRecorder()
+		s.Handler().ServeHTTP(rec, httptest.NewRequestWithContext(t.Context(), "GET", "/", nil))
+
+		body := rec.Body.String()
+		assert.Contains(t, body, `<link rel="icon" href="/static/logo.svg"`)
+		assert.Contains(t, body, ":focus-visible")
+	})
+
+	t.Run("draws every copy button and the banner with SVG icons", func(t *testing.T) {
+		s := New(Config{Project: "demo", Network: "kevin-demo", Store: session.NewStore()})
+
+		rec := httptest.NewRecorder()
+		s.Handler().ServeHTTP(rec, httptest.NewRequestWithContext(t.Context(), "GET", "/", nil))
+
+		body := rec.Body.String()
+		buttons := strings.Count(body, `class="copy-btn"`)
+		require.Positive(t, buttons)
+		assert.Equal(t, buttons, strings.Count(body, `class="icon-check"`), "each copy button carries its confirmation icon")
+		assert.Equal(t, buttons, strings.Count(body, `<span class="sr-only" role="status"></span>`), "each copy button has a status span the script fills in")
+		assert.Contains(t, body, `class="icon-warn"`)
+		assert.NotContains(t, body, "⧉")
+		assert.NotContains(t, body, "⚠")
+		assert.NotContains(t, body, `aria-label="copy"`, "a copy button names what it copies")
 	})
 }
 

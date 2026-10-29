@@ -30,6 +30,7 @@ import (
 	"github.com/kevin-env/kevin/internal/run/session"
 	"github.com/kevin-env/kevin/internal/ui/browser"
 	"github.com/kevin-env/kevin/internal/ui/mcpserver"
+	"github.com/kevin-env/kevin/internal/version"
 )
 
 var log = logging.New("console")
@@ -54,6 +55,8 @@ type View struct {
 	// Browser is the kind of browser viewing the page, detected from its
 	// User-Agent - used to target the Proxy tab's setup instructions.
 	Browser browser.Kind
+	// Version is the kevin version serving the page, with its commit.
+	Version string
 }
 
 // Server serves the page for one session's state, held by a
@@ -125,6 +128,7 @@ func (s *Server) View(host string) View {
 		Project: s.project,
 		McpURL:  "http://" + host + mcpserver.Path,
 		Network: s.network,
+		Version: version.Full(),
 	}
 }
 
